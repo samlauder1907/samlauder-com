@@ -1,0 +1,138 @@
+---
+const navLinks = [
+  { label: 'Portfolio', href: '/portfolio' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+];
+
+const { pathname } = Astro.url;
+---
+
+<header class="site-nav">
+  <nav class="container nav-inner">
+    <a href="/" class="nav-logo">Sam Lauder Photography</a>
+    <ul class="nav-links" role="list">
+      {navLinks.map(({ label, href }) => (
+        <li>
+          <a href={href} class:list={['nav-link', { 'nav-link--active': pathname.startsWith(href) }]}>
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+<style>
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    border-bottom: 1px solid var(--color-border);
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .nav-logo {
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .nav-logo:hover {
+    text-decoration: none;
+    opacity: 0.7;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+    color: var(--color-text-muted);
+    transition: color 0.15s;
+  }
+
+  .nav-link:hover,
+  .nav-link--active {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-text);
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  @media (max-width: 640px) {
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-bottom: 1px solid var(--color-border);
+      flex-direction: column;
+      gap: 0;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links.open {
+      display: flex;
+    }
+
+    .nav-links li a {
+      display: block;
+      padding: 0.75rem 1.5rem;
+    }
+
+    .nav-toggle {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.querySelector('.nav-toggle') as HTMLButtonElement;
+  const links = document.querySelector('.nav-links') as HTMLElement;
+
+  toggle?.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+</script>
