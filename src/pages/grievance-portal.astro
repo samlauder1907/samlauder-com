@@ -1,0 +1,248 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Grievance Portal"
+  description="Submit a grievance."
+  noindex={true}
+>
+  <div class="container">
+    <div class="grievance-layout">
+      <header class="grievance-header">
+        <h1>Grievance Portal</h1>
+        <p>
+          Got a beef? File it here. All submissions are read. Not all will be acted upon. Some will be laughed at — privately, professionally.
+        </p>
+      </header>
+
+      <div class="grievance-form-wrap">
+        <form
+          id="grievance-form"
+          action="https://formspree.io/f/GRIEVANCE_FORM_ID"
+          method="POST"
+          class="grievance-form"
+        >
+          <div class="form-field">
+            <label for="grievant-name">Your Name <span class="optional">(optional)</span></label>
+            <input
+              type="text"
+              id="grievant-name"
+              name="name"
+              autocomplete="name"
+              placeholder="Anonymous is fine"
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="grievant-email">Email <span class="optional">(optional — if you'd like a response)</span></label>
+            <input
+              type="email"
+              id="grievant-email"
+              name="email"
+              autocomplete="email"
+            />
+          </div>
+
+          <fieldset class="mood-fieldset">
+            <legend>Current Mood</legend>
+            <div class="mood-options">
+              <label class="mood-option">
+                <input type="checkbox" name="mood" value="disgruntled" />
+                <span>Disgruntled</span>
+              </label>
+              <label class="mood-option">
+                <input type="checkbox" name="mood" value="mildly-inconvenienced" />
+                <span>Mildly inconvenienced</span>
+              </label>
+              <label class="mood-option">
+                <input type="checkbox" name="mood" value="furious" />
+                <span>Furious</span>
+              </label>
+              <label class="mood-option">
+                <input type="checkbox" name="mood" value="disappointed" />
+                <span>Disappointed (the worst one)</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form-field">
+            <label for="grievance-subject">Subject</label>
+            <input
+              type="text"
+              id="grievance-subject"
+              name="subject"
+              required
+              placeholder="State your grievance in 10 words or fewer"
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="grievance-detail">Details</label>
+            <textarea
+              id="grievance-detail"
+              name="message"
+              rows="7"
+              required
+              placeholder="Make your case. Be specific. Vague grievances are the most dismissible kind."
+            ></textarea>
+          </div>
+
+          <div class="form-field">
+            <label for="desired-outcome">Desired Outcome <span class="optional">(optional)</span></label>
+            <input
+              type="text"
+              id="desired-outcome"
+              name="desired_outcome"
+              placeholder="What would make this right?"
+            />
+          </div>
+
+          <button type="submit" class="btn-submit">Submit Grievance</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .grievance-layout {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 4rem 0;
+  }
+
+  .grievance-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .grievance-header h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+  }
+
+  .grievance-header p {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .grievance-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-field label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+  }
+
+  .optional {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    opacity: 0.7;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    background: transparent;
+    color: var(--color-text);
+    appearance: none;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-field input::placeholder,
+  .form-field textarea::placeholder {
+    color: var(--color-text-muted);
+    opacity: 0.6;
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus {
+    border-color: var(--color-text);
+  }
+
+  .form-field textarea {
+    resize: vertical;
+  }
+
+  /* Mood checkboxes */
+  .mood-fieldset {
+    border: 1px solid var(--color-border);
+    padding: 1.25rem 1.25rem 1rem;
+  }
+
+  .mood-fieldset legend {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    padding: 0 0.5rem;
+  }
+
+  .mood-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .mood-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  .mood-option input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--color-text);
+    cursor: pointer;
+  }
+
+  .btn-submit {
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: 0.875rem 2rem;
+    background: var(--color-text);
+    color: var(--color-bg);
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: opacity 0.2s;
+  }
+
+  .btn-submit:hover {
+    opacity: 0.8;
+  }
+
+  @media (max-width: 480px) {
+    .mood-options {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

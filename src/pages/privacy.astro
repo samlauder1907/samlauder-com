@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Privacy Policy"
+  description="Privacy policy for samlauder.com"
+>
+  <div class="container">
+    <div class="privacy-content">
+      <h1>Privacy Policy</h1>
+      <p class="last-updated">Last updated: June 2025</p>
+
+      <section>
+        <h2>Overview</h2>
+        <p>
+          This website (samlauder.com) is operated by Sam Lauder Photography. This policy explains how personal information is collected and used when you interact with this site.
+        </p>
+      </section>
+
+      <section>
+        <h2>Information Collected</h2>
+        <p>
+          When you submit the contact form or grievance portal, your name, email address, and message content are collected and transmitted to Formspree for delivery. This information is used solely to respond to your enquiry.
+        </p>
+        <p>
+          This site does not use analytics tracking, advertising cookies, or third-party tracking scripts.
+        </p>
+      </section>
+
+      <section>
+        <h2>Third-Party Services</h2>
+        <p>
+          This site uses <a href="https://formspree.io" target="_blank" rel="noopener noreferrer">Formspree</a> to process form submissions. Formspree's privacy policy applies to data processed through their service.
+        </p>
+        <p>
+          This site is hosted on <a href="https://pages.cloudflare.com" target="_blank" rel="noopener noreferrer">Cloudflare Pages</a>. Cloudflare may process request metadata (IP address, user agent) as part of their network operations. Refer to Cloudflare's privacy policy for details.
+        </p>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>
+          For any privacy-related enquiries, contact <a href="mailto:SamLauderPhotography@gmail.com">SamLauderPhotography@gmail.com</a>.
+        </p>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .privacy-content {
+    max-width: 680px;
+    padding: 4rem 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.4rem;
+  }
+
+  .last-updated {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  section {
+    margin-bottom: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    color: var(--color-text-muted);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: var(--color-text);
+    text-decoration: underline;
+  }
+
+  a:hover {
+    opacity: 0.7;
+  }
+</style>

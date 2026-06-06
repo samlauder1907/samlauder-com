@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="About"
+  description="Sam Lauder is a Melbourne-based architectural photographer specialising in architecture and the built environment."
+>
+  <div class="container">
+    <div class="about-layout">
+      <div class="about-image">
+        <img
+          src="/images/about/portrait.jpg"
+          alt="Sam Lauder, architectural photographer"
+          loading="eager"
+        />
+      </div>
+
+      <div class="about-content">
+        <h1>About</h1>
+
+        <div class="about-body">
+          <p>
+            I'm a Melbourne-based photographer specialising in architectural and interior photography. I work with architects, interior designers, developers, and builders to document the built environment with clarity, craft, and a considered eye.
+          </p>
+          <p>
+            My approach is collaborative. I take time to understand each project before arriving on site, whether that means reviewing drawings and precedents, visiting at different times of day, or simply having a conversation with the design team about what makes the work distinctive.
+          </p>
+          <p>
+            I've worked across commercial, civic, hospitality, and residential projects with clients including Fieldwork Architects, Woods Bagot, WMK Architecture, Studio Esteta, Hayball, and GroupGSA.
+          </p>
+          <p>
+            Based in Melbourne, available nationally.
+          </p>
+        </div>
+
+        <div class="about-contact">
+          <a href="/contact" class="btn btn-outline">Get in Touch</a>
+          <a href="mailto:SamLauderPhotography@gmail.com" class="email-link">SamLauderPhotography@gmail.com</a>
+        </div>
+
+        <div class="about-clients">
+          <h2>Selected Clients</h2>
+          <ul>
+            <li>Fieldwork Architects</li>
+            <li>Woods Bagot</li>
+            <li>WMK Architecture</li>
+            <li>Studio Esteta</li>
+            <li>Hayball</li>
+            <li>GroupGSA</li>
+            <li>Sibling Architecture</li>
+            <li>FJC Studio</li>
+            <li>MORC Interiors</li>
+            <li>Canva</li>
+            <li>Urban Climb</li>
+            <li>Metricon</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    padding: 4rem 0;
+    align-items: start;
+  }
+
+  .about-image img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+  }
+
+  .about-content h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .about-body p {
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .about-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-contact {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+    flex-wrap: wrap;
+  }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    transition: border-color 0.2s;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--color-text);
+  }
+
+  .email-link {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+
+  .email-link:hover {
+    color: var(--color-text);
+  }
+
+  .about-clients {
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .about-clients h2 {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .about-clients ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1rem;
+  }
+
+  .about-clients li {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 900px) {
+    .about-layout {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding: 3rem 0;
+    }
+
+    .about-image img {
+      aspect-ratio: 3 / 2;
+      max-height: 400px;
+    }
+  }
+</style>
