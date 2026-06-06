@@ -4,6 +4,7 @@ const DB_ID = '2856a8b1-60c0-45fa-849d-21d3c68fe40c';
 
 function getClient() {
   const token = process.env.NOTION_TOKEN ?? import.meta.env.NOTION_TOKEN;
+  console.log('[notion] token present:', !!token);
   if (!token) return null;
   return new Client({ auth: token });
 }
