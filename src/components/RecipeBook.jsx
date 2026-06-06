@@ -1,43 +1,94 @@
 import { useState, useMemo } from 'react';
 
-export default function RecipeBook({ recipes }) {
-  const [activeTag, setActiveTag] = useState(null);
+function stripPrefix(value) {
+  return value.replace(/^(Difficulty|Duration):\s*/i, '');
+}
 
-  const allTags = useMemo(() => {
+function FilterRow({ label, options, active, onToggle }) {
+  if (options.length === 0) return null;
+  return (
+    <div className="filter-row">
+      <span className="filter-row-label">{label}</span>
+      <div className="filter-row-btns">
+        {options.map(opt => (
+          <button
+            key={opt}
+            className={`filter-btn${active === opt ? ' active' : ''}`}
+            onClick={() => onToggle(opt)}
+          >
+            {stripPrefix(opt)}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function RecipeBook({ recipes }) {
+  const [activeCategory, setActiveCategory] = useState(null);
+  const [activeDifficulty, setActiveDifficulty] = useState(null);
+  const [activeDuration, setActiveDuration] = useState(null);
+
+  const allCategories = useMemo(() => {
     const set = new Set();
     recipes.forEach(r => r.tags?.forEach(t => set.add(t)));
     return Array.from(set).sort();
   }, [recipes]);
 
+  const allDifficulties = useMemo(() => {
+    const set = new Set();
+    recipes.forEach(r => r.difficulty?.forEach(t => set.add(t)));
+    return Array.from(set).sort();
+  }, [recipes]);
+
+  const allDurations = useMemo(() => {
+    const set = new Set();
+    recipes.forEach(r => r.duration?.forEach(t => set.add(t)));
+    return Array.from(set).sort();
+  }, [recipes]);
+
   const filtered = useMemo(() => {
-    if (!activeTag) return recipes;
-    return recipes.filter(r => r.tags?.includes(activeTag));
-  }, [recipes, activeTag]);
+    return recipes.filter(r => {
+      if (activeCategory && !r.tags?.includes(activeCategory)) return false;
+      if (activeDifficulty && !r.difficulty?.includes(activeDifficulty)) return false;
+      if (activeDuration && !r.duration?.includes(activeDuration)) return false;
+      return true;
+    });
+  }, [recipes, activeCategory, activeDifficulty, activeDuration]);
+
+  const hasFilters = allCategories.length > 0 || allDifficulties.length > 0 || allDurations.length > 0;
+
+  function toggle(active, setActive, value) {
+    setActive(prev => (prev === value ? null : value));
+  }
 
   return (
     <div className="recipe-book">
-      {allTags.length > 0 && (
-        <div className="recipe-filters" role="group" aria-label="Filter by category">
-          <button
-            className={`filter-btn${!activeTag ? ' active' : ''}`}
-            onClick={() => setActiveTag(null)}
-          >
-            All
-          </button>
-          {allTags.map(tag => (
-            <button
-              key={tag}
-              className={`filter-btn${activeTag === tag ? ' active' : ''}`}
-              onClick={() => setActiveTag(activeTag === tag ? null : tag)}
-            >
-              {tag}
-            </button>
-          ))}
+      {hasFilters && (
+        <div className="recipe-filters">
+          <FilterRow
+            label="Category"
+            options={allCategories}
+            active={activeCategory}
+            onToggle={v => toggle(activeCategory, setActiveCategory, v)}
+          />
+          <FilterRow
+            label="Difficulty"
+            options={allDifficulties}
+            active={activeDifficulty}
+            onToggle={v => toggle(activeDifficulty, setActiveDifficulty, v)}
+          />
+          <FilterRow
+            label="Duration"
+            options={allDurations}
+            active={activeDuration}
+            onToggle={v => toggle(activeDuration, setActiveDuration, v)}
+          />
         </div>
       )}
 
       {filtered.length === 0 ? (
-        <p className="recipe-empty">No recipes yet.</p>
+        <p className="recipe-empty">No recipes match the selected filters.</p>
       ) : (
         <div className="recipe-grid">
           {filtered.map(recipe => (
@@ -52,8 +103,8 @@ export default function RecipeBook({ recipes }) {
               <div className="recipe-card-info">
                 <h2>{recipe.name}</h2>
                 <div className="recipe-meta">
-                  {recipe.duration?.[0] && <span>{recipe.duration[0]}</span>}
-                  {recipe.difficulty?.[0] && <span>{recipe.difficulty[0]}</span>}
+                  {recipe.duration?.[0] && <span>{stripPrefix(recipe.duration[0])}</span>}
+                  {recipe.difficulty?.[0] && <span>{stripPrefix(recipe.difficulty[0])}</span>}
                 </div>
                 {recipe.tags?.length > 0 && (
                   <ul className="recipe-tags" aria-label="Categories">
@@ -71,15 +122,40 @@ export default function RecipeBook({ recipes }) {
       <style>{`
         .recipe-filters {
           display: flex;
-          flex-wrap: wrap;
-          gap: 0.5rem;
+          flex-direction: column;
+          gap: 0.75rem;
           margin-bottom: 2.5rem;
+          padding-bottom: 2rem;
+          border-bottom: 1px solid var(--color-border, #e0e0e0);
+        }
+
+        .filter-row {
+          display: flex;
+          align-items: baseline;
+          gap: 0.75rem;
+          flex-wrap: wrap;
+        }
+
+        .filter-row-label {
+          font-size: 0.7rem;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          color: var(--color-text-muted, #666);
+          width: 70px;
+          flex-shrink: 0;
+        }
+
+        .filter-row-btns {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.4rem;
         }
 
         .filter-btn {
           font-family: inherit;
           font-size: 0.8rem;
-          padding: 0.4rem 1rem;
+          padding: 0.3rem 0.85rem;
           border: 1px solid var(--color-border, #e0e0e0);
           background: transparent;
           color: var(--color-text-muted, #666);
@@ -172,6 +248,7 @@ export default function RecipeBook({ recipes }) {
 
         @media (max-width: 480px) {
           .recipe-grid { grid-template-columns: 1fr; }
+          .filter-row-label { width: auto; }
         }
       `}</style>
     </div>

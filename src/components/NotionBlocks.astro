@@ -15,12 +15,55 @@ function richText(items = []) {
     return text;
   }).join('');
 }
+
+function renderBlock(block: any): string {
+  const type = block.type;
+  const content = block[type];
+
+  if (type === 'paragraph') {
+    const html = richText(content?.rich_text);
+    return html ? `<p>${html}</p>` : `<p class="spacer"></p>`;
+  }
+  if (type === 'heading_1') return `<h2>${richText(content?.rich_text)}</h2>`;
+  if (type === 'heading_2') return `<h3>${richText(content?.rich_text)}</h3>`;
+  if (type === 'heading_3') return `<h4>${richText(content?.rich_text)}</h4>`;
+  if (type === 'bulleted_list_item') return `<ul class="notion-list"><li>${richText(content?.rich_text)}</li></ul>`;
+  if (type === 'numbered_list_item') return `<ol class="notion-list"><li>${richText(content?.rich_text)}</li></ol>`;
+  if (type === 'divider') return `<hr />`;
+  if (type === 'quote') return `<blockquote>${richText(content?.rich_text)}</blockquote>`;
+  if (type === 'callout') {
+    const icon = content?.icon?.emoji || '';
+    return `<div class="notion-callout">${icon ? `<span class="callout-icon">${icon}</span>` : ''}<div>${richText(content?.rich_text)}</div></div>`;
+  }
+  if (type === 'image') {
+    const src = content?.external?.url || content?.file?.url;
+    const cap = richText(content?.caption);
+    if (!src) return '';
+    return `<figure class="notion-image"><img src="${src}" alt="${cap || ''}" loading="lazy" />${cap ? `<figcaption>${cap}</figcaption>` : ''}</figure>`;
+  }
+  return '';
+}
+
+// Pre-render column_list blocks entirely to HTML strings to avoid nested maps in the Astro template
+const processedBlocks = blocks.map((block: any) => {
+  if (block.type === 'column_list' && block._columns) {
+    const cols = (block._columns as any[][])
+      .map(col => `<div class="notion-column">${col.map(renderBlock).join('')}</div>`)
+      .join('');
+    return { ...block, _renderedHtml: `<div class="notion-columns">${cols}</div>` };
+  }
+  return block;
+});
 ---
 
 <div class="notion-body">
-  {blocks.map(block => {
+  {processedBlocks.map((block) => {
     const type = block.type;
     const content = block[type];
+
+    if (type === 'column_list') {
+      return <Fragment set:html={block._renderedHtml} />;
+    }
 
     if (type === 'paragraph') {
       const html = richText(content?.rich_text);
@@ -187,5 +230,26 @@ function richText(items = []) {
 
   .notion-body a:hover {
     opacity: 0.7;
+  }
+
+  /* Two-column layout from Notion column_list */
+  .notion-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .notion-column :global(h2:first-child),
+  .notion-column :global(h3:first-child),
+  .notion-column :global(h4:first-child) {
+    margin-top: 0;
+  }
+
+  @media (max-width: 640px) {
+    .notion-columns {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
   }
 </style>

@@ -55,17 +55,6 @@ const moods = [
         class="grievance-form"
       >
         <div class="form-field">
-          <label for="grievant-name">Your Name <span class="optional">(optional)</span></label>
-          <input
-            type="text"
-            id="grievant-name"
-            name="name"
-            autocomplete="name"
-            placeholder="Anonymous is fine"
-          />
-        </div>
-
-        <div class="form-field">
           <label for="grievant-email">Email <span class="optional">(optional — if you'd like a response)</span></label>
           <input
             type="email"
@@ -80,7 +69,7 @@ const moods = [
           <div class="mood-options">
             {moods.map(mood => (
               <label class="mood-option">
-                <input type="checkbox" name="mood" value={mood.value} />
+                <input type="checkbox" name="mood" value={mood.value} data-label={mood.label} />
                 <span class="mood-emoji">{mood.emoji}</span>
                 <span>{mood.label}</span>
               </label>
@@ -88,16 +77,7 @@ const moods = [
           </div>
         </fieldset>
 
-        <div class="form-field">
-          <label for="grievance-subject">Subject</label>
-          <input
-            type="text"
-            id="grievance-subject"
-            name="subject"
-            required
-            placeholder="State your grievance in 10 words or fewer"
-          />
-        </div>
+        <input type="hidden" id="grievance-subject" name="subject" />
 
         <div class="form-field">
           <label for="grievance-detail">Details</label>
@@ -108,16 +88,6 @@ const moods = [
             required
             placeholder="Make your case. Be specific. Vague grievances are the most dismissible kind."
           ></textarea>
-        </div>
-
-        <div class="form-field">
-          <label for="desired-outcome">Desired Outcome <span class="optional">(optional)</span></label>
-          <input
-            type="text"
-            id="desired-outcome"
-            name="desired_outcome"
-            placeholder="What would make this right?"
-          />
         </div>
 
         <div class="form-error" id="form-error" role="alert" aria-live="polite"></div>
@@ -147,6 +117,13 @@ const moods = [
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     errorEl.textContent = '';
+
+    // Auto-populate hidden subject from selected moods
+    const checked = Array.from(form.querySelectorAll<HTMLInputElement>('input[name="mood"]:checked'));
+    const labels = checked.map(el => el.dataset.label ?? el.value);
+    const subjectField = document.getElementById('grievance-subject') as HTMLInputElement;
+    subjectField.value = labels.length > 0 ? `Feeling: ${labels.join(', ')}` : 'Grievance submission';
+
     submitBtn.disabled = true;
     submitBtn.textContent = 'Filing…';
 

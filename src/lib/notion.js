@@ -67,6 +67,25 @@ export async function getRecipes() {
   }
 }
 
+async function fetchBlocks(notion, blockId) {
+  const res = await notion.blocks.children.list({ block_id: blockId, page_size: 100 });
+  const blocks = [];
+  for (const block of res.results) {
+    if (block.type === 'column_list') {
+      const colsRes = await notion.blocks.children.list({ block_id: block.id, page_size: 100 });
+      const columns = [];
+      for (const col of colsRes.results) {
+        const colContent = await notion.blocks.children.list({ block_id: col.id, page_size: 100 });
+        columns.push(colContent.results);
+      }
+      blocks.push({ ...block, _columns: columns });
+    } else {
+      blocks.push(block);
+    }
+  }
+  return blocks;
+}
+
 export async function getRecipePage(pageId) {
   const notion = getClient();
   if (!notion) return { recipe: null, blocks: [] };
@@ -74,14 +93,14 @@ export async function getRecipePage(pageId) {
   const fullId = pageId.replace(/-/g, '').replace(/(.{8})(.{4})(.{4})(.{4})(.{12})/, '$1-$2-$3-$4-$5');
 
   try {
-    const [page, blocksRes] = await Promise.all([
+    const [page, blocks] = await Promise.all([
       notion.pages.retrieve({ page_id: fullId }),
-      notion.blocks.children.list({ block_id: fullId, page_size: 100 }),
+      fetchBlocks(notion, fullId),
     ]);
 
     return {
       recipe: normaliseRecipe(page),
-      blocks: blocksRes.results,
+      blocks,
     };
   } catch (err) {
     console.error('[notion] getRecipePage failed:', err.message);

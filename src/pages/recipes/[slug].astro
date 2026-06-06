@@ -14,6 +14,10 @@ export async function getStaticPaths() {
 const { recipeId } = Astro.props;
 const { recipe, blocks } = await getRecipePage(recipeId);
 
+function stripPrefix(value: string) {
+  return value.replace(/^(Difficulty|Duration):\s*/i, '');
+}
+
 if (!recipe) {
   return Astro.redirect('/recipes');
 }
@@ -47,13 +51,13 @@ if (!recipe) {
             {recipe.duration?.length > 0 && (
               <div class="meta-item">
                 <span class="meta-label">Duration</span>
-                <span>{recipe.duration.join(', ')}</span>
+                <span>{recipe.duration.map(stripPrefix).join(', ')}</span>
               </div>
             )}
             {recipe.difficulty?.length > 0 && (
               <div class="meta-item">
                 <span class="meta-label">Difficulty</span>
-                <span>{recipe.difficulty.join(', ')}</span>
+                <span>{recipe.difficulty.map(stripPrefix).join(', ')}</span>
               </div>
             )}
             {recipe.credits && (
