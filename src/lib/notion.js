@@ -62,8 +62,8 @@ export async function getRecipes() {
 
     return results.map(normaliseRecipe);
   } catch (err) {
-    console.error('[notion] getRecipes failed:', err.message);
-    return [];
+    console.error('[notion] getRecipes failed:', err.message, err.status, err.code);
+    throw err;
   }
 }
 
