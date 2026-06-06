@@ -7,12 +7,14 @@ interface Props {
   title: string;
   description?: string;
   noindex?: boolean;
+  standalone?: boolean;
 }
 
 const {
   title,
   description = 'Sam Lauder is a Melbourne-based architectural photographer specialising in architecture and the built environment.',
   noindex = false,
+  standalone = false,
 } = Astro.props;
 
 const fullTitle = title === 'Sam Lauder Photography'
@@ -31,10 +33,10 @@ const fullTitle = title === 'Sam Lauder Photography'
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
-    <Nav />
+    {!standalone && <Nav />}
     <main>
       <slot />
     </main>
-    <Footer />
+    {!standalone && <Footer />}
   </body>
 </html>

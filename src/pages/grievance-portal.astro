@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const FORMSPREE_ID = import.meta.env.FORMSPREE_GRIEVANCE_ID || 'GRIEVANCE_FORM_ID';
+const FORMSPREE_ID = import.meta.env.FORMSPREE_GRIEVANCE_ID || 'mgvyognn';
 
 const dogImages = [
   { src: '/images/grievance/6844f8d48914891479811220_IMG_4939.jpeg', alt: 'Golden retriever' },
@@ -10,21 +10,21 @@ const dogImages = [
 ];
 
 const moods = [
-  { value: 'abandoned', emoji: '🥺', label: 'Abandoned' },
-  { value: 'angry', emoji: '😠', label: 'Angry' },
-  { value: 'annoyed', emoji: '🙄', label: 'Annoyed' },
-  { value: 'anxious', emoji: '😬', label: 'Anxious' },
-  { value: 'apathetic', emoji: '😒', label: 'Apathetic' },
-  { value: 'bored', emoji: '🥱', label: 'Bored' },
+  { value: 'abandoned',    emoji: '🥺', label: 'Abandoned' },
+  { value: 'angry',        emoji: '😠', label: 'Angry' },
+  { value: 'annoyed',      emoji: '🙄', label: 'Annoyed' },
+  { value: 'anxious',      emoji: '😬', label: 'Anxious' },
+  { value: 'apathetic',    emoji: '😒', label: 'Apathetic' },
+  { value: 'bored',        emoji: '🥱', label: 'Bored' },
   { value: 'disappointed', emoji: '😞', label: 'Disappointed' },
-  { value: 'frustrated', emoji: '😤', label: 'Frustrated' },
-  { value: 'fine', emoji: '😊', label: "Actually, I'm fine" },
-  { value: 'neutral', emoji: '😑', label: 'Neutral' },
-  { value: 'overwhelmed', emoji: '🤯', label: 'Overwhelmed' },
-  { value: 'remorseful', emoji: '😥', label: 'Remorseful' },
-  { value: 'sad', emoji: '😔', label: 'Sad' },
-  { value: 'stressed', emoji: '😰', label: 'Stressed' },
-  { value: 'withdrawn', emoji: '😶‍🌫️', label: 'Withdrawn' },
+  { value: 'frustrated',   emoji: '😤', label: 'Frustrated' },
+  { value: 'fine',         emoji: '😊', label: "Actually fine" },
+  { value: 'neutral',      emoji: '😑', label: 'Neutral' },
+  { value: 'overwhelmed',  emoji: '🤯', label: 'Overwhelmed' },
+  { value: 'remorseful',   emoji: '😥', label: 'Remorseful' },
+  { value: 'sad',          emoji: '😔', label: 'Sad' },
+  { value: 'stressed',     emoji: '😰', label: 'Stressed' },
+  { value: 'withdrawn',    emoji: '😶‍🌫️', label: 'Withdrawn' },
 ];
 ---
 
@@ -32,78 +32,111 @@ const moods = [
   title="Grievance Portal"
   description="Submit a grievance."
   noindex={true}
+  standalone={true}
 >
-  <div class="container">
-    <div class="grievance-layout">
-      <div class="dog-strip" aria-hidden="true">
-        {dogImages.map(img => (
-          <img src={img.src} alt={img.alt} loading="eager" />
-        ))}
+  <div class="gp-page">
+    <div class="gp-card">
+
+      <!-- Header with dog circles -->
+      <div class="gp-card-header">
+        <div class="dog-circle">
+          <img src={dogImages[0].src} alt={dogImages[0].alt} loading="eager" />
+        </div>
+        <div class="gp-title-block">
+          <h1>Grievance Portal</h1>
+          <p class="gp-subtitle">Let it all out! We're here to listen 🌸</p>
+        </div>
+        <div class="dog-circle">
+          <img src={dogImages[1].src} alt={dogImages[1].alt} loading="eager" />
+        </div>
       </div>
 
-      <header class="grievance-header">
-        <h1>Grievance Portal</h1>
-        <p>
-          Got a beef? File it here. All submissions are read. Not all will be acted upon. Some will be laughed at, privately, professionally.
-        </p>
-      </header>
-
+      <!-- Form -->
       <form
         id="grievance-form"
         action={`https://formspree.io/f/${FORMSPREE_ID}`}
         method="POST"
-        class="grievance-form"
+        class="gp-form"
       >
-        <div class="form-field">
-          <label for="grievant-email">Email <span class="optional">(optional — if you'd like a response)</span></label>
+        <!-- Mood section -->
+        <div class="mood-section">
+          <p class="mood-label">How are you feeling right now? (Select all that apply)</p>
+          <div class="mood-grid" id="mood-grid">
+            {moods.map(mood => (
+              <button
+                type="button"
+                class="mood-btn"
+                data-value={mood.value}
+                data-label={mood.label}
+                aria-pressed="false"
+              >
+                <span class="mood-emoji">{mood.emoji}</span>
+                <span class="mood-text">{mood.label.toUpperCase()}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- Hidden mood inputs (populated by JS) -->
+        <div id="mood-inputs-container" aria-hidden="true"></div>
+        <input type="hidden" id="grievance-subject" name="subject" />
+
+        <!-- Email -->
+        <div class="gp-field">
+          <label for="grievant-email" class="gp-label">Your Email</label>
           <input
             type="email"
             id="grievant-email"
             name="email"
             autocomplete="email"
+            class="gp-input"
           />
         </div>
 
-        <fieldset class="mood-fieldset">
-          <legend>Current Mood</legend>
-          <div class="mood-options">
-            {moods.map(mood => (
-              <label class="mood-option">
-                <input type="checkbox" name="mood" value={mood.value} data-label={mood.label} />
-                <span class="mood-emoji">{mood.emoji}</span>
-                <span>{mood.label}</span>
-              </label>
-            ))}
-          </div>
-        </fieldset>
+        <!-- Title -->
+        <div class="gp-field">
+          <label for="grievance-title" class="gp-label">What's this about?</label>
+          <input
+            type="text"
+            id="grievance-title"
+            name="title"
+            class="gp-input"
+            placeholder="Give your grievance a title..."
+          />
+        </div>
 
-        <input type="hidden" id="grievance-subject" name="subject" />
-
-        <div class="form-field">
-          <label for="grievance-detail">Details</label>
+        <!-- Message -->
+        <div class="gp-field">
+          <label for="grievance-detail" class="gp-label">Tell us everything</label>
           <textarea
             id="grievance-detail"
             name="message"
-            rows="7"
-            required
-            placeholder="Make your case. Be specific. Vague grievances are the most dismissible kind."
+            rows="6"
+            class="gp-input gp-textarea"
+            placeholder="Express yourself freely — every feeling is valid! 💕"
           ></textarea>
         </div>
 
         <div class="form-error" id="form-error" role="alert" aria-live="polite"></div>
 
-        <button type="submit" class="btn-submit" id="submit-btn">Submit Grievance</button>
+        <button type="submit" class="gp-submit" id="submit-btn">
+          Share your grievance 💕
+        </button>
       </form>
 
-      <div class="form-success" id="form-success" hidden>
-        <div class="dog-strip" aria-hidden="true">
+      <!-- Success state -->
+      <div class="gp-success" id="form-success" hidden>
+        <div class="success-dogs">
           {dogImages.map(img => (
-            <img src={img.src} alt={img.alt} loading="lazy" />
+            <div class="dog-circle">
+              <img src={img.src} alt={img.alt} loading="lazy" />
+            </div>
           ))}
         </div>
-        <h2>Grievance received.</h2>
-        <p>Your complaint has been logged. It will be reviewed with all the seriousness it deserves.</p>
+        <h2>Grievance received 🌸</h2>
+        <p>Your feelings have been heard. Thank you for sharing.</p>
       </div>
+
     </div>
   </div>
 </Layout>
@@ -113,19 +146,40 @@ const moods = [
   const success = document.getElementById('form-success') as HTMLElement;
   const errorEl = document.getElementById('form-error') as HTMLElement;
   const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const moodGrid = document.getElementById('mood-grid') as HTMLElement;
+  const moodContainer = document.getElementById('mood-inputs-container') as HTMLElement;
+  const subjectField = document.getElementById('grievance-subject') as HTMLInputElement;
+
+  // Mood button toggle
+  moodGrid.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest('.mood-btn') as HTMLButtonElement | null;
+    if (!btn) return;
+    const pressed = btn.getAttribute('aria-pressed') === 'true';
+    btn.setAttribute('aria-pressed', pressed ? 'false' : 'true');
+    btn.classList.toggle('selected', !pressed);
+  });
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     errorEl.textContent = '';
 
-    // Auto-populate hidden subject from selected moods
-    const checked = Array.from(form.querySelectorAll<HTMLInputElement>('input[name="mood"]:checked'));
-    const labels = checked.map(el => el.dataset.label ?? el.value);
-    const subjectField = document.getElementById('grievance-subject') as HTMLInputElement;
+    // Collect selected moods and populate hidden inputs + subject
+    const selected = Array.from(moodGrid.querySelectorAll<HTMLButtonElement>('.mood-btn.selected'));
+    const labels = selected.map(btn => btn.dataset.label ?? btn.dataset.value ?? '');
+
+    moodContainer.innerHTML = '';
+    selected.forEach(btn => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'mood';
+      input.value = btn.dataset.value ?? '';
+      moodContainer.appendChild(input);
+    });
+
     subjectField.value = labels.length > 0 ? `Feeling: ${labels.join(', ')}` : 'Grievance submission';
 
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Filing…';
+    submitBtn.textContent = 'Filing… 💕';
 
     try {
       const res = await fetch(form.action, {
@@ -142,199 +196,279 @@ const moods = [
         errorEl.textContent = data?.errors?.map((e: { message: string }) => e.message).join(', ')
           || 'Something went wrong. Please try again.';
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Submit Grievance';
+        submitBtn.textContent = 'Share your grievance 💕';
       }
     } catch {
       errorEl.textContent = 'Could not submit. Please check your connection and try again.';
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Submit Grievance';
+      submitBtn.textContent = 'Share your grievance 💕';
     }
   });
 </script>
 
 <style>
-  .grievance-layout {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 4rem 0;
+  /* Page */
+  .gp-page {
+    min-height: 100vh;
+    background: #fdf4f7;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3rem 1rem 4rem;
   }
 
-  .dog-strip {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
+  /* Card */
+  .gp-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 40px rgba(200, 60, 100, 0.08);
+    width: 100%;
+    max-width: 580px;
+    padding: 2.5rem 2.5rem 3rem;
+  }
+
+  /* Header */
+  .gp-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
     margin-bottom: 2.5rem;
   }
 
-  .dog-strip img {
+  .dog-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 3px solid #f7c5d6;
+  }
+
+  .dog-circle img {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    height: 100%;
     object-fit: cover;
     display: block;
   }
 
-  .grievance-header {
-    margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--color-border);
+  .gp-title-block {
+    text-align: center;
+    flex: 1;
   }
 
-  .grievance-header h1 {
-    font-size: 2rem;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.75rem;
+  .gp-title-block h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #c2527a;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.35rem;
+    line-height: 1.2;
   }
 
-  .grievance-header p {
-    color: var(--color-text-muted);
-    line-height: 1.7;
+  .gp-subtitle {
+    font-size: 0.9rem;
+    color: #d4799a;
+    line-height: 1.4;
   }
 
-  .grievance-form {
+  /* Form */
+  .gp-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.75rem;
   }
 
-  .form-field {
+  /* Mood section */
+  .mood-section {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 1rem;
   }
 
-  .form-field label {
-    font-size: 0.8rem;
-    font-weight: 500;
+  .mood-label {
+    font-size: 0.7rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--color-text-muted);
+    letter-spacing: 0.1em;
+    color: #c2527a;
   }
 
-  .optional {
-    font-weight: 400;
-    text-transform: none;
-    letter-spacing: 0;
-    opacity: 0.7;
-  }
-
-  .form-field input,
-  .form-field textarea {
-    font-family: inherit;
-    font-size: 0.95rem;
-    padding: 0.75rem 1rem;
-    border: 1px solid var(--color-border);
-    background: transparent;
-    color: var(--color-text);
-    appearance: none;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  .form-field input::placeholder,
-  .form-field textarea::placeholder {
-    color: var(--color-text-muted);
-    opacity: 0.6;
-  }
-
-  .form-field input:focus,
-  .form-field textarea:focus {
-    border-color: var(--color-text);
-  }
-
-  .form-field textarea {
-    resize: vertical;
-  }
-
-  .mood-fieldset {
-    border: 1px solid var(--color-border);
-    padding: 1.25rem 1.25rem 1rem;
-  }
-
-  .mood-fieldset legend {
-    font-size: 0.8rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--color-text-muted);
-    padding: 0 0.5rem;
-  }
-
-  .mood-options {
+  .mood-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.6rem;
-    margin-top: 0.75rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
   }
 
-  .mood-option {
+  .mood-btn {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 0.4rem;
+    justify-content: center;
+    gap: 0.3rem;
+    padding: 0.65rem 0.25rem;
+    border: 2px solid #f2d0db;
+    border-radius: 12px;
+    background: #fff9fb;
     cursor: pointer;
-    font-size: 0.875rem;
+    transition: border-color 0.15s, background 0.15s;
+    font-family: inherit;
+  }
+
+  .mood-btn:hover {
+    border-color: #e8a0bb;
+    background: #fff0f5;
+  }
+
+  .mood-btn.selected {
+    border-color: #c2527a;
+    background: #fce4ef;
   }
 
   .mood-emoji {
-    font-size: 1rem;
+    font-size: 1.4rem;
     line-height: 1;
   }
 
-  .mood-option input[type="checkbox"] {
-    width: 1rem;
-    height: 1rem;
-    accent-color: var(--color-text);
-    cursor: pointer;
-    flex-shrink: 0;
+  .mood-text {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #b04870;
+    text-align: center;
+    line-height: 1.2;
   }
 
+  /* Fields */
+  .gp-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .gp-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #c2527a;
+  }
+
+  .gp-input {
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #f2d0db;
+    border-radius: 10px;
+    background: #fff9fb;
+    color: #333;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+
+  .gp-input::placeholder {
+    color: #d4a0b5;
+  }
+
+  .gp-input:focus {
+    border-color: #c2527a;
+  }
+
+  .gp-textarea {
+    resize: vertical;
+    min-height: 130px;
+  }
+
+  /* Error */
   .form-error {
     font-size: 0.875rem;
     color: #c0392b;
     min-height: 1.25rem;
   }
 
-  .btn-submit {
+  /* Submit */
+  .gp-submit {
     font-family: inherit;
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    padding: 0.875rem 2rem;
-    background: var(--color-text);
-    color: var(--color-bg);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.9rem 2.5rem;
     border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #e8729a, #c2527a);
+    color: #fff;
     cursor: pointer;
-    align-self: flex-start;
-    transition: opacity 0.2s;
+    align-self: center;
+    transition: opacity 0.2s, transform 0.15s;
+    box-shadow: 0 4px 15px rgba(194, 82, 122, 0.3);
   }
 
-  .btn-submit:hover:not(:disabled) {
-    opacity: 0.8;
+  .gp-submit:hover:not(:disabled) {
+    opacity: 0.92;
+    transform: translateY(-1px);
   }
 
-  .btn-submit:disabled {
-    opacity: 0.5;
+  .gp-submit:disabled {
+    opacity: 0.6;
     cursor: not-allowed;
+    transform: none;
   }
 
-  .form-success {
-    padding: 1rem 0 3rem;
+  /* Success */
+  .gp-success {
+    text-align: center;
+    padding: 1rem 0 1.5rem;
   }
 
-  .form-success h2 {
+  .success-dogs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .gp-success h2 {
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 600;
+    color: #c2527a;
     margin-bottom: 0.75rem;
   }
 
-  .form-success p {
-    color: var(--color-text-muted);
-    line-height: 1.7;
+  .gp-success p {
+    color: #d4799a;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 
-  @media (max-width: 480px) {
-    .mood-options {
-      grid-template-columns: 1fr 1fr;
+  /* Responsive */
+  @media (max-width: 540px) {
+    .gp-card {
+      padding: 2rem 1.25rem 2.5rem;
+      border-radius: 16px;
+    }
+
+    .gp-card-header {
+      gap: 0.75rem;
+    }
+
+    .dog-circle {
+      width: 56px;
+      height: 56px;
+    }
+
+    .gp-title-block h1 {
+      font-size: 1.4rem;
+    }
+
+    .mood-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 360px) {
+    .mood-grid {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>
