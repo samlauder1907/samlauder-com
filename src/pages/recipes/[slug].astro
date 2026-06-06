@@ -1,0 +1,195 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import NotionBlocks from '../../components/NotionBlocks.astro';
+import { getRecipes, getRecipePage } from '../../lib/notion.js';
+
+export async function getStaticPaths() {
+  const recipes = await getRecipes();
+  return recipes.map(recipe => ({
+    params: { slug: recipe.slug },
+    props: { recipeId: recipe.id },
+  }));
+}
+
+const { recipeId } = Astro.props;
+const { recipe, blocks } = await getRecipePage(recipeId);
+
+if (!recipe) {
+  return Astro.redirect('/recipes');
+}
+---
+
+<Layout
+  title={recipe.name}
+  description={recipe.description || `${recipe.name} — a recipe.`}
+>
+  <div class="recipe-page">
+    {recipe.cover && (
+      <div class="recipe-hero">
+        <img src={recipe.cover} alt={recipe.name} loading="eager" />
+      </div>
+    )}
+
+    <div class="container">
+      <div class="recipe-header">
+        <div class="recipe-title-wrap">
+          <a href="/recipes" class="back-link">&larr; Recipes</a>
+          <h1>{recipe.name}</h1>
+          {recipe.tags?.length > 0 && (
+            <ul class="recipe-tags" aria-label="Categories">
+              {recipe.tags.map(tag => <li>{tag}</li>)}
+            </ul>
+          )}
+        </div>
+
+        {(recipe.time || recipe.serves || recipe.description) && (
+          <div class="recipe-meta-block">
+            {recipe.time && (
+              <div class="meta-item">
+                <span class="meta-label">Time</span>
+                <span>{recipe.time}</span>
+              </div>
+            )}
+            {recipe.serves && (
+              <div class="meta-item">
+                <span class="meta-label">Serves</span>
+                <span>{recipe.serves}</span>
+              </div>
+            )}
+            {recipe.description && (
+              <p class="recipe-description">{recipe.description}</p>
+            )}
+          </div>
+        )}
+      </div>
+
+      <div class="recipe-content">
+        {blocks.length > 0
+          ? <NotionBlocks blocks={blocks} />
+          : <p class="no-content">Recipe content coming soon.</p>
+        }
+      </div>
+
+      <div class="recipe-footer">
+        <a href="/recipes" class="back-link">&larr; Back to Recipes</a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .recipe-hero {
+    width: 100%;
+    max-height: 60vh;
+    overflow: hidden;
+    background: #111;
+  }
+
+  .recipe-hero img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    display: block;
+  }
+
+  .recipe-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 2.5rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    color: var(--color-text);
+  }
+
+  .recipe-title-wrap h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .recipe-tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .recipe-tags li {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    padding: 0.15rem 0.5rem;
+  }
+
+  .recipe-meta-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .meta-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+
+  .meta-item span:last-child {
+    font-size: 0.95rem;
+  }
+
+  .recipe-description {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+  }
+
+  .recipe-content {
+    max-width: 680px;
+    padding-bottom: 3rem;
+  }
+
+  .no-content {
+    color: var(--color-text-muted);
+    padding: 2rem 0;
+  }
+
+  .recipe-footer {
+    border-top: 1px solid var(--color-border);
+    padding: 2rem 0 4rem;
+  }
+
+  @media (max-width: 640px) {
+    .recipe-header {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .recipe-hero img {
+      height: 50vw;
+      min-height: 200px;
+    }
+  }
+</style>

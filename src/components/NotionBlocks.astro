@@ -1,0 +1,191 @@
+---
+const { blocks } = Astro.props;
+
+function richText(items = []) {
+  return items.map(t => {
+    let text = t.plain_text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+    if (t.annotations?.bold)          text = `<strong>${text}</strong>`;
+    if (t.annotations?.italic)        text = `<em>${text}</em>`;
+    if (t.annotations?.code)          text = `<code>${text}</code>`;
+    if (t.annotations?.strikethrough) text = `<s>${text}</s>`;
+    if (t.href)                        text = `<a href="${t.href}" target="_blank" rel="noopener noreferrer">${text}</a>`;
+    return text;
+  }).join('');
+}
+---
+
+<div class="notion-body">
+  {blocks.map(block => {
+    const type = block.type;
+    const content = block[type];
+
+    if (type === 'paragraph') {
+      const html = richText(content?.rich_text);
+      return html
+        ? <p set:html={html} />
+        : <p class="spacer" />;
+    }
+
+    if (type === 'heading_1') return <h2 set:html={richText(content?.rich_text)} />;
+    if (type === 'heading_2') return <h3 set:html={richText(content?.rich_text)} />;
+    if (type === 'heading_3') return <h4 set:html={richText(content?.rich_text)} />;
+
+    if (type === 'bulleted_list_item') {
+      return (
+        <ul class="notion-list">
+          <li set:html={richText(content?.rich_text)} />
+        </ul>
+      );
+    }
+
+    if (type === 'numbered_list_item') {
+      return (
+        <ol class="notion-list">
+          <li set:html={richText(content?.rich_text)} />
+        </ol>
+      );
+    }
+
+    if (type === 'image') {
+      const src = content?.external?.url || content?.file?.url;
+      const caption = richText(content?.caption);
+      return src ? (
+        <figure class="notion-image">
+          <img src={src} alt={caption || ''} loading="lazy" />
+          {caption && <figcaption set:html={caption} />}
+        </figure>
+      ) : null;
+    }
+
+    if (type === 'divider') return <hr />;
+
+    if (type === 'quote') {
+      return <blockquote set:html={richText(content?.rich_text)} />;
+    }
+
+    if (type === 'callout') {
+      const icon = content?.icon?.emoji || '';
+      return (
+        <div class="notion-callout">
+          {icon && <span class="callout-icon">{icon}</span>}
+          <div set:html={richText(content?.rich_text)} />
+        </div>
+      );
+    }
+
+    return null;
+  })}
+</div>
+
+<style>
+  .notion-body {
+    line-height: 1.75;
+  }
+
+  .notion-body p {
+    margin-bottom: 1rem;
+    color: var(--color-text-muted);
+  }
+
+  .notion-body p.spacer {
+    margin-bottom: 0.5rem;
+  }
+
+  .notion-body h2 {
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin: 2rem 0 0.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  .notion-body h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  .notion-body h4 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 1.25rem 0 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .notion-list {
+    margin: 0 0 1rem 1.5rem;
+    color: var(--color-text-muted);
+  }
+
+  .notion-list + .notion-list {
+    margin-top: -0.75rem;
+  }
+
+  .notion-list li {
+    margin-bottom: 0.3rem;
+  }
+
+  .notion-image {
+    margin: 1.5rem 0;
+  }
+
+  .notion-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .notion-image figcaption {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: 0.4rem;
+    text-align: center;
+  }
+
+  .notion-body hr {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 2rem 0;
+  }
+
+  .notion-body blockquote {
+    border-left: 3px solid var(--color-border);
+    margin: 1.5rem 0;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  .notion-callout {
+    display: flex;
+    gap: 0.75rem;
+    background: #f5f5f3;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+  }
+
+  .callout-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    line-height: 1.75;
+  }
+
+  .notion-body code {
+    font-family: ui-monospace, monospace;
+    font-size: 0.85em;
+    background: #f0f0ee;
+    padding: 0.15em 0.35em;
+  }
+
+  .notion-body a {
+    color: var(--color-text);
+    text-decoration: underline;
+  }
+
+  .notion-body a:hover {
+    opacity: 0.7;
+  }
+</style>
