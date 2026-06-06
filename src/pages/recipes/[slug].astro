@@ -42,22 +42,25 @@ if (!recipe) {
           )}
         </div>
 
-        {(recipe.time || recipe.serves || recipe.description) && (
+        {(recipe.duration?.length > 0 || recipe.difficulty?.length > 0 || recipe.credits) && (
           <div class="recipe-meta-block">
-            {recipe.time && (
+            {recipe.duration?.length > 0 && (
               <div class="meta-item">
-                <span class="meta-label">Time</span>
-                <span>{recipe.time}</span>
+                <span class="meta-label">Duration</span>
+                <span>{recipe.duration.join(', ')}</span>
               </div>
             )}
-            {recipe.serves && (
+            {recipe.difficulty?.length > 0 && (
               <div class="meta-item">
-                <span class="meta-label">Serves</span>
-                <span>{recipe.serves}</span>
+                <span class="meta-label">Difficulty</span>
+                <span>{recipe.difficulty.join(', ')}</span>
               </div>
             )}
-            {recipe.description && (
-              <p class="recipe-description">{recipe.description}</p>
+            {recipe.credits && (
+              <div class="meta-item">
+                <span class="meta-label">Credits</span>
+                <span>{recipe.credits}</span>
+              </div>
             )}
           </div>
         )}

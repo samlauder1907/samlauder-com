@@ -52,8 +52,8 @@ export default function RecipeBook({ recipes }) {
               <div className="recipe-card-info">
                 <h2>{recipe.name}</h2>
                 <div className="recipe-meta">
-                  {recipe.time && <span>{recipe.time}</span>}
-                  {recipe.serves && <span>Serves {recipe.serves}</span>}
+                  {recipe.duration?.[0] && <span>{recipe.duration[0]}</span>}
+                  {recipe.difficulty?.[0] && <span>{recipe.difficulty[0]}</span>}
                 </div>
                 {recipe.tags?.length > 0 && (
                   <ul className="recipe-tags" aria-label="Categories">

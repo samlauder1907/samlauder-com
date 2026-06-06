@@ -1,6 +1,6 @@
 import { Client } from '@notionhq/client';
 
-const DB_ID = '9e38e7b2-1841-440d-b056-5a88098ef704';
+const DB_ID = '2856a8b1-60c0-45fa-849d-21d3c68fe40c';
 
 function getClient() {
   const token = import.meta.env.NOTION_TOKEN;
@@ -16,34 +16,12 @@ function richTextToString(richText) {
 function normaliseRecipe(page) {
   const props = page.properties;
 
-  const name =
-    richTextToString(props.Name?.title) ||
-    richTextToString(props.name?.title) ||
-    'Untitled';
+  const name = richTextToString(props.Name?.title) || 'Untitled';
 
-  const tags =
-    props.Tags?.multi_select?.map(t => t.name) ||
-    props.Category?.multi_select?.map(t => t.name) ||
-    props.category?.select ? [props.category.select.name] :
-    [];
-
-  const serves =
-    richTextToString(props.Serves?.rich_text) ||
-    props.Serves?.number?.toString() ||
-    richTextToString(props.serves?.rich_text) ||
-    '';
-
-  const time =
-    richTextToString(props.Time?.rich_text) ||
-    props.Time?.number?.toString() ||
-    richTextToString(props['Cook time']?.rich_text) ||
-    richTextToString(props['Prep time']?.rich_text) ||
-    '';
-
-  const description =
-    richTextToString(props.Description?.rich_text) ||
-    richTextToString(props.description?.rich_text) ||
-    '';
+  const category = props.Category?.multi_select?.map(t => t.name) ?? [];
+  const difficulty = props.Difficulty?.multi_select?.map(t => t.name) ?? [];
+  const duration = props.Duration?.multi_select?.map(t => t.name) ?? [];
+  const credits = richTextToString(props.Credits?.rich_text);
 
   const cover =
     page.cover?.external?.url ||
@@ -54,10 +32,10 @@ function normaliseRecipe(page) {
     id: page.id,
     slug: page.id.replace(/-/g, ''),
     name,
-    tags,
-    serves,
-    time,
-    description,
+    tags: category,
+    difficulty,
+    duration,
+    credits,
     cover,
     lastEdited: page.last_edited_time,
   };
@@ -72,8 +50,8 @@ export async function getRecipes() {
     let cursor;
 
     do {
-      const res = await notion.databases.query({
-        database_id: DB_ID,
+      const res = await notion.dataSources.query({
+        data_source_id: DB_ID,
         start_cursor: cursor,
         page_size: 100,
         sorts: [{ property: 'Name', direction: 'ascending' }],
@@ -93,7 +71,7 @@ export async function getRecipePage(pageId) {
   const notion = getClient();
   if (!notion) return { recipe: null, blocks: [] };
 
-  const fullId = pageId.replace(/(.{8})(.{4})(.{4})(.{4})(.{12})/, '$1-$2-$3-$4-$5');
+  const fullId = pageId.replace(/-/g, '').replace(/(.{8})(.{4})(.{4})(.{4})(.{12})/, '$1-$2-$3-$4-$5');
 
   try {
     const [page, blocksRes] = await Promise.all([
