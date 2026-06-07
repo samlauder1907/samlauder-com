@@ -126,15 +126,9 @@ const moods = [
 
       <!-- Success state -->
       <div class="gp-success" id="form-success" hidden>
-        <div class="success-dogs">
-          {dogImages.map(img => (
-            <div class="dog-circle">
-              <img src={img.src} alt={img.alt} loading="lazy" />
-            </div>
-          ))}
-        </div>
-        <h2>Grievance received 🌸</h2>
-        <p>Your feelings have been heard. Thank you for sharing.</p>
+        <h2>Thank You! 🐕</h2>
+        <p>Your grievance has been fetched successfully. We'll get back to you soon!</p>
+        <button type="button" class="gp-reset" id="reset-btn">I'm not done!</button>
       </div>
 
     </div>
@@ -149,6 +143,7 @@ const moods = [
   const moodGrid = document.getElementById('mood-grid') as HTMLElement;
   const moodContainer = document.getElementById('mood-inputs-container') as HTMLElement;
   const subjectField = document.getElementById('grievance-subject') as HTMLInputElement;
+  const resetBtn = document.getElementById('reset-btn') as HTMLButtonElement;
 
   // Mood button toggle
   moodGrid.addEventListener('click', (e) => {
@@ -203,6 +198,22 @@ const moods = [
       submitBtn.disabled = false;
       submitBtn.textContent = 'Share your grievance 💕';
     }
+  });
+
+  // Reset and show the form again from the success state
+  resetBtn.addEventListener('click', () => {
+    form.reset();
+    moodGrid.querySelectorAll<HTMLButtonElement>('.mood-btn.selected').forEach(btn => {
+      btn.classList.remove('selected');
+      btn.setAttribute('aria-pressed', 'false');
+    });
+    moodContainer.innerHTML = '';
+    subjectField.value = '';
+    errorEl.textContent = '';
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Share your grievance 💕';
+    success.hidden = true;
+    form.hidden = false;
   });
 </script>
 
@@ -421,13 +432,6 @@ const moods = [
     padding: 1rem 0 1.5rem;
   }
 
-  .success-dogs {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-
   .gp-success h2 {
     font-size: 1.5rem;
     font-weight: 600;
@@ -439,6 +443,26 @@ const moods = [
     color: #d4799a;
     font-size: 0.95rem;
     line-height: 1.6;
+    margin-bottom: 1.75rem;
+  }
+
+  .gp-reset {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.85rem 2.4rem;
+    border: 2px solid #c2527a;
+    border-radius: 50px;
+    background: transparent;
+    color: #c2527a;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+  }
+
+  .gp-reset:hover {
+    background: #c2527a;
+    color: #fff;
+    transform: translateY(-1px);
   }
 
   /* Responsive */
