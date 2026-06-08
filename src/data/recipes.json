@@ -571,6 +571,23 @@
       "lastEdited": "2021-08-13T01:53:00.000Z"
     },
     {
+      "id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1",
+      "slug": "3797f2e526bb8190a20be7ef4c18e4b1",
+      "name": "Peppercorn Sauce (Steak au Poivre) — Fallow",
+      "tags": [
+        "Misc"
+      ],
+      "difficulty": [
+        "Difficulty: 2"
+      ],
+      "duration": [
+        "Duration: <30min"
+      ],
+      "credits": "Fallow (YouTube)",
+      "cover": null,
+      "lastEdited": "2026-06-08T05:27:00.000Z"
+    },
+    {
       "id": "ce2a62ad-ee99-4694-88fb-261eed37af88",
       "slug": "ce2a62adee99469488fb261eed37af88",
       "name": "Pita Bread",
@@ -603,6 +620,23 @@
       "credits": "SBS",
       "cover": null,
       "lastEdited": "2021-07-23T00:46:00.000Z"
+    },
+    {
+      "id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7",
+      "slug": "3797f2e526bb81bdb924ec01ae7839f7",
+      "name": "Restaurant Ragu (Fallow)",
+      "tags": [
+        "Dinner"
+      ],
+      "difficulty": [
+        "Difficulty: 3"
+      ],
+      "duration": [
+        "Duration: 4-5hrs"
+      ],
+      "credits": "Fallow (YouTube)",
+      "cover": null,
+      "lastEdited": "2026-06-08T05:24:00.000Z"
     },
     {
       "id": "7a886c6b-e76f-4c82-a385-7d754695cd71",
@@ -688,6 +722,23 @@
       "credits": "Sam Lauder",
       "cover": null,
       "lastEdited": "2021-07-23T00:46:00.000Z"
+    },
+    {
+      "id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3",
+      "slug": "3797f2e526bb81b3a7bad3ed1c221fb3",
+      "name": "Ultimate Butter Chicken (BiBi / Fallow)",
+      "tags": [
+        "Chicken"
+      ],
+      "difficulty": [
+        "Difficulty: 3"
+      ],
+      "duration": [
+        "Duration: 2-3hrs"
+      ],
+      "credits": "Chet Sharma, BiBi (via Fallow YouTube)",
+      "cover": null,
+      "lastEdited": "2026-06-08T05:26:00.000Z"
     },
     {
       "id": "a9d78021-1f0b-4e91-8534-379fd5464b42",
@@ -38528,6 +38579,1027 @@
         "archived": false
       }
     ],
+    "3797f2e526bb8190a20be7ef4c18e4b1": [
+      {
+        "object": "block",
+        "id": "4d50c083-6750-4f53-9d70-c436db12e2f0",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Ingredients",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Ingredients",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "05df0ea1-abf8-48ac-9d44-fe82d1e22aa0",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "1 tbsp black peppercorns, coarsely cracked",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "1 tbsp black peppercorns, coarsely cracked",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "27f1ed49-7678-47a6-a247-d2606e26b3a5",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "2 tbsp green peppercorns in brine, drained",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "2 tbsp green peppercorns in brine, drained",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "935ca469-2496-424a-a280-a86ac0894421",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "2 tbsp butter",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "2 tbsp butter",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "cc2be515-839d-4c90-ae33-4ade7d276e35",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "1 shallot, finely diced",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "1 shallot, finely diced",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "4016bbe4-0858-4cd7-be67-52144b83f7e1",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "2 garlic cloves, sliced",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "2 garlic cloves, sliced",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "31306190-576e-428f-9a20-3e5a5ccf93e2",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "60ml brandy (for flambé)",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "60ml brandy (for flambé)",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "012b54bf-375b-4ec5-9355-403dc008f97b",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "125ml double cream",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "125ml double cream",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "66d8c189-a6ad-43d2-b78f-c483cfb261fb",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "250ml reduced beef stock",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "250ml reduced beef stock",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "0fcb5c01-9732-4734-b79c-d94fb5095dfe",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Squeeze of lemon juice",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Squeeze of lemon juice",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "a8a2b929-139f-4fbb-8d42-02dc7032a45b",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Small pinch of fresh parsley, chopped",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Small pinch of fresh parsley, chopped",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "3ca72a49-14e5-461a-a0cd-4bd5108df20a",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Salt, to taste",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Salt, to taste",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "62f3bbd2-aad2-40de-8ba5-00f8f3184227",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Method",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Method",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "91b07586-169a-468b-8513-6710982b3954",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "In a dry skillet over medium heat, toast the cracked black peppercorns and drained green peppercorns until fragrant, about 2 minutes.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "In a dry skillet over medium heat, toast the cracked black peppercorns and drained green peppercorns until fragrant, about 2 minutes.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "3337d35d-53e3-4f31-9266-5585a4b8412b",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Add butter and melt. Add the shallot and garlic and cook for 3 minutes until softened.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Add butter and melt. Add the shallot and garlic and cook for 3 minutes until softened.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "02571595-729f-47bf-898d-168d804b6595",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Carefully add the brandy and flambé — stand back and ignite with a lighter or tilt the pan toward the flame. Allow the flame to subside completely.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Carefully add the brandy and flambé — stand back and ignite with a lighter or tilt the pan toward the flame. Allow the flame to subside completely.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "f07ed6fd-8562-4d39-86f6-3812661ca51b",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Stir in the double cream and reduced beef stock. Simmer for 5 minutes until the sauce coats the back of a spoon.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Stir in the double cream and reduced beef stock. Simmer for 5 minutes until the sauce coats the back of a spoon.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "4f3bdf4f-2d6d-45b8-84dd-352131a76aea",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Stir through the green peppercorns, a squeeze of lemon juice, and finish with a pinch of parsley. Season to taste.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Stir through the green peppercorns, a squeeze of lemon juice, and finish with a pinch of parsley. Season to taste.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "73587a48-be3c-480b-993d-885ca89d8634",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Notes",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Notes",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "0d213e8f-453f-47d2-9834-339e7c8725b8",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "From Fallow's '5 Steak Sauces Every Chef Needs to Learn' video — peppercorn sauce section only.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "From Fallow's '5 Steak Sauces Every Chef Needs to Learn' video — peppercorn sauce section only.",
+              "href": null
+            }
+          ],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "060d3f5a-050c-4655-8ccb-51b111b77f0f",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "This recipe assumes you have reduced beef stock on hand. You can make a quick version by simmering 500ml good quality beef stock down to 250ml, or use a good bought demi-glace.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "This recipe assumes you have reduced beef stock on hand. You can make a quick version by simmering 500ml good quality beef stock down to 250ml, or use a good bought demi-glace.",
+              "href": null
+            }
+          ],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "d6be990c-9e20-4ba5-a5db-1d8ad599a8e5",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Toasting the peppercorns before building the sauce is what gives this its depth — don't skip it.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Toasting the peppercorns before building the sauce is what gives this its depth — don't skip it.",
+              "href": null
+            }
+          ],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "92252ac1-42f9-4199-b0db-4d57a2ead6f3",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8190-a20b-e7ef4c18e4b1"
+        },
+        "created_time": "2026-06-08T05:27:00.000Z",
+        "last_edited_time": "2026-06-08T05:27:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Flambéing burns off the harsh alcohol while keeping the brandy flavour. If you'd rather not flambé, just let the brandy reduce for 2-3 minutes on high heat instead.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Flambéing burns off the harsh alcohol while keeping the brandy flavour. If you'd rather not flambé, just let the brandy reduce for 2-3 minutes on high heat instead.",
+              "href": null
+            }
+          ],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      }
+    ],
     "ce2a62adee99469488fb261eed37af88": [
       {
         "object": "block",
@@ -40389,6 +41461,1953 @@
         "type": "paragraph",
         "paragraph": {
           "rich_text": [],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      }
+    ],
+    "3797f2e526bb81bdb924ec01ae7839f7": [
+      {
+        "object": "block",
+        "id": "fc369d66-28f1-4730-8518-9d954d75c329",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Ingredients",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Ingredients",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "262da740-f3b0-4b84-a738-b31827565927",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "1kg beef mince (50% shin, 50% chuck)",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "1kg beef mince (50% shin, 50% chuck)",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "9174fe09-37d9-4d6f-b870-ec1967ccd41e",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "400g pork belly, diced",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "400g pork belly, diced",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "fb886089-3d8a-474a-a6ab-def4af383318",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "100g pancetta, diced",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "100g pancetta, diced",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "02394722-df78-4f91-bc93-c8f70994e296",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "200g onion, finely diced",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "200g onion, finely diced",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "9edc721b-baa1-4913-b7b1-137bb1c2d97b",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "150g carrots, finely diced",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "150g carrots, finely diced",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "6f6ef47d-945d-41f3-8cd9-86037c4aad4a",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "150g celery, finely diced",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "150g celery, finely diced",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "cec6db79-6c2f-499d-9e1e-d0609bc225c4",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "1-2 garlic cloves, finely grated",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "1-2 garlic cloves, finely grated",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "925c076e-a5c6-47f3-9917-52a614ca3ad6",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Extra virgin olive oil",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Extra virgin olive oil",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "21a73627-da01-4f5b-80ac-ecd6dd631c76",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Neutral oil",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Neutral oil",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "3f0dbc1f-46b5-4471-a2fa-d6f53daeef3f",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "80g tomato purée",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "80g tomato purée",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "331d38a5-bbbe-4e12-9c52-1fa514b2538d",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "400g passata",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "400g passata",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "27b01bee-a939-445c-a0d4-cb466f4727dc",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "200ml red wine",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "200ml red wine",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "38d52ff1-19aa-48c3-8d05-b6a690009cfc",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Whole milk (added in two stages)",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Whole milk (added in two stages)",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "1d485fdd-1c3b-4414-b246-ac6bf9c86bb3",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "~500ml chicken or beef stock",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "~500ml chicken or beef stock",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "8e9729d3-0f96-4593-9baa-3b69bdb80b84",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "1 Parmesan rind",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "1 Parmesan rind",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "5fd7d6f9-988d-43cb-aa21-49e728662ae7",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "2 bay leaves",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "2 bay leaves",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "584f1e00-8650-4542-934f-ff77bdb2c018",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Pinch of nutmeg",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Pinch of nutmeg",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "9bc3bed9-b140-42a5-bf53-3a31a9930f4e",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Salt, to taste",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Salt, to taste",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "c14ce38a-a12c-4be2-8c68-8fe43c5f22d7",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Gastrique",
+                "link": null
+              },
+              "annotations": {
+                "bold": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Gastrique",
+              "href": null
+            }
+          ],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "c22759d0-947f-4534-b2ce-03436fdbc80a",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "100g balsamic vinegar",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "100g balsamic vinegar",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "aed092c0-8a04-4dba-9f5c-d9bd65919100",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "50g sugar",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "50g sugar",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "8689acb7-db8b-4255-9d53-8bf104f74983",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "To finish",
+                "link": null
+              },
+              "annotations": {
+                "bold": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "To finish",
+              "href": null
+            }
+          ],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "040433c3-87c1-4a20-a35a-4222c90a44e2",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Cold butter",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Cold butter",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "87f14e93-32db-490b-ac8a-a21abec2a952",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Extra splash of milk",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Extra splash of milk",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "0c6b0d55-26e6-4759-89d7-bab126d07286",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Method",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Method",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "e8a74122-3a2d-491a-b119-4e29a26abc94",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "On low heat, add olive oil and pancetta to a heavy pot. Slowly render the fat — no colour, just melting.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "On low heat, add olive oil and pancetta to a heavy pot. Slowly render the fat — no colour, just melting.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "ca4c8070-f82d-4033-96cd-1ab5d5ee1342",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Add onion, carrot and celery with a pinch of salt. Sweat gently until soft, pale and sweet — no colour at all. Grate in garlic for the final 1-2 minutes, then remove the soffritto and set aside.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Add onion, carrot and celery with a pinch of salt. Sweat gently until soft, pale and sweet — no colour at all. Grate in garlic for the final 1-2 minutes, then remove the soffritto and set aside.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "c1ad77f1-cdea-4ba9-b41c-5ca1ebb7c3d3",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Return the pot to high heat with a little neutral oil. Add the beef mince, breaking it up and cooking hot to drive off all moisture.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Return the pot to high heat with a little neutral oil. Add the beef mince, breaking it up and cooking hot to drive off all moisture.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "c37bc4bc-d40e-4b0f-a9bb-a89219b13b1d",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Once dry, lower the heat slightly and caramelise the beef slowly until deeply browned, scraping the fond regularly.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Once dry, lower the heat slightly and caramelise the beef slowly until deeply browned, scraping the fond regularly.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "d48f7f12-ea07-4c94-a534-4967276e1d32",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Add the pork belly and gently warm through — no heavy browning.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Add the pork belly and gently warm through — no heavy browning.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "25d93615-673c-4e63-9678-435c11d02409",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Stir in the tomato purée and cook until it darkens and caramelises, about 2-3 minutes.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Stir in the tomato purée and cook until it darkens and caramelises, about 2-3 minutes.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "dc6c0de3-13e7-416e-9481-34526237220f",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Lower the heat and add the first portion of milk. Let it fully absorb into the meat.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Lower the heat and add the first portion of milk. Let it fully absorb into the meat.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "695917b8-8548-4f90-b341-dad6cfc66430",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Deglaze with red wine and reduce by about half, scraping the pan clean.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Deglaze with red wine and reduce by about half, scraping the pan clean.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "1a0bb70e-8907-4aa0-b0ff-14338ee4e29d",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Return the soffritto to the pot, then add passata, stock, Parmesan rind, bay leaves and a pinch of nutmeg.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Return the soffritto to the pot, then add passata, stock, Parmesan rind, bay leaves and a pinch of nutmeg.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "0bdc625b-9427-4d0b-a71d-a57bd9e77d55",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Bring to a simmer, cover, and cook in a low oven at 120°C for 4.5 hours, stirring occasionally.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Bring to a simmer, cover, and cook in a low oven at 120°C for 4.5 hours, stirring occasionally.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "17424bde-a78d-4c81-910b-a8f22cb6360a",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "While cooking, make the gastrique: boil balsamic vinegar and sugar briefly until lightly thickened. Set aside.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "While cooking, make the gastrique: boil balsamic vinegar and sugar briefly until lightly thickened. Set aside.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "e21e5cb9-08f5-4520-805f-bacac7f1fbbb",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Once cooked, remove the bay leaves and Parmesan rind.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Once cooked, remove the bay leaves and Parmesan rind.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "bbd9299a-008c-4262-9c59-927901972280",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Finish with a splash of milk, cold butter for gloss, and the gastrique added gradually to balance acidity. Season to taste.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Finish with a splash of milk, cold butter for gloss, and the gastrique added gradually to balance acidity. Season to taste.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "a527ae44-8915-4e16-999e-9367fb253165",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Notes",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Notes",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "8e57c0b5-e393-4494-9f7b-eb5e435753c6",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "The soffritto should be pale and sweet — no browning at all. Colour here means bitterness.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "The soffritto should be pale and sweet — no browning at all. Colour here means bitterness.",
+              "href": null
+            }
+          ],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "f7967f33-baf9-49ad-b5ae-2d13574e9fa4",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "The two-stage milk addition (before the wine, then again at the end) is central to the technique — it tenderises the meat and adds richness without heaviness.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "The two-stage milk addition (before the wine, then again at the end) is central to the technique — it tenderises the meat and adds richness without heaviness.",
+              "href": null
+            }
+          ],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "2d7f7f7f-dfb2-4c9f-a85c-8551390c4fcc",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Gastrique is optional but worth making. Add it conservatively and taste as you go — it should balance the richness, not make it sweet.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Gastrique is optional but worth making. Add it conservatively and taste as you go — it should balance the richness, not make it sweet.",
+              "href": null
+            }
+          ],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "beac1829-989a-4026-a677-06de42fdc49f",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81bd-b924-ec01ae7839f7"
+        },
+        "created_time": "2026-06-08T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:24:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Fallow serve this with gnocchi. Works equally well with pappardelle or rigatoni.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Fallow serve this with gnocchi. Works equally well with pappardelle or rigatoni.",
+              "href": null
+            }
+          ],
           "icon": null,
           "color": "default"
         },
@@ -45526,6 +48545,2638 @@
         "type": "paragraph",
         "paragraph": {
           "rich_text": [],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      }
+    ],
+    "3797f2e526bb81b3a7bad3ed1c221fb3": [
+      {
+        "object": "block",
+        "id": "787db35a-0b9e-44f6-9493-7d00451b13ec",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Chicken Tikka (Marinade)",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Chicken Tikka (Marinade)",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "ab866561-1013-47c3-8835-9d8515d78250",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_3",
+        "heading_3": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Ingredients",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Ingredients",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "78d2fa3e-4138-49e1-bd20-cf9d78797473",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Chicken thighs, skinless boneless",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Chicken thighs, skinless boneless",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "e9c9feda-375c-4f39-b058-d35add93aee2",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "30g mustard oil",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "30g mustard oil",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "39bc6f14-86c1-467a-8062-02a0a32c6a98",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "30g Kashmiri chilli powder",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "30g Kashmiri chilli powder",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "30ba9582-288b-4ce3-9408-ed85342cee50",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "30g ginger garlic paste",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "30g ginger garlic paste",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "ed69c4b6-c429-46c9-83b1-2fe20527a15f",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "15g coriander powder",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "15g coriander powder",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "b6971edd-5cb7-412f-809d-d22a20d5ed98",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "5g cumin powder",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "5g cumin powder",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "90544e38-6e81-406a-8081-7e4245ba8955",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "3g turmeric powder",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "3g turmeric powder",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "1a01b486-9ce6-4bb3-8c59-912733f164ac",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "3g kasoori methi",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "3g kasoori methi",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "81c4cf1f-9188-43c2-a116-2f348e58b75d",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "3g amchur powder",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "3g amchur powder",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "2cd7fa6b-dbef-4784-af9b-df702922ede3",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "3g black salt",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "3g black salt",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "5b8cd603-5494-42e0-8be7-71c4c593b7f2",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "5g garam masala",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "5g garam masala",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "6489efc1-0ff9-4ca2-a44a-80ca6cb787b6",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "12g kosher salt",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "12g kosher salt",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "51a38f73-0146-4441-802f-1606a6d71269",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "200g hung yoghurt",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "200g hung yoghurt",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "dbd84bab-bbb9-4b8b-9c58-d2e59b4e024c",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "15ml Indian lemon juice (or 45% lime, 35% lemon, 20% white/yellow grapefruit juice)",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "15ml Indian lemon juice (or 45% lime, 35% lemon, 20% white/yellow grapefruit juice)",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "fc5b869b-3046-4e7f-b100-e8b559f1ebc1",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_3",
+        "heading_3": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Method",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Method",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "41d667c6-42b5-4013-8197-6fca939a94de",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Mix the chicken with the ginger garlic paste, salt and lemon juice. Marinate for 30 minutes.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Mix the chicken with the ginger garlic paste, salt and lemon juice. Marinate for 30 minutes.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "b4974984-e687-4706-84ed-56495926fd0a",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Drain the juices released by the chicken.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Drain the juices released by the chicken.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "7ad2b756-7405-482f-bb1a-c90b8ce8d68d",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Mix the remaining marinade ingredients in a large bowl.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Mix the remaining marinade ingredients in a large bowl.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "d54e7dc5-4451-49f2-b802-87e35f9081ff",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Add the drained chicken and mix thoroughly.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Add the drained chicken and mix thoroughly.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "09252be3-9882-4dc9-ac6f-fc8bd2fe66f4",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Cover and marinate in the fridge for a minimum of 4 hours, ideally overnight.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Cover and marinate in the fridge for a minimum of 4 hours, ideally overnight.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "aad6083a-de71-47c2-b6ad-19f022cb10af",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Skewer the chicken and grill over charcoal until cooked and lightly charred around the edges.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Skewer the chicken and grill over charcoal until cooked and lightly charred around the edges.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "696a10e9-b261-41e1-8596-25bef9f2fb4f",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Set aside while you finish the sauce.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Set aside while you finish the sauce.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "63fc0835-0cdb-44a5-8594-88a4bba7baf5",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "divider",
+        "divider": {},
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "946b3a41-66b5-4b52-8b7d-b3fc8504b584",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Makhani Sauce",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Makhani Sauce",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "5cbf62db-248d-41da-ad9c-d542522394de",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_3",
+        "heading_3": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Ingredients",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Ingredients",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "8e4f45e7-ae7d-44c4-847b-522efa7dadda",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "30g ghee",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "30g ghee",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "36d74235-7da5-488a-a10b-e025c6465c28",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "5g cumin seeds",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "5g cumin seeds",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "9bd841f9-8900-4b9e-b763-7c743e9f21b7",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "400g Bombay onions or shallots, sliced",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "400g Bombay onions or shallots, sliced",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "c3aaa29f-4198-4826-a73a-177b21a1923b",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "20g peeled garlic, chopped",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "20g peeled garlic, chopped",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "e62f34c6-7361-4e56-abdf-006448d0a074",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "20g peeled ginger, chopped",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "20g peeled ginger, chopped",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "5bb58216-bf7b-4db2-ae9f-ca0100bfacbc",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "5g green bird's eye chilli, chopped",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "5g green bird's eye chilli, chopped",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "49b438d9-6f88-48a7-a81b-c1a7053fd51d",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "30g Kashmiri chilli powder",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "30g Kashmiri chilli powder",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "a46efcec-ccd4-4cf4-b2f2-a49f15e75081",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "15g coriander powder",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "15g coriander powder",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "3ecbf156-31ef-4c3c-8ad2-7cdfc6f67ac1",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "3g turmeric powder",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "3g turmeric powder",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "b6fdd5f5-f12d-481a-ad21-0e692b6bec0a",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "5 whole Kashmiri chillies",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "5 whole Kashmiri chillies",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "da2504ff-6061-46a4-bfdc-811d2c70004c",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "12 green cardamom pods",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "12 green cardamom pods",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "fbe00dd0-58d6-4711-9db7-4560fc9bb96d",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "1000g fresh San Marzano tomatoes, chopped",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "1000g fresh San Marzano tomatoes, chopped",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "076bb9c5-a90f-417c-8c1b-34abb5a72e17",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "50g roasted cashew nuts",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "50g roasted cashew nuts",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "204d2125-2734-4be4-b020-0629e99d223a",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "50g coriander stems, roughly chopped",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "50g coriander stems, roughly chopped",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "29c84e7f-8ebe-438c-a611-f73fb28b6cf2",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "3g khoya",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "3g khoya",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "d37c86fd-91ba-4adb-a77d-a44afcebd1e9",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Salt, to taste",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Salt, to taste",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "9a71eab0-0127-499b-8d60-5180076c72a2",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "100g double cream",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "100g double cream",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "d8a9b790-4fa5-4dde-aa5b-29a92f234ab4",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "80g salted butter",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "80g salted butter",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "6bff8a8a-8d2f-47d6-9f01-ed7b28387abe",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "3g kasoori methi",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "3g kasoori methi",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "bbbf7e9f-5a24-4e27-ba8b-8e3443fc8c54",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Honey, to taste",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Honey, to taste",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "19ba39ba-b47b-4abd-8569-76c235105618",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_3",
+        "heading_3": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Method",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Method",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "43553958-969b-4066-97d5-9dbfa8452516",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Heat ghee in a heavy pot and add cumin seeds. Fry until they crackle.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Heat ghee in a heavy pot and add cumin seeds. Fry until they crackle.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "de41fa56-a9cb-44da-a3d9-995ca40dbd1a",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Add garlic, ginger, green chilli and sliced onion. Cook on medium heat until the onion turns translucent.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Add garlic, ginger, green chilli and sliced onion. Cook on medium heat until the onion turns translucent.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "49d823b1-7172-4c6d-a1c2-cf1be4d1dba4",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Add all remaining ingredients except butter, kasoori methi, double cream and honey.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Add all remaining ingredients except butter, kasoori methi, double cream and honey.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "736d11cb-af2f-41ca-bfac-6655636e1d34",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Cook on low heat until the tomatoes are completely soft, about 30-40 minutes.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Cook on low heat until the tomatoes are completely soft, about 30-40 minutes.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "c23cb052-39ff-4ff5-a1a2-d7c7bdc5dee6",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Add butter, cream, honey and kasoori methi, then blend everything in a high-powered blender until completely smooth.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Add butter, cream, honey and kasoori methi, then blend everything in a high-powered blender until completely smooth.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "132c2d12-bea6-49c5-bd83-667ab777e2f1",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Add the grilled chicken tikka to the sauce.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Add the grilled chicken tikka to the sauce.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "cc2d4b2c-14cc-4979-9bf5-4c41516663c9",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Adjust seasoning with salt and kasoori methi as needed.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Adjust seasoning with salt and kasoori methi as needed.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "0b87216e-7f4a-4084-88c0-2c21199eba24",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Notes",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Notes",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "8f4c8da0-b456-4b8a-9041-49f387139f89",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Kasoori methi (dried fenugreek leaves) is key to the flavour — don't skip it. Find it at Indian grocery stores.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Kasoori methi (dried fenugreek leaves) is key to the flavour — don't skip it. Find it at Indian grocery stores.",
+              "href": null
+            }
+          ],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "ae25bd98-efd3-473a-8296-46c31311a395",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Hung yoghurt is regular yoghurt strained through a cloth overnight to remove liquid. Greek yoghurt works as a substitute.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Hung yoghurt is regular yoghurt strained through a cloth overnight to remove liquid. Greek yoghurt works as a substitute.",
+              "href": null
+            }
+          ],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "8d261232-19b8-480c-8359-5a665ef04ab3",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Amchur is dried mango powder and adds a subtle tartness to the marinade. Also available at Indian grocery stores.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Amchur is dried mango powder and adds a subtle tartness to the marinade. Also available at Indian grocery stores.",
+              "href": null
+            }
+          ],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "1399633a-db67-46f1-9900-b59085fdd9e9",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-81b3-a7ba-d3ed1c221fb3"
+        },
+        "created_time": "2026-06-08T05:26:00.000Z",
+        "last_edited_time": "2026-06-08T05:26:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Charcoal grilling the tikka before adding to the sauce is what separates this from a basic butter chicken — the char is essential.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Charcoal grilling the tikka before adding to the sauce is what separates this from a basic butter chicken — the char is essential.",
+              "href": null
+            }
+          ],
           "icon": null,
           "color": "default"
         },
