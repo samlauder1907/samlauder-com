@@ -1,8 +1,9 @@
 import { Client } from '@notionhq/client';
-import { writeFileSync, readFileSync, mkdirSync, existsSync, createWriteStream } from 'fs';
+import { writeFileSync, readFileSync, mkdirSync, existsSync, createWriteStream, unlinkSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { pipeline } from 'stream/promises';
+import { execFileSync } from 'child_process';
 import https from 'https';
 import http from 'http';
 
@@ -61,6 +62,16 @@ function downloadFile(url, destPath, redirectCount = 0) {
   });
 }
 
+// iPhone photos uploaded to Notion are often served as HEIC, which most
+// browsers (other than Safari) can't display — convert to JPEG with sips.
+function convertHeicToJpeg(srcPath, filename) {
+  const jpegFilename = filename.replace(/\.(heic|heif)$/i, '.jpg');
+  const jpegPath = join(dirname(srcPath), jpegFilename);
+  execFileSync('sips', ['-s', 'format', 'jpeg', srcPath, '--out', jpegPath], { stdio: 'ignore' });
+  unlinkSync(srcPath);
+  return jpegFilename;
+}
+
 // Notion's file:// image URLs are presigned S3 links that expire after about
 // an hour, so they can't be committed as-is — download them locally instead.
 async function localiseImage(url, slug, filename) {
@@ -72,6 +83,9 @@ async function localiseImage(url, slug, filename) {
   const destPath = join(dir, filename);
   try {
     await downloadFile(url, destPath);
+    if (/\.(heic|heif)$/i.test(filename)) {
+      filename = convertHeicToJpeg(destPath, filename);
+    }
     return `/images/recipes/${slug}/${filename}`;
   } catch (e) {
     process.stdout.write(`\n    ! failed to download ${filename}: ${e.message}`);
