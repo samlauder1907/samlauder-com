@@ -112,33 +112,14 @@
         "Pastry"
       ],
       "difficulty": [
-        "Difficulty: 5 (Hardest)"
-      ],
-      "duration": [
-        "Duration: 2-3hrs"
-      ],
-      "credits": "",
-      "cover": null,
-      "lastEdited": "2026-05-10T05:24:00.000Z"
-    },
-    {
-      "id": "1e85bc23-a012-4b6b-b800-2ae056f4dce6",
-      "slug": "1e85bc23a0124b6bb8002ae056f4dce6",
-      "name": "Canele",
-      "tags": [
-        "Baking",
-        "Pastry"
-      ],
-      "difficulty": [
         "Difficulty: 4"
       ],
       "duration": [
-        "Duration: 1.5-2hrs",
         "Duration: >8hrs"
       ],
-      "credits": "Chef John",
+      "credits": "",
       "cover": null,
-      "lastEdited": "2022-08-13T23:07:00.000Z"
+      "lastEdited": "2026-06-08T05:39:00.000Z"
     },
     {
       "id": "84dc6ff2-bc7a-4889-b61f-1ea919f40484",
@@ -447,6 +428,23 @@
       "credits": "Adriano Zumbo",
       "cover": null,
       "lastEdited": "2021-07-23T00:46:00.000Z"
+    },
+    {
+      "id": "3797f2e5-26bb-8107-8447-ca4c9188606f",
+      "slug": "3797f2e526bb81078447ca4c9188606f",
+      "name": "Italian Meatballs",
+      "tags": [
+        "Beef"
+      ],
+      "difficulty": [
+        "Difficulty: 2"
+      ],
+      "duration": [
+        "Duration: 30min-1hr"
+      ],
+      "credits": "Reddit",
+      "cover": null,
+      "lastEdited": "2026-06-08T05:39:00.000Z"
     },
     {
       "id": "3f048362-554e-4e8b-afa2-8f1fea5171de",
@@ -9386,7 +9384,802 @@
           "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
         },
         "created_time": "2026-05-10T05:23:00.000Z",
-        "last_edited_time": "2026-05-10T05:24:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Batter Ingredients",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Batter Ingredients",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "6ff83e24-9a71-4775-99f8-3c8ea18c9791",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "500g whole milk",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "500g whole milk",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "78fe8393-7602-4c8d-9d75-cc6f73e8abce",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "1 vanilla bean pod (use 2 if the pod isn't very plump)",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "1 vanilla bean pod (use 2 if the pod isn't very plump)",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "01cd3f5f-62d7-4dd7-834a-963f89cb001c",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "1 egg + 3 egg yolks",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "1 egg + 3 egg yolks",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "acd188cc-eb7a-43da-9149-447890ed1ce4",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "30g cold butter",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "30g cold butter",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "c626570e-d81f-4e34-8da7-df40302f4bff",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "125g AP flour",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "125g AP flour",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "5f5a1164-d7fe-458a-a15e-d0a1ed805077",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "225g sugar",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "225g sugar",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "54441418-d591-49d2-b92f-2797df7e7881",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "25g brandy",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "25g brandy",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "6ffd9027-6538-434a-9ff9-a00f57d4f657",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "25g Grand Marnier",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "25g Grand Marnier",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "1fb3e97d-8419-411b-bbf9-ceca7b0958ac",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Beeswax Mixture",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Beeswax Mixture",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "f40c3428-5733-4d23-9db2-a6b4efd710fd",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "40g beeswax",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "40g beeswax",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "528c7a7d-84f7-4aab-af4f-c7cbaabd3236",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "60g butter",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "60g butter",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "a8472a8e-548f-4dc7-b7ed-50546cc1f375",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Making the Batter",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Making the Batter",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "97873e40-9b1c-4bd0-8612-1706849603b2",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Scrape seeds out of vanilla beans and add them and the pods to a saucepan along with the milk. Bring to a boil over medium heat, stirring occasionally to prevent scalding. Once boiled, kill the heat and add the 30g cold butter. Check the temperature with a thermometer — you want it to reach 85°C (185°F).",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Scrape seeds out of vanilla beans and add them and the pods to a saucepan along with the milk. Bring to a boil over medium heat, stirring occasionally to prevent scalding. Once boiled, kill the heat and add the 30g cold butter. Check the temperature with a thermometer — you want it to reach 85°C (185°F).",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "750d129f-cfb8-41c6-a304-98efa011cb6e",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "While that's coming to a boil, mix flour and sugar in one bowl, and beat eggs and egg yolks in another large bowl.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "While that's coming to a boil, mix flour and sugar in one bowl, and beat eggs and egg yolks in another large bowl.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "e97b2cb9-96ea-4d43-848f-537c8ab8e564",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Once the vanilla-infused milk reaches 85°C, temper the egg mixture by slowly adding a little hot milk first, then combine all of the milk with the egg mixture.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Once the vanilla-infused milk reaches 85°C, temper the egg mixture by slowly adding a little hot milk first, then combine all of the milk with the egg mixture.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "6feba8d6-f4aa-413d-97b2-802c6d446a7a",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Slowly pour in the flour/sugar mixture to the tempered egg/milk mixture. Add the alcohol and whisk until just barely combined.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Slowly pour in the flour/sugar mixture to the tempered egg/milk mixture. Add the alcohol and whisk until just barely combined.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "619e9d01-abc6-4c33-b308-93928940999d",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Set aside for at least 12 hours in a container in the fridge. You should have about 1 litre of batter.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Set aside for at least 12 hours in a container in the fridge. You should have about 1 litre of batter.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "a5658de9-2aa7-4e0e-b46e-22b8656f4e70",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
         "created_by": {
           "object": "user",
           "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
@@ -9403,7 +10196,24 @@
             {
               "type": "text",
               "text": {
-                "content": "Batter Ingredients\n•\t500g whole milk\n•\t1 vanilla bean pod (I’ll use 2 if the vanilla pod isn’t very plump)\n•\t1 egg + 3 egg yolks\n•\t30g of cold butter\n•\t125g AP flour\n•\t225g sugar\n•\t25g brandy\n•\t25g grand marnier\nBeeswax Mixture Ingredients\n•\t40g beeswax\n•\t60g butter\nMaking the batter:\n1.\tScrape seeds out of vanilla beans and add them and the pods to a sauce pan along with your milk. Bring to a boil over medium heat, stirring occasionally to prevent milk scalding on the bottom of the pan. Once boiled, kill heat and add your 30g of cold butter. With a thermometer, check the temperature of the milk. You want it to reach 85degrees C.\n2.\tWhile that’s coming to a boil, in one bowl mix your flour and sugar, and in another large bowl beat your eggs and egg yolks.\n3.\tOnce your vanilla-infused milk reaches 185 degrees F, temper the egg mixture with the milk before combining all of the milk with your egg mixture in the large bowl.\n4.\tSlowly pour in your flour/sugar mixture to the tempered egg/milk mixture. Add your alcohol and whisk until just barely combined.\n5.\tSet aside for at least 12 hours in a container in the fridge. You should have about 1 quart of batter.\nIMPORTANT: Before baking, your canele batter needs to be room temperature. Remove the batter from the fridge and let sit at room temperature for at least 2 hours.\nPreparing the molds:\n1.\tPreheat the oven to 220 degrees C.  Place your molds onto a sheet pan and place them in the oven to preheat.\n2.\tIn a sauce pan, combine your beeswax with 60g of butter. Melt over medium heat, then reduce the heat to low when it’s done.\n3.\tRemoving one mold from the oven at a time, pour the beeswax mixture into the mold all the way to the top. Pour the beeswax mixture from the mold back into the saucepan. Set that mold aside. Repeat this for all the molds. NOTE: Continually swirl the beeswax mixture so the butter and beeswax don’t separate. Avoid using utensils here, as they’ll be a pain to clean.\n4.\tThen turn the heat off on the beeswax mixture entirely. Repeat the exact same process as step 3, pouring wax into a mold and returning excess wax into the sauce pan. You want all of the molds to be nice and evenly coated, though some variation is totally fine.\nBaking the canele:\n1.\tStrain the batter and remove the used vanilla bean pods. (clean them, let them dry in a paper towel overnight, and add them to your sugar container).\n2.\tGive the batter a slow stir with a spoon. Do NOT whisk. We want to avoid incorporating air into the batter.\n3.\tPour the batter into your prepared molds. Place the molds onto a baking sheet, and then directly onto the pizza stone.\n4.\tBake them at 220 degrees C for 15 minutes.\n5.\tAfter this time, reduce the temperature to 190 degrees C and bake for another 50-75 minutes. Make sure they’re the appropriate dark brown color on top.\n6.\tNOTE: if your canele are ballooning out of their molds (rising out vertically is fine, but ballooning out over the sides is what you want to avoid) you can take those out of the oven and let them settle back into the molds. If they settle at an angle, give them a gentle tap against the counter to get them back down into the mold properly. Return them to the oven.\n7.\tRemove molds from oven and let rest for 5 minutes. With some force, hit the molds against the counter to release the canele. Let them rest on a wire rack for several hours so they don’t get too chewy.\n8.\tNOTE: If you remove a canele and it’s paler than you wanted, just put it back into the mold and back into the oven at 220 degrees C for another 10-15 minutes",
+                "content": "IMPORTANT:",
+                "link": null
+              },
+              "annotations": {
+                "bold": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "IMPORTANT:",
+              "href": null
+            },
+            {
+              "type": "text",
+              "text": {
+                "content": " Before baking, the batter must be at room temperature. Remove from the fridge and let sit for at least 2 hours before baking.",
                 "link": null
               },
               "annotations": {
@@ -9414,7 +10224,7 @@
                 "code": false,
                 "color": "default"
               },
-              "plain_text": "Batter Ingredients\n•\t500g whole milk\n•\t1 vanilla bean pod (I’ll use 2 if the vanilla pod isn’t very plump)\n•\t1 egg + 3 egg yolks\n•\t30g of cold butter\n•\t125g AP flour\n•\t225g sugar\n•\t25g brandy\n•\t25g grand marnier\nBeeswax Mixture Ingredients\n•\t40g beeswax\n•\t60g butter\nMaking the batter:\n1.\tScrape seeds out of vanilla beans and add them and the pods to a sauce pan along with your milk. Bring to a boil over medium heat, stirring occasionally to prevent milk scalding on the bottom of the pan. Once boiled, kill heat and add your 30g of cold butter. With a thermometer, check the temperature of the milk. You want it to reach 85degrees C.\n2.\tWhile that’s coming to a boil, in one bowl mix your flour and sugar, and in another large bowl beat your eggs and egg yolks.\n3.\tOnce your vanilla-infused milk reaches 185 degrees F, temper the egg mixture with the milk before combining all of the milk with your egg mixture in the large bowl.\n4.\tSlowly pour in your flour/sugar mixture to the tempered egg/milk mixture. Add your alcohol and whisk until just barely combined.\n5.\tSet aside for at least 12 hours in a container in the fridge. You should have about 1 quart of batter.\nIMPORTANT: Before baking, your canele batter needs to be room temperature. Remove the batter from the fridge and let sit at room temperature for at least 2 hours.\nPreparing the molds:\n1.\tPreheat the oven to 220 degrees C.  Place your molds onto a sheet pan and place them in the oven to preheat.\n2.\tIn a sauce pan, combine your beeswax with 60g of butter. Melt over medium heat, then reduce the heat to low when it’s done.\n3.\tRemoving one mold from the oven at a time, pour the beeswax mixture into the mold all the way to the top. Pour the beeswax mixture from the mold back into the saucepan. Set that mold aside. Repeat this for all the molds. NOTE: Continually swirl the beeswax mixture so the butter and beeswax don’t separate. Avoid using utensils here, as they’ll be a pain to clean.\n4.\tThen turn the heat off on the beeswax mixture entirely. Repeat the exact same process as step 3, pouring wax into a mold and returning excess wax into the sauce pan. You want all of the molds to be nice and evenly coated, though some variation is totally fine.\nBaking the canele:\n1.\tStrain the batter and remove the used vanilla bean pods. (clean them, let them dry in a paper towel overnight, and add them to your sugar container).\n2.\tGive the batter a slow stir with a spoon. Do NOT whisk. We want to avoid incorporating air into the batter.\n3.\tPour the batter into your prepared molds. Place the molds onto a baking sheet, and then directly onto the pizza stone.\n4.\tBake them at 220 degrees C for 15 minutes.\n5.\tAfter this time, reduce the temperature to 190 degrees C and bake for another 50-75 minutes. Make sure they’re the appropriate dark brown color on top.\n6.\tNOTE: if your canele are ballooning out of their molds (rising out vertically is fine, but ballooning out over the sides is what you want to avoid) you can take those out of the oven and let them settle back into the molds. If they settle at an angle, give them a gentle tap against the counter to get them back down into the mold properly. Return them to the oven.\n7.\tRemove molds from oven and let rest for 5 minutes. With some force, hit the molds against the counter to release the canele. Let them rest on a wire rack for several hours so they don’t get too chewy.\n8.\tNOTE: If you remove a canele and it’s paler than you wanted, just put it back into the mold and back into the oven at 220 degrees C for another 10-15 minutes",
+              "plain_text": " Before baking, the batter must be at room temperature. Remove from the fridge and let sit for at least 2 hours before baking.",
               "href": null
             }
           ],
@@ -9422,21 +10232,19 @@
           "color": "default"
         },
         "archived": false
-      }
-    ],
-    "1e85bc23a0124b6bb8002ae056f4dce6": [
+      },
       {
         "object": "block",
-        "id": "e5ed0339-fd05-41fa-aa62-fa499878de01",
+        "id": "5ad59784-135f-406b-9ea8-187f372bede0",
         "parent": {
           "type": "page_id",
-          "page_id": "1e85bc23-a012-4b6b-b800-2ae056f4dce6"
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
         },
-        "created_time": "2021-12-23T10:32:00.000Z",
-        "last_edited_time": "2021-12-23T10:32:00.000Z",
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
         "created_by": {
           "object": "user",
-          "id": "57fec637-5a40-4339-ba2e-7a2e1c9902ff"
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
         },
         "last_edited_by": {
           "object": "user",
@@ -9444,831 +10252,662 @@
         },
         "has_children": false,
         "in_trash": false,
-        "type": "paragraph",
-        "paragraph": {
-          "rich_text": [],
-          "icon": null,
-          "color": "default"
-        },
-        "archived": false
-      },
-      {
-        "object": "block",
-        "id": "b36473f2-5673-4cf0-b760-59d52fc1574d",
-        "parent": {
-          "type": "page_id",
-          "page_id": "1e85bc23-a012-4b6b-b800-2ae056f4dce6"
-        },
-        "created_time": "2021-12-23T10:32:00.000Z",
-        "last_edited_time": "2021-12-23T10:32:00.000Z",
-        "created_by": {
-          "object": "user",
-          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-        },
-        "last_edited_by": {
-          "object": "user",
-          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-        },
-        "has_children": true,
-        "in_trash": false,
-        "type": "column_list",
-        "column_list": {},
-        "archived": false,
-        "_columns": [
-          [
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
             {
-              "object": "block",
-              "id": "e77985d1-41fa-47e9-9e37-3073c9657f0e",
-              "parent": {
-                "type": "block_id",
-                "block_id": "02d1d6bf-6f58-46a0-ad16-416827377380"
+              "type": "text",
+              "text": {
+                "content": "Preparing the Molds",
+                "link": null
               },
-              "created_time": "2021-12-23T10:32:00.000Z",
-              "last_edited_time": "2021-12-23T10:32:00.000Z",
-              "created_by": {
-                "object": "user",
-                "id": "57fec637-5a40-4339-ba2e-7a2e1c9902ff"
-              },
-              "last_edited_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "has_children": false,
-              "in_trash": false,
-              "type": "heading_1",
-              "heading_1": {
-                "rich_text": [
-                  {
-                    "type": "text",
-                    "text": {
-                      "content": "Ingredients ",
-                      "link": null
-                    },
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    },
-                    "plain_text": "Ingredients ",
-                    "href": null
-                  }
-                ],
-                "is_toggleable": false,
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
                 "color": "default"
               },
-              "archived": false
-            },
-            {
-              "object": "block",
-              "id": "af61da63-c972-49d6-92ba-09887518a11f",
-              "parent": {
-                "type": "block_id",
-                "block_id": "02d1d6bf-6f58-46a0-ad16-416827377380"
-              },
-              "created_time": "2021-12-23T10:32:00.000Z",
-              "last_edited_time": "2021-12-23T10:36:00.000Z",
-              "created_by": {
-                "object": "user",
-                "id": "57fec637-5a40-4339-ba2e-7a2e1c9902ff"
-              },
-              "last_edited_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "has_children": false,
-              "in_trash": false,
-              "type": "bulleted_list_item",
-              "bulleted_list_item": {
-                "rich_text": [
-                  {
-                    "type": "text",
-                    "text": {
-                      "content": "150g flour",
-                      "link": null
-                    },
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    },
-                    "plain_text": "150g flour",
-                    "href": null
-                  }
-                ],
-                "color": "default"
-              },
-              "archived": false
-            },
-            {
-              "object": "block",
-              "id": "90b6b325-b1bb-4027-8d6f-3b6a59a126dc",
-              "parent": {
-                "type": "block_id",
-                "block_id": "02d1d6bf-6f58-46a0-ad16-416827377380"
-              },
-              "created_time": "2021-12-23T10:33:00.000Z",
-              "last_edited_time": "2021-12-23T10:36:00.000Z",
-              "created_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "last_edited_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "has_children": false,
-              "in_trash": false,
-              "type": "bulleted_list_item",
-              "bulleted_list_item": {
-                "rich_text": [
-                  {
-                    "type": "text",
-                    "text": {
-                      "content": "215g sugar",
-                      "link": null
-                    },
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    },
-                    "plain_text": "215g sugar",
-                    "href": null
-                  }
-                ],
-                "color": "default"
-              },
-              "archived": false
-            },
-            {
-              "object": "block",
-              "id": "263ce70b-1bf3-41fa-9f01-f3182bc5eb9c",
-              "parent": {
-                "type": "block_id",
-                "block_id": "02d1d6bf-6f58-46a0-ad16-416827377380"
-              },
-              "created_time": "2021-12-23T10:34:00.000Z",
-              "last_edited_time": "2021-12-23T10:34:00.000Z",
-              "created_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "last_edited_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "has_children": false,
-              "in_trash": false,
-              "type": "bulleted_list_item",
-              "bulleted_list_item": {
-                "rich_text": [
-                  {
-                    "type": "text",
-                    "text": {
-                      "content": "4 egg yolks",
-                      "link": null
-                    },
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    },
-                    "plain_text": "4 egg yolks",
-                    "href": null
-                  }
-                ],
-                "color": "default"
-              },
-              "archived": false
-            },
-            {
-              "object": "block",
-              "id": "b2f11157-aaac-4d7a-a335-bd93d683ca05",
-              "parent": {
-                "type": "block_id",
-                "block_id": "02d1d6bf-6f58-46a0-ad16-416827377380"
-              },
-              "created_time": "2021-12-23T10:34:00.000Z",
-              "last_edited_time": "2021-12-23T10:34:00.000Z",
-              "created_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "last_edited_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "has_children": false,
-              "in_trash": false,
-              "type": "bulleted_list_item",
-              "bulleted_list_item": {
-                "rich_text": [
-                  {
-                    "type": "text",
-                    "text": {
-                      "content": "62ml rum",
-                      "link": null
-                    },
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    },
-                    "plain_text": "62ml rum",
-                    "href": null
-                  }
-                ],
-                "color": "default"
-              },
-              "archived": false
-            },
-            {
-              "object": "block",
-              "id": "03f3e902-f499-4cb3-b33b-a87b885664cd",
-              "parent": {
-                "type": "block_id",
-                "block_id": "02d1d6bf-6f58-46a0-ad16-416827377380"
-              },
-              "created_time": "2021-12-23T10:34:00.000Z",
-              "last_edited_time": "2021-12-23T10:35:00.000Z",
-              "created_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "last_edited_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "has_children": false,
-              "in_trash": false,
-              "type": "bulleted_list_item",
-              "bulleted_list_item": {
-                "rich_text": [
-                  {
-                    "type": "text",
-                    "text": {
-                      "content": "3tsp vanilla",
-                      "link": null
-                    },
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    },
-                    "plain_text": "3tsp vanilla",
-                    "href": null
-                  }
-                ],
-                "color": "default"
-              },
-              "archived": false
-            },
-            {
-              "object": "block",
-              "id": "0186e2f5-a427-432f-a626-f47ced6d2dbc",
-              "parent": {
-                "type": "block_id",
-                "block_id": "02d1d6bf-6f58-46a0-ad16-416827377380"
-              },
-              "created_time": "2021-12-23T10:35:00.000Z",
-              "last_edited_time": "2021-12-23T10:35:00.000Z",
-              "created_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "last_edited_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "has_children": false,
-              "in_trash": false,
-              "type": "bulleted_list_item",
-              "bulleted_list_item": {
-                "rich_text": [
-                  {
-                    "type": "text",
-                    "text": {
-                      "content": "1/2tsp salt",
-                      "link": null
-                    },
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    },
-                    "plain_text": "1/2tsp salt",
-                    "href": null
-                  }
-                ],
-                "color": "default"
-              },
-              "archived": false
-            },
-            {
-              "object": "block",
-              "id": "31a2257e-6ed8-4f7f-b0fc-fbf9c62b9151",
-              "parent": {
-                "type": "block_id",
-                "block_id": "02d1d6bf-6f58-46a0-ad16-416827377380"
-              },
-              "created_time": "2021-12-23T10:35:00.000Z",
-              "last_edited_time": "2021-12-23T10:35:00.000Z",
-              "created_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "last_edited_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "has_children": false,
-              "in_trash": false,
-              "type": "bulleted_list_item",
-              "bulleted_list_item": {
-                "rich_text": [
-                  {
-                    "type": "text",
-                    "text": {
-                      "content": "500ml milk",
-                      "link": null
-                    },
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    },
-                    "plain_text": "500ml milk",
-                    "href": null
-                  }
-                ],
-                "color": "default"
-              },
-              "archived": false
-            },
-            {
-              "object": "block",
-              "id": "1e532d2e-9649-4440-aaea-9f701a3ee53f",
-              "parent": {
-                "type": "block_id",
-                "block_id": "02d1d6bf-6f58-46a0-ad16-416827377380"
-              },
-              "created_time": "2021-12-23T10:35:00.000Z",
-              "last_edited_time": "2021-12-23T10:35:00.000Z",
-              "created_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "last_edited_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "has_children": false,
-              "in_trash": false,
-              "type": "bulleted_list_item",
-              "bulleted_list_item": {
-                "rich_text": [
-                  {
-                    "type": "text",
-                    "text": {
-                      "content": "30g butter",
-                      "link": null
-                    },
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    },
-                    "plain_text": "30g butter",
-                    "href": null
-                  }
-                ],
-                "color": "default"
-              },
-              "archived": false
+              "plain_text": "Preparing the Molds",
+              "href": null
             }
           ],
-          [
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "4dd161b6-4d32-47f1-a449-adeedb11b08c",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
             {
-              "object": "block",
-              "id": "02115535-4a77-4240-a401-d7f974ff1736",
-              "parent": {
-                "type": "block_id",
-                "block_id": "f571eedd-3f12-4453-9ea1-3dd5ac4ff891"
+              "type": "text",
+              "text": {
+                "content": "Preheat the oven to 230°C (450°F). Position a pizza stone on the bottom rack. Place your molds onto a sheet pan and put them in the oven to preheat.",
+                "link": null
               },
-              "created_time": "2021-12-23T10:32:00.000Z",
-              "last_edited_time": "2021-12-23T10:32:00.000Z",
-              "created_by": {
-                "object": "user",
-                "id": "57fec637-5a40-4339-ba2e-7a2e1c9902ff"
-              },
-              "last_edited_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "has_children": false,
-              "in_trash": false,
-              "type": "heading_1",
-              "heading_1": {
-                "rich_text": [
-                  {
-                    "type": "text",
-                    "text": {
-                      "content": "Method",
-                      "link": null
-                    },
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    },
-                    "plain_text": "Method",
-                    "href": null
-                  }
-                ],
-                "is_toggleable": false,
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
                 "color": "default"
               },
-              "archived": false
-            },
-            {
-              "object": "block",
-              "id": "78971a97-40ba-4015-9373-6e08b07b35d4",
-              "parent": {
-                "type": "block_id",
-                "block_id": "f571eedd-3f12-4453-9ea1-3dd5ac4ff891"
-              },
-              "created_time": "2021-12-23T10:32:00.000Z",
-              "last_edited_time": "2021-12-23T10:38:00.000Z",
-              "created_by": {
-                "object": "user",
-                "id": "57fec637-5a40-4339-ba2e-7a2e1c9902ff"
-              },
-              "last_edited_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "has_children": false,
-              "in_trash": false,
-              "type": "numbered_list_item",
-              "numbered_list_item": {
-                "rich_text": [
-                  {
-                    "type": "text",
-                    "text": {
-                      "content": "Place 30g of butter and 500ml milk in a pot and bring to a gentle simmer.",
-                      "link": null
-                    },
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    },
-                    "plain_text": "Place 30g of butter and 500ml milk in a pot and bring to a gentle simmer.",
-                    "href": null
-                  }
-                ],
-                "color": "default"
-              },
-              "archived": false
-            },
-            {
-              "object": "block",
-              "id": "fc90bbf0-b1c9-465d-add1-aa5eeb92f41c",
-              "parent": {
-                "type": "block_id",
-                "block_id": "f571eedd-3f12-4453-9ea1-3dd5ac4ff891"
-              },
-              "created_time": "2021-12-23T10:38:00.000Z",
-              "last_edited_time": "2021-12-23T10:38:00.000Z",
-              "created_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "last_edited_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "has_children": false,
-              "in_trash": false,
-              "type": "numbered_list_item",
-              "numbered_list_item": {
-                "rich_text": [
-                  {
-                    "type": "text",
-                    "text": {
-                      "content": "Meanwhile combine the remaining ingredients in a heat proof bowl",
-                      "link": null
-                    },
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    },
-                    "plain_text": "Meanwhile combine the remaining ingredients in a heat proof bowl",
-                    "href": null
-                  }
-                ],
-                "color": "default"
-              },
-              "archived": false
-            },
-            {
-              "object": "block",
-              "id": "7dd6be07-6977-46bd-8fa2-43e6cdcc1c7d",
-              "parent": {
-                "type": "block_id",
-                "block_id": "f571eedd-3f12-4453-9ea1-3dd5ac4ff891"
-              },
-              "created_time": "2021-12-23T10:38:00.000Z",
-              "last_edited_time": "2021-12-23T10:39:00.000Z",
-              "created_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "last_edited_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "has_children": false,
-              "in_trash": false,
-              "type": "numbered_list_item",
-              "numbered_list_item": {
-                "rich_text": [
-                  {
-                    "type": "text",
-                    "text": {
-                      "content": "Once the milk is simmering temper the egg mixture. Transfer back to pot and bring to 86degrees",
-                      "link": null
-                    },
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    },
-                    "plain_text": "Once the milk is simmering temper the egg mixture. Transfer back to pot and bring to 86degrees",
-                    "href": null
-                  }
-                ],
-                "color": "default"
-              },
-              "archived": false
-            },
-            {
-              "object": "block",
-              "id": "018edbbc-f8c4-4bf9-a572-0c21e44fc06a",
-              "parent": {
-                "type": "block_id",
-                "block_id": "f571eedd-3f12-4453-9ea1-3dd5ac4ff891"
-              },
-              "created_time": "2021-12-23T10:39:00.000Z",
-              "last_edited_time": "2021-12-23T10:39:00.000Z",
-              "created_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "last_edited_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "has_children": false,
-              "in_trash": false,
-              "type": "numbered_list_item",
-              "numbered_list_item": {
-                "rich_text": [
-                  {
-                    "type": "text",
-                    "text": {
-                      "content": "Strain through a fine mesh sieve. Refrigerate for up to 5 days.",
-                      "link": null
-                    },
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    },
-                    "plain_text": "Strain through a fine mesh sieve. Refrigerate for up to 5 days.",
-                    "href": null
-                  }
-                ],
-                "color": "default"
-              },
-              "archived": false
-            },
-            {
-              "object": "block",
-              "id": "d11ce977-2749-49ce-970f-0cb9b27ec3a2",
-              "parent": {
-                "type": "block_id",
-                "block_id": "f571eedd-3f12-4453-9ea1-3dd5ac4ff891"
-              },
-              "created_time": "2021-12-23T10:39:00.000Z",
-              "last_edited_time": "2021-12-23T10:40:00.000Z",
-              "created_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "last_edited_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "has_children": false,
-              "in_trash": false,
-              "type": "numbered_list_item",
-              "numbered_list_item": {
-                "rich_text": [
-                  {
-                    "type": "text",
-                    "text": {
-                      "content": "Preheat oven to 230c, grease moulds with heaps of butter and cooking spray",
-                      "link": null
-                    },
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    },
-                    "plain_text": "Preheat oven to 230c, grease moulds with heaps of butter and cooking spray",
-                    "href": null
-                  }
-                ],
-                "color": "default"
-              },
-              "archived": false
-            },
-            {
-              "object": "block",
-              "id": "02ee137c-b3ea-44c4-960b-25a36ec2ce01",
-              "parent": {
-                "type": "block_id",
-                "block_id": "f571eedd-3f12-4453-9ea1-3dd5ac4ff891"
-              },
-              "created_time": "2021-12-23T10:40:00.000Z",
-              "last_edited_time": "2021-12-23T10:41:00.000Z",
-              "created_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "last_edited_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "has_children": false,
-              "in_trash": false,
-              "type": "numbered_list_item",
-              "numbered_list_item": {
-                "rich_text": [
-                  {
-                    "type": "text",
-                    "text": {
-                      "content": "Place in oven for 10min, turn oven down to 190c and bake for another 50.",
-                      "link": null
-                    },
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    },
-                    "plain_text": "Place in oven for 10min, turn oven down to 190c and bake for another 50.",
-                    "href": null
-                  }
-                ],
-                "color": "default"
-              },
-              "archived": false
-            },
-            {
-              "object": "block",
-              "id": "d4c29527-79ec-4108-9198-c1ed9fbedef2",
-              "parent": {
-                "type": "block_id",
-                "block_id": "f571eedd-3f12-4453-9ea1-3dd5ac4ff891"
-              },
-              "created_time": "2021-12-23T10:41:00.000Z",
-              "last_edited_time": "2021-12-23T10:41:00.000Z",
-              "created_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "last_edited_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "has_children": false,
-              "in_trash": false,
-              "type": "numbered_list_item",
-              "numbered_list_item": {
-                "rich_text": [
-                  {
-                    "type": "text",
-                    "text": {
-                      "content": "Remove from mould almost immediately ",
-                      "link": null
-                    },
-                    "annotations": {
-                      "bold": false,
-                      "italic": false,
-                      "strikethrough": false,
-                      "underline": false,
-                      "code": false,
-                      "color": "default"
-                    },
-                    "plain_text": "Remove from mould almost immediately ",
-                    "href": null
-                  }
-                ],
-                "color": "default"
-              },
-              "archived": false
-            },
-            {
-              "object": "block",
-              "id": "f56ca57a-c779-425c-bf56-a4e185bd9b24",
-              "parent": {
-                "type": "block_id",
-                "block_id": "f571eedd-3f12-4453-9ea1-3dd5ac4ff891"
-              },
-              "created_time": "2021-12-23T11:01:00.000Z",
-              "last_edited_time": "2021-12-23T11:01:00.000Z",
-              "created_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "last_edited_by": {
-                "object": "user",
-                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
-              },
-              "has_children": false,
-              "in_trash": false,
-              "type": "numbered_list_item",
-              "numbered_list_item": {
-                "rich_text": [],
-                "color": "default"
-              },
-              "archived": false
+              "plain_text": "Preheat the oven to 230°C (450°F). Position a pizza stone on the bottom rack. Place your molds onto a sheet pan and put them in the oven to preheat.",
+              "href": null
             }
-          ]
-        ]
+          ],
+          "color": "default"
+        },
+        "archived": false
       },
       {
         "object": "block",
-        "id": "a910ea02-c7c3-443f-a313-66471600b241",
+        "id": "493a2e89-8263-4591-aa4c-538f35a2e645",
         "parent": {
           "type": "page_id",
-          "page_id": "1e85bc23-a012-4b6b-b800-2ae056f4dce6"
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
         },
-        "created_time": "2021-12-23T10:32:00.000Z",
-        "last_edited_time": "2022-08-13T23:07:00.000Z",
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
         "created_by": {
           "object": "user",
-          "id": "57fec637-5a40-4339-ba2e-7a2e1c9902ff"
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "In a saucepan, combine the beeswax with 60g butter. Melt over medium heat, then reduce to low.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "In a saucepan, combine the beeswax with 60g butter. Melt over medium heat, then reduce to low.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "97713478-15fc-45d0-9bf3-01a6d876fdff",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Removing one mold from the oven at a time, pour the beeswax mixture all the way to the top of the mold, then pour it back into the saucepan. Set that mold aside and repeat for all molds. Continually swirl the mixture so the butter and wax don't separate. Avoid utensils — they'll be a pain to clean.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Removing one mold from the oven at a time, pour the beeswax mixture all the way to the top of the mold, then pour it back into the saucepan. Set that mold aside and repeat for all molds. Continually swirl the mixture so the butter and wax don't separate. Avoid utensils — they'll be a pain to clean.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "5bb5689e-9a71-4fec-8c49-df47c0b00e01",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Turn the heat off. Repeat the exact same process again — pour into each mold and return the excess — so all molds get a second even coat.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Turn the heat off. Repeat the exact same process again — pour into each mold and return the excess — so all molds get a second even coat.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "68968442-14ff-460e-832c-b83d8f382b3a",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Baking",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Baking",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "8092f718-d6d9-41bf-afa7-c3ae0aced424",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Strain the batter and remove the vanilla bean pods. (Clean them, dry overnight on a paper towel, then add to your sugar container.)",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Strain the batter and remove the vanilla bean pods. (Clean them, dry overnight on a paper towel, then add to your sugar container.)",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "29d38709-5db1-4e00-b63e-ef9d59174cdc",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Give the batter a slow stir with a spoon. Do NOT whisk — avoid incorporating air.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Give the batter a slow stir with a spoon. Do NOT whisk — avoid incorporating air.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "8e4b0815-5319-42e8-9dd2-2b2c078c5d3d",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Pour the batter into the prepared molds. Place molds on a baking sheet, then directly onto the pizza stone.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Pour the batter into the prepared molds. Place molds on a baking sheet, then directly onto the pizza stone.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "2cb466bb-2980-422e-8f41-f82ee7bec9dc",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Bake at 230°C (450°F) for 15 minutes.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Bake at 230°C (450°F) for 15 minutes.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "4d194322-ca2e-40d8-a901-62f9a3dc02fc",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Reduce the temperature to 220°C (425°F) and bake for another 60–75 minutes. They should be a deep, dark brown on top.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Reduce the temperature to 220°C (425°F) and bake for another 60–75 minutes. They should be a deep, dark brown on top.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "c47fa2a1-14d6-4552-80e5-fa423fc6e79d",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "If the canelé are ballooning out over the sides of the mold (rising up vertically is fine), remove them from the oven and let them settle back down. If they settle at an angle, tap the mold gently against the counter to reseat them, then return to the oven.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "If the canelé are ballooning out over the sides of the mold (rising up vertically is fine), remove them from the oven and let them settle back down. If they settle at an angle, tap the mold gently against the counter to reseat them, then return to the oven.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "59f9c4f9-c42c-44ea-b3fc-fe20a52addd3",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Remove from the oven and rest for 5 minutes. With some force, hit the molds against the counter to release the canelé. Rest on a wire rack for several hours so they don't get too chewy.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Remove from the oven and rest for 5 minutes. With some force, hit the molds against the counter to release the canelé. Rest on a wire rack for several hours so they don't get too chewy.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "b95b0aa7-bf16-42d8-8716-7a1469f97a24",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "If a canelé is paler than you wanted, put it back in the mold and return to the oven at 230°C (450°F) for another 10–15 minutes.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "If a canelé is paler than you wanted, put it back in the mold and return to the oven at 230°C (450°F) for another 10–15 minutes.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "4a8fcddb-4b6f-42d8-a771-8a313c131de4",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Notes",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Notes",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "6abe8804-d5cd-4021-9762-4106ede235d9",
+        "parent": {
+          "type": "page_id",
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
         },
         "last_edited_by": {
           "object": "user",
@@ -10278,7 +10917,25 @@
         "in_trash": false,
         "type": "paragraph",
         "paragraph": {
-          "rich_text": [],
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Beeswax cleaning tip: while it's still hot and melted, pour it into the bin, then wipe the pan with paper towels. Do not use utensils to stir the wax, and do not add water before wiping — you'll end up with clumped wax that's extremely difficult to clean.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Beeswax cleaning tip: while it's still hot and melted, pour it into the bin, then wipe the pan with paper towels. Do not use utensils to stir the wax, and do not add water before wiping — you'll end up with clumped wax that's extremely difficult to clean.",
+              "href": null
+            }
+          ],
           "icon": null,
           "color": "default"
         },
@@ -10286,13 +10943,13 @@
       },
       {
         "object": "block",
-        "id": "7b8b183a-7b41-4303-8b8d-80bf9b83e98f",
+        "id": "a59c6347-be92-4837-b315-3a69fd4f0188",
         "parent": {
           "type": "page_id",
-          "page_id": "1e85bc23-a012-4b6b-b800-2ae056f4dce6"
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
         },
-        "created_time": "2021-12-23T10:32:00.000Z",
-        "last_edited_time": "2021-12-23T10:32:00.000Z",
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
         "created_by": {
           "object": "user",
           "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
@@ -10305,7 +10962,25 @@
         "in_trash": false,
         "type": "paragraph",
         "paragraph": {
-          "rich_text": [],
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "The 12-hour batter rest is non-negotiable — it allows the gluten to relax and the flavours to develop properly.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "The 12-hour batter rest is non-negotiable — it allows the gluten to relax and the flavours to develop properly.",
+              "href": null
+            }
+          ],
           "icon": null,
           "color": "default"
         },
@@ -10313,13 +10988,13 @@
       },
       {
         "object": "block",
-        "id": "9bca54d0-a783-4c63-b6dc-8f89f91ded45",
+        "id": "fdcd169b-7f71-4511-a58c-9a20507a1877",
         "parent": {
           "type": "page_id",
-          "page_id": "1e85bc23-a012-4b6b-b800-2ae056f4dce6"
+          "page_id": "35c7f2e5-26bb-8013-bd53-cb4918707e8a"
         },
-        "created_time": "2021-12-23T10:32:00.000Z",
-        "last_edited_time": "2021-12-23T10:32:00.000Z",
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
         "created_by": {
           "object": "user",
           "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
@@ -10332,7 +11007,25 @@
         "in_trash": false,
         "type": "paragraph",
         "paragraph": {
-          "rich_text": [],
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "The two-coat wax method ensures an even, glossy shell. The first coat primes the mold, the second coat seals it.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "The two-coat wax method ensures an even, glossy shell. The first coat primes the mold, the second coat seals it.",
+              "href": null
+            }
+          ],
           "icon": null,
           "color": "default"
         },
@@ -31367,6 +32060,895 @@
         "type": "paragraph",
         "paragraph": {
           "rich_text": [],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      }
+    ],
+    "3797f2e526bb81078447ca4c9188606f": [
+      {
+        "object": "block",
+        "id": "a0d36107-844c-48fd-b99d-d38990dc5f7a",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Ingredients",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Ingredients",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "84983243-30e8-4643-a4bc-45fd80516520",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "450g (1 lb) ground beef, 20% fat",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "450g (1 lb) ground beef, 20% fat",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "ad25895a-ca78-4e5f-a298-80bb7acb9bb8",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "1 tsp salt",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "1 tsp salt",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "9bdc95bc-2859-4876-ad9e-9e06c9b2cfbb",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "1 egg",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "1 egg",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "32ffffd7-d439-432b-9404-ea927420c9b5",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "2 slices white sandwich bread, soaked in whole milk",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "2 slices white sandwich bread, soaked in whole milk",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "337a10cc-427c-46b7-95ff-443bdda553c0",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "1.5 garlic cloves, grated or minced",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "1.5 garlic cloves, grated or minced",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "f3f93326-5946-4a5a-b640-6238223326e5",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "1/8 cup flat-leaf parsley, chopped",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "1/8 cup flat-leaf parsley, chopped",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "6d63f57c-e92c-4af2-b76d-08d83b78a31f",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "1/8 cup (up to 1/4 cup) grated pecorino cheese (Parmesan works but is less funky)",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "1/8 cup (up to 1/4 cup) grated pecorino cheese (Parmesan works but is less funky)",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "4c23f6e1-dd65-4a21-851c-5aaf569be615",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "1 heaped tbsp ricotta cheese",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "1 heaped tbsp ricotta cheese",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "5af1743f-c93e-4f1a-9496-7b4be2eca3f7",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "1 heaped tbsp grated zucchini flesh (white part only)",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "1 heaped tbsp grated zucchini flesh (white part only)",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "29eb02c4-e96e-498d-8504-051a481b2bb7",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Method",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Method",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "507b8e54-09e0-44f4-856d-8b0856222d29",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Soak the bread slices in whole milk until fully saturated, then squeeze out the excess milk.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Soak the bread slices in whole milk until fully saturated, then squeeze out the excess milk.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "379c4ab0-01e5-43e0-bd11-ce08bdfe71c4",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Combine all ingredients in a bowl and mix until just combined — don't overwork.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Combine all ingredients in a bowl and mix until just combined — don't overwork.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "f01ca18a-3de8-486a-9291-370bbe797043",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Portion into balls of approximately 55g (2 oz) raw weight.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Portion into balls of approximately 55g (2 oz) raw weight.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "0b4580ec-795d-41de-8466-02170ba30b74",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "numbered_list_item",
+        "numbered_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Place on a baking tray and roast in a preheated oven at 220°C (425°F) for 16–18 minutes.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Place on a baking tray and roast in a preheated oven at 220°C (425°F) for 16–18 minutes.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "6e141455-0e5f-4ddf-9512-d9c794d70c9d",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Notes",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Notes",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "7ec1c95a-4bd5-46ed-8c0e-9496c7322a9e",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "NO pre-soaking the meatballs in water or sauce before baking.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "NO pre-soaking the meatballs in water or sauce before baking.",
+              "href": null
+            }
+          ],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "223c109a-baa5-4325-b1e0-967e57e0451a",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "The zucchini flesh (white part only, no skin) adds moisture without flavour — grate it finely and squeeze out excess liquid before adding.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "The zucchini flesh (white part only, no skin) adds moisture without flavour — grate it finely and squeeze out excess liquid before adding.",
+              "href": null
+            }
+          ],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "786ff3ed-a347-4d26-b076-223b023455ba",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Pecorino is worth using over Parmesan if you can get it — the funkiness makes a real difference.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Pecorino is worth using over Parmesan if you can get it — the funkiness makes a real difference.",
+              "href": null
+            }
+          ],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "6ffdff10-9347-438d-a869-e3a20c26f755",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3797f2e5-26bb-8107-8447-ca4c9188606f"
+        },
+        "created_time": "2026-06-08T05:39:00.000Z",
+        "last_edited_time": "2026-06-08T05:39:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Serve with your preferred tomato sauce and pasta, or as they are.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Serve with your preferred tomato sauce and pasta, or as they are.",
+              "href": null
+            }
+          ],
           "icon": null,
           "color": "default"
         },
