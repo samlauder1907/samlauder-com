@@ -4,6 +4,25 @@ function stripPrefix(value) {
   return value.replace(/^(Difficulty|Duration):\s*/i, '');
 }
 
+const TABS = {
+  'Baked Goods': new Set(['Cake', 'Biscuit', 'Bread', 'Pastry', 'Slice', 'Baking', 'Icing/Filling', 'Lolly']),
+  'Cooking': new Set(['Dinner', 'Beef', 'Chicken', 'Pasta/Noodles', 'Vegan', 'Drink', 'Misc']),
+};
+
+const TAB_NAMES = Object.keys(TABS);
+const DEFAULT_TAB = 'Baked Goods';
+
+function matchesTab(recipe, tab) {
+  const tags = recipe.tags ?? [];
+  if (tab !== 'Cooking') return tags.some(t => TABS[tab].has(t));
+
+  // Cooking is the fallback tab: recipes with no category, or a category
+  // that doesn't belong to either group, land here too.
+  const isCategorised = tags.some(t => TABS['Baked Goods'].has(t) || TABS['Cooking'].has(t));
+  if (!isCategorised) return true;
+  return tags.some(t => TABS['Cooking'].has(t));
+}
+
 function FilterRow({ label, options, active, onToggle }) {
   if (options.length === 0) return null;
   return (
@@ -25,36 +44,39 @@ function FilterRow({ label, options, active, onToggle }) {
 }
 
 export default function RecipeBook({ recipes }) {
+  const [activeTab, setActiveTab] = useState(DEFAULT_TAB);
   const [activeCategory, setActiveCategory] = useState(null);
   const [activeDifficulty, setActiveDifficulty] = useState(null);
   const [activeDuration, setActiveDuration] = useState(null);
 
+  const tabPool = useMemo(() => recipes.filter(r => matchesTab(r, activeTab)), [recipes, activeTab]);
+
   const allCategories = useMemo(() => {
     const set = new Set();
-    recipes.forEach(r => r.tags?.forEach(t => set.add(t)));
+    tabPool.forEach(r => r.tags?.forEach(t => set.add(t)));
     return Array.from(set).sort();
-  }, [recipes]);
+  }, [tabPool]);
 
   const allDifficulties = useMemo(() => {
     const set = new Set();
-    recipes.forEach(r => r.difficulty?.forEach(t => set.add(t)));
+    tabPool.forEach(r => r.difficulty?.forEach(t => set.add(t)));
     return Array.from(set).sort();
-  }, [recipes]);
+  }, [tabPool]);
 
   const allDurations = useMemo(() => {
     const set = new Set();
-    recipes.forEach(r => r.duration?.forEach(t => set.add(t)));
+    tabPool.forEach(r => r.duration?.forEach(t => set.add(t)));
     return Array.from(set).sort();
-  }, [recipes]);
+  }, [tabPool]);
 
   const filtered = useMemo(() => {
-    return recipes.filter(r => {
+    return tabPool.filter(r => {
       if (activeCategory && !r.tags?.includes(activeCategory)) return false;
       if (activeDifficulty && !r.difficulty?.includes(activeDifficulty)) return false;
       if (activeDuration && !r.duration?.includes(activeDuration)) return false;
       return true;
     });
-  }, [recipes, activeCategory, activeDifficulty, activeDuration]);
+  }, [tabPool, activeCategory, activeDifficulty, activeDuration]);
 
   const hasFilters = allCategories.length > 0 || allDifficulties.length > 0 || allDurations.length > 0;
 
@@ -62,8 +84,27 @@ export default function RecipeBook({ recipes }) {
     setActive(prev => (prev === value ? null : value));
   }
 
+  function selectTab(tab) {
+    setActiveTab(tab);
+    setActiveCategory(null);
+    setActiveDifficulty(null);
+    setActiveDuration(null);
+  }
+
   return (
     <div className="recipe-book">
+      <div className="recipe-tabs">
+        {TAB_NAMES.map(tab => (
+          <button
+            key={tab}
+            className={`tab-btn${activeTab === tab ? ' active' : ''}`}
+            onClick={() => selectTab(tab)}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+
       {hasFilters && (
         <div className="recipe-filters">
           <FilterRow
@@ -120,6 +161,44 @@ export default function RecipeBook({ recipes }) {
       )}
 
       <style>{`
+        .recipe-tabs {
+          display: flex;
+          gap: 1rem;
+          margin-bottom: 1.75rem;
+        }
+
+        .tab-btn {
+          font-family: inherit;
+          font-size: 1.05rem;
+          font-weight: 500;
+          padding: 0.7rem 2rem;
+          border: 1px solid var(--color-text, #1a1a1a);
+          background: transparent;
+          color: var(--color-text, #1a1a1a);
+          letter-spacing: 0.01em;
+          cursor: pointer;
+          transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+        }
+
+        .tab-btn:hover {
+          background: var(--color-border, #e0e0e0);
+        }
+
+        .tab-btn.active {
+          background: var(--color-text, #1a1a1a);
+          border-color: var(--color-text, #1a1a1a);
+          color: var(--color-bg, #fff);
+        }
+
+        @media (max-width: 480px) {
+          .tab-btn {
+            flex: 1;
+            padding: 0.7rem 1rem;
+            font-size: 0.95rem;
+            text-align: center;
+          }
+        }
+
         .recipe-filters {
           display: flex;
           flex-direction: column;
