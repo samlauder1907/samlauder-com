@@ -26,6 +26,7 @@ https://github.com/samlauder1907/samlauder-com (branch: main)
 
 ## Blockers / notes
 - None outstanding for the build itself
+- Recipe images: covers are downloaded locally by `fetch-recipes.mjs` into `public/images/recipes/<slug>/`. 16 of 43 recipes have no cover set in Notion (rendered as a grey placeholder, by design). One recipe ("Caramel Oat Cookies") had its cover downloaded as HEIC (an iPhone photo format most browsers can't render) — fixed by converting to JPEG with `sips` and updating `fetch-recipes.mjs` to auto-convert HEIC/HEIF downloads to JPEG going forward
 
 ## Phases
 - [x] Phase 0 — Pre-requisites
