@@ -1,66 +1,72 @@
 /**
  * Post-processes the astro build output for Cloudflare Pages compatibility.
  *
- * @astrojs/cloudflare v13 targets the "Workers with static assets" deployment
- * model (deployed via `wrangler deploy`), not Cloudflare Pages CI. It outputs:
+ * @astrojs/cloudflare v13 generates output for the "Workers with static assets"
+ * deployment model (wrangler deploy), not Cloudflare Pages CI. It produces:
  *   dist/client/   — prerendered HTML + static assets
  *   dist/server/   — Worker entry (entry.mjs) + wrangler.json
  *
- * Pages CI looks for a Worker at dist/_worker.js (Pages advanced mode).
- * It does not find Workers in dist/server/, so it falls back to pure static
- * serving — which means SSR routes all 404.
+ * The generated dist/server/wrangler.json is in a SUBDIRECTORY of the output.
+ * Pages CI looks for wrangler.json at the ROOT of the output directory (dist/).
+ * It ignores wrangler.json files in subdirectories, so the deployment ends up
+ * as a static-only site with no Worker — all SSR routes return 404.
  *
- * This script produces a Pages-compatible build:
- *   1. Copies dist/client/* to dist/ so static HTML is at the output root.
- *   2. Creates dist/_worker.js, the Worker entry point Pages looks for.
- *   3. Creates dist/_routes.json, restricting the Worker to /artchel/* only.
- *      Without this, Pages sends ALL requests through the Worker — including
- *      prerendered pages — which fails inconsistently. With _routes.json,
- *      prerendered pages are served by Pages directly from static files, and
- *      the Worker only handles the Art Log SSR routes it actually needs to.
- *   4. Removes dist/server/wrangler.json so Pages doesn't validate its
- *      Workers-only keys (main, rules, assets) against Pages config rules.
+ * This script:
+ *   1. Creates dist/wrangler.json at the output root — a valid Workers config
+ *      with the correct relative paths to entry.mjs and the client assets.
+ *      Crucially, it omits pages_build_output_dir so Pages validates it as a
+ *      Workers config (not a Pages config), which allows main/rules/assets.
+ *   2. Removes dist/server/wrangler.json to prevent Pages from finding and
+ *      trying to validate it alongside the new root-level config.
+ *
+ * With this in place, Pages CI reads dist/wrangler.json, deploys the Worker
+ * from dist/server/entry.mjs, and serves static assets from dist/client/.
+ * The Worker's env.ASSETS binding is configured to point to dist/client/,
+ * so prerendered pages are served via env.ASSETS.fetch() and SSR routes are
+ * rendered dynamically.
  */
 
-import { cpSync, writeFileSync, rmSync } from 'fs';
+import { writeFileSync, rmSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
-// 1. Promote static files from dist/client/ to dist/ root.
-cpSync(resolve(root, 'dist/client'), resolve(root, 'dist'), { recursive: true });
-console.log('fix-worker-config: copied dist/client/* → dist/');
-
-// 2. Create dist/_worker.js — Pages advanced mode Worker entry point.
-writeFileSync(
-  resolve(root, 'dist/_worker.js'),
-  `export { default } from './server/entry.mjs';\n`
-);
-console.log('fix-worker-config: created dist/_worker.js');
-
-// 3. Create dist/_routes.json — restrict Worker to Art Log routes only.
-//
-//    In _worker.js mode, Pages sends ALL requests through the Worker by default.
-//    _routes.json lets us limit the Worker to /artchel/* (the SSR routes).
-//    Everything else (prerendered HTML, static assets) is served by Pages CDN
-//    directly from the static files promoted in step 1 — no Worker involved.
-writeFileSync(
-  resolve(root, 'dist/_routes.json'),
-  JSON.stringify(
+// 1. Create dist/wrangler.json at the output directory root.
+//    Pages CI looks here (not in subdirectories) for the Worker config.
+//    No pages_build_output_dir → validated as Workers config → main/rules/assets accepted.
+const workerConfig = {
+  name: 'samlauder-com',
+  compatibility_date: '2024-09-23',
+  // Worker entry — relative to dist/ (the output root)
+  main: './server/entry.mjs',
+  // Static assets binding — serves dist/client/ via env.ASSETS in the Worker
+  assets: {
+    binding: 'ASSETS',
+    directory: './client',
+  },
+  // Required so Pages treats .mjs files as ES modules
+  rules: [{ type: 'ESModule', globs: ['**/*.js', '**/*.mjs'] }],
+  d1_databases: [
     {
-      version: 1,
-      include: ['/artchel', '/artchel/*'],
-      exclude: [],
+      binding: 'DB',
+      database_name: 'samlauder-art-log',
+      database_id: '87453463-b938-4fda-a258-3cfeb21c3313',
     },
-    null,
-    2
-  )
-);
-console.log('fix-worker-config: created dist/_routes.json (Worker handles /artchel/* only)');
+  ],
+  r2_buckets: [
+    {
+      binding: 'ART_IMAGES',
+      bucket_name: 'samlauder-art-log',
+    },
+  ],
+};
 
-// 4. Remove dist/server/wrangler.json so Pages doesn't validate it.
-//    It inherits pages_build_output_dir + Workers-only keys that Pages rejects.
+writeFileSync(resolve(root, 'dist/wrangler.json'), JSON.stringify(workerConfig, null, 2));
+console.log('fix-worker-config: created dist/wrangler.json (output root Worker config)');
+
+// 2. Remove dist/server/wrangler.json to avoid Pages CI finding a second
+//    wrangler.json in a subdirectory and getting confused.
 try {
   rmSync(resolve(root, 'dist/server/wrangler.json'));
   console.log('fix-worker-config: removed dist/server/wrangler.json');
