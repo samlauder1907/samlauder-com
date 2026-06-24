@@ -2,6 +2,13 @@ name = "samlauder-com"
 pages_build_output_dir = "dist"
 compatibility_date = "2024-09-23"
 
+# Prevents @astrojs/cloudflare from injecting the reserved "ASSETS" binding.
+# The adapter only adds assets.binding = "ASSETS" when config.assets.binding is
+# undefined; defining any binding here satisfies that check. The binding itself
+# is unused — Pages serves static files via pages_build_output_dir directly.
+[assets]
+binding = "STATIC"
+
 [[d1_databases]]
 binding = "DB"
 database_name = "samlauder-art-log"
