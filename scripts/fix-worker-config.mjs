@@ -2,71 +2,57 @@
  * Post-processes the astro build output for Cloudflare Pages compatibility.
  *
  * @astrojs/cloudflare v13 generates output for the "Workers with static assets"
- * deployment model (wrangler deploy), not Cloudflare Pages CI. It produces:
+ * model (wrangler deploy), not Cloudflare Pages CI. The output structure is:
  *   dist/client/   — prerendered HTML + static assets
  *   dist/server/   — Worker entry (entry.mjs) + wrangler.json
  *
- * The generated dist/server/wrangler.json is in a SUBDIRECTORY of the output.
- * Pages CI looks for wrangler.json at the ROOT of the output directory (dist/).
- * It ignores wrangler.json files in subdirectories, so the deployment ends up
- * as a static-only site with no Worker — all SSR routes return 404.
+ * Pages CI behaviour summary (discovered through trial):
+ *  - wrangler.json in a subdirectory (dist/server/) → ignored entirely
+ *  - wrangler.json at output root (dist/) WITHOUT pages_build_output_dir
+ *    → "not a valid Pages config, skipping" → treated as static-only
+ *  - wrangler.json at output root (dist/) WITH pages_build_output_dir
+ *    → validated as Pages config → rejects Workers-only keys (main, rules, assets)
+ *  - _worker.js at output root → accepted as the Worker entry point ✓
  *
- * This script:
- *   1. Creates dist/wrangler.json at the output root — a valid Workers config
- *      with the correct relative paths to entry.mjs and the client assets.
- *      Crucially, it omits pages_build_output_dir so Pages validates it as a
- *      Workers config (not a Pages config), which allows main/rules/assets.
- *   2. Removes dist/server/wrangler.json to prevent Pages from finding and
- *      trying to validate it alongside the new root-level config.
+ * This script produces a _worker.js-based deployment:
+ *   1. Copies dist/client/* to dist/ so prerendered HTML is at the output root.
+ *      env.ASSETS (auto-provided in _worker.js mode) can then serve them by URL.
+ *   2. Creates dist/_worker.js re-exporting the adapter's server entry.
+ *   3. Removes dist/server/wrangler.json — this file is no longer needed and
+ *      would create a dangling pointer in .wrangler/deploy/config.json.
+ *   4. Deletes .wrangler/deploy/config.json. astro build auto-generates this
+ *      pointing to dist/server/wrangler.json. After step 3 deletes that target,
+ *      Pages CI would fail trying to follow the dangling pointer. Removing the
+ *      deploy config entirely lets Pages CI find _worker.js through normal lookup.
  *
- * With this in place, Pages CI reads dist/wrangler.json, deploys the Worker
- * from dist/server/entry.mjs, and serves static assets from dist/client/.
- * The Worker's env.ASSETS binding is configured to point to dist/client/,
- * so prerendered pages are served via env.ASSETS.fetch() and SSR routes are
- * rendered dynamically.
+ * In _worker.js mode, Pages automatically provides:
+ *   - env.ASSETS: static files in the output directory (used by the Worker to
+ *     serve prerendered pages via app.render() → env.ASSETS.fetch())
+ *   - env.DB, env.ART_IMAGES, ART_LOG_PASSWORD: from Pages project settings
  */
 
-import { writeFileSync, rmSync, mkdirSync } from 'fs';
+import { cpSync, writeFileSync, rmSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
-// 1. Create dist/wrangler.json at the output directory root.
-//    Pages CI looks here (not in subdirectories) for the Worker config.
-//    No pages_build_output_dir → validated as Workers config → main/rules/assets accepted.
-const workerConfig = {
-  name: 'samlauder-com',
-  compatibility_date: '2024-09-23',
-  // Worker entry — relative to dist/ (the output root)
-  main: './server/entry.mjs',
-  // Static assets binding — serves dist/client/ via env.ASSETS in the Worker
-  assets: {
-    binding: 'ASSETS',
-    directory: './client',
-  },
-  // Required so Pages treats .mjs files as ES modules
-  rules: [{ type: 'ESModule', globs: ['**/*.js', '**/*.mjs'] }],
-  d1_databases: [
-    {
-      binding: 'DB',
-      database_name: 'samlauder-art-log',
-      database_id: '87453463-b938-4fda-a258-3cfeb21c3313',
-    },
-  ],
-  r2_buckets: [
-    {
-      binding: 'ART_IMAGES',
-      bucket_name: 'samlauder-art-log',
-    },
-  ],
-};
+// 1. Promote static files from dist/client/ to dist/ root.
+//    In _worker.js mode, env.ASSETS serves all files in the output directory.
+//    Prerendered HTML must be at the output root for URL paths to resolve.
+cpSync(resolve(root, 'dist/client'), resolve(root, 'dist'), { recursive: true });
+console.log('fix-worker-config: copied dist/client/* → dist/');
 
-writeFileSync(resolve(root, 'dist/wrangler.json'), JSON.stringify(workerConfig, null, 2));
-console.log('fix-worker-config: created dist/wrangler.json (output root Worker config)');
+// 2. Create dist/_worker.js — the entry point Pages CI recognises for Workers.
+writeFileSync(
+  resolve(root, 'dist/_worker.js'),
+  `export { default } from './server/entry.mjs';\n`
+);
+console.log('fix-worker-config: created dist/_worker.js');
 
-// 2. Remove dist/server/wrangler.json to avoid Pages CI finding a second
-//    wrangler.json in a subdirectory and getting confused.
+// 3. Remove dist/server/wrangler.json.
+//    This file inherited pages_build_output_dir + Workers-only keys, causing Pages
+//    CI to either reject it or create a dangling pointer. Not needed for _worker.js.
 try {
   rmSync(resolve(root, 'dist/server/wrangler.json'));
   console.log('fix-worker-config: removed dist/server/wrangler.json');
@@ -74,18 +60,14 @@ try {
   console.log('fix-worker-config: dist/server/wrangler.json already absent');
 }
 
-// 3. Update .wrangler/deploy/config.json to point to dist/wrangler.json.
-//
-//    During astro build, the adapter generates .wrangler/deploy/config.json with
-//    configPath pointing to dist/server/wrangler.json. After we delete that file
-//    in step 2, Pages CI reads the deploy config, follows the dangling pointer,
-//    and fails with "redirected configuration path does not exist."
-//
-//    Updating the configPath to dist/wrangler.json (our new root-level config)
-//    redirects Pages CI to the correct file instead.
-mkdirSync(resolve(root, '.wrangler/deploy'), { recursive: true });
-writeFileSync(
-  resolve(root, '.wrangler/deploy/config.json'),
-  JSON.stringify({ configPath: '../../dist/wrangler.json', auxiliaryWorkers: [] })
-);
-console.log('fix-worker-config: updated .wrangler/deploy/config.json → dist/wrangler.json');
+// 4. Delete .wrangler/deploy/config.json.
+//    astro build generates this file pointing to dist/server/wrangler.json.
+//    After step 3 removes that file, Pages CI would follow the dangling pointer
+//    and fail. Deleting the deploy config lets Pages CI use normal lookup instead,
+//    finding dist/_worker.js as the Worker entry point.
+try {
+  rmSync(resolve(root, '.wrangler/deploy/config.json'));
+  console.log('fix-worker-config: deleted .wrangler/deploy/config.json');
+} catch {
+  console.log('fix-worker-config: .wrangler/deploy/config.json already absent');
+}
