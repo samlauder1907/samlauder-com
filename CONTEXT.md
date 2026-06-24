@@ -6,9 +6,12 @@ Phases 0–7 complete. Site is live on Cloudflare Pages at samlauder-com.pages.d
 ## Stack
 - Astro 6.4.4, static output (`output: 'static'`, @astrojs/cloudflare adapter with platformProxy)
   - Astro 6 removed `output: 'hybrid'` — `output: 'static'` now behaves the same way (default-prerender, opt-out per page)
-  - Adapter config: `imageService: 'passthrough'`, `prerenderEnvironment: 'node'` (required to avoid an ASSETS/SESSION binding conflict that breaks the build in the workerd prerender environment)
+  - Adapter config: `imageService: 'passthrough'`, `prerenderEnvironment: 'node'` (required to avoid ASSETS/SESSION binding conflicts in the workerd prerender environment)
+  - `session: { driver: sessionDrivers.null() }` in astro.config.mjs prevents the adapter from auto-injecting a SESSION KV namespace
   - All existing pages remain statically prerendered
   - Art Log routes use `export const prerender = false` for server-rendering via Cloudflare Workers
+  - **Deployment model:** @astrojs/cloudflare v13 targets "Workers with static assets" (not legacy Pages). Build produces dist/client/ (static assets) and dist/server/ (Worker + wrangler.json). The Worker serves ALL routes: prerendered pages via env.ASSETS.fetch() from dist/client/, SSR pages rendered dynamically.
+  - **Build command:** `astro build && node scripts/fix-worker-config.mjs` — the post-build script removes pages_build_output_dir from dist/server/wrangler.json so Pages CI validates it as a Workers config (not a Pages config). The source wrangler.toml keeps pages_build_output_dir so Pages CI knows where to find the dist/ output structure.
 - @astrojs/react for interactive islands (LightboxGallery, RecipeBook — both `client:load`)
 - Notion data pre-fetched at commit-time into `src/data/recipes.json` via `scripts/fetch-recipes.mjs` (re-run and commit whenever recipes change in Notion — Cloudflare Pages does not expose build-time secrets in its new UI, so the live API can't be called during the Cloudflare build)
 - Formspree for contact and grievance forms

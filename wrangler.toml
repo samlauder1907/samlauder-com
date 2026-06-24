@@ -1,10 +1,13 @@
 name = "samlauder-com"
+pages_build_output_dir = "dist"
 compatibility_date = "2024-09-23"
-# pages_build_output_dir is intentionally absent. @astrojs/cloudflare v13 copies
-# this field into dist/server/wrangler.json, causing Pages CI to validate that file
-# as a Pages config and reject Workers-only keys (main, rules, assets). Omitting it
-# here makes the generated config a valid Workers config. The output directory (dist)
-# remains configured via the Pages project settings in the Cloudflare dashboard.
+# NOTE: pages_build_output_dir is present so Pages CI knows to look inside dist/ for
+# the full output structure (dist/client/ for static assets, dist/server/wrangler.json
+# for the Worker). However, @astrojs/cloudflare v13 copies this field into the
+# generated dist/server/wrangler.json, which causes Pages to validate that file as a
+# Pages config and reject Workers-only keys (main, rules, assets). The post-build
+# script in scripts/fix-worker-config.mjs removes pages_build_output_dir from the
+# generated file so Pages validates it as a Workers config instead.
 
 [[d1_databases]]
 binding = "DB"
