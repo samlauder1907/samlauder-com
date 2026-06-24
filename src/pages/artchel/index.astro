@@ -11,11 +11,29 @@ type Piece = {
   cover_image_key: string | null;
 };
 
-const pieces = (
-  await env.DB.prepare(
-    'SELECT title, slug, status, cover_image_key FROM pieces ORDER BY created_at DESC'
-  ).all()
-).results as Piece[];
+let pieces: Piece[] = [];
+try {
+  pieces = (
+    await env.DB.prepare(
+      'SELECT title, slug, status, cover_image_key FROM pieces ORDER BY created_at DESC'
+    ).all()
+  ).results as Piece[];
+} catch (e: unknown) {
+  const err = e instanceof Error ? e : new Error(String(e));
+  // Temporary diagnostic: return actual error so we can see what's failing in production.
+  // Remove after diagnosing. See CONTEXT.md → DEPLOYMENT BLOCKER.
+  const envDump = (() => {
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const e2 = env as any;
+      return `env null: ${env == null}, env.DB type: ${typeof e2?.DB}, env.DB null: ${e2?.DB == null}, env keys: [${Object.keys(e2 ?? {}).join(', ')}]`;
+    } catch { return 'could not inspect env'; }
+  })();
+  return new Response(
+    `[artchel/index] D1 error\n${envDump}\nMessage: ${err.message}\nStack:\n${err.stack ?? ''}`,
+    { status: 500, headers: { 'Content-Type': 'text/plain' } },
+  );
+}
 
 function statusLabel(status: string) {
   if (status === 'in_progress') return 'In Progress';
