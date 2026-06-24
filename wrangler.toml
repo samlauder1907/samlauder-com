@@ -1,13 +1,11 @@
 name = "samlauder-com"
-pages_build_output_dir = "dist"
 compatibility_date = "2024-09-23"
-# NOTE: pages_build_output_dir is present so Pages CI knows to look inside dist/ for
-# the full output structure (dist/client/ for static assets, dist/server/wrangler.json
-# for the Worker). However, @astrojs/cloudflare v13 copies this field into the
-# generated dist/server/wrangler.json, which causes Pages to validate that file as a
-# Pages config and reject Workers-only keys (main, rules, assets). The post-build
-# script in scripts/fix-worker-config.mjs removes pages_build_output_dir from the
-# generated file so Pages validates it as a Workers config instead.
+# pages_build_output_dir is intentionally absent from this file.
+# When present, it triggers Cloudflare Pages CI "v2 root directory strategy" which
+# skips the build command and tries to serve directly from the repo — but dist/ is
+# gitignored, so the deployment ends up empty. Pages CI uses the build command and
+# output directory from the project settings instead (build: npm run build, output: dist).
+# For local dev, platformProxy reads D1/R2 bindings below — no pages_build_output_dir needed.
 
 [[d1_databases]]
 binding = "DB"
