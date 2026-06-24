@@ -26,7 +26,7 @@
  * rendered dynamically.
  */
 
-import { writeFileSync, rmSync } from 'fs';
+import { writeFileSync, rmSync, mkdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -73,3 +73,19 @@ try {
 } catch {
   console.log('fix-worker-config: dist/server/wrangler.json already absent');
 }
+
+// 3. Update .wrangler/deploy/config.json to point to dist/wrangler.json.
+//
+//    During astro build, the adapter generates .wrangler/deploy/config.json with
+//    configPath pointing to dist/server/wrangler.json. After we delete that file
+//    in step 2, Pages CI reads the deploy config, follows the dangling pointer,
+//    and fails with "redirected configuration path does not exist."
+//
+//    Updating the configPath to dist/wrangler.json (our new root-level config)
+//    redirects Pages CI to the correct file instead.
+mkdirSync(resolve(root, '.wrangler/deploy'), { recursive: true });
+writeFileSync(
+  resolve(root, '.wrangler/deploy/config.json'),
+  JSON.stringify({ configPath: '../../dist/wrangler.json', auxiliaryWorkers: [] })
+);
+console.log('fix-worker-config: updated .wrangler/deploy/config.json → dist/wrangler.json');
