@@ -1,0 +1,164 @@
+---
+export const prerender = false;
+
+import Layout from '../../layouts/Layout.astro';
+import { env } from 'cloudflare:workers';
+
+type Piece = {
+  title: string;
+  slug: string;
+  status: string;
+  cover_image_key: string | null;
+};
+
+const pieces = (
+  await env.DB.prepare(
+    'SELECT title, slug, status, cover_image_key FROM pieces ORDER BY created_at DESC'
+  ).all()
+).results as Piece[];
+
+function statusLabel(status: string) {
+  if (status === 'in_progress') return 'In Progress';
+  if (status === 'finished') return 'Finished';
+  if (status === 'given_away') return 'Given Away';
+  return status;
+}
+---
+
+<Layout
+  title="Art Log"
+  description="Paintings and works in progress by Sam Lauder."
+>
+  <div class="container">
+    <header class="page-header">
+      <h1>Art Log</h1>
+      <p>Paintings, works in progress, and finished pieces.</p>
+    </header>
+
+    {pieces.length === 0 ? (
+      <p class="empty-state">No pieces yet.</p>
+    ) : (
+      <div class="gallery-grid">
+        {pieces.map(piece => (
+          <a href={`/artchel/${piece.slug}`} class="piece-card">
+            <div class="piece-card-image">
+              {piece.cover_image_key ? (
+                <img
+                  src={`/artchel/images/${piece.cover_image_key}`}
+                  alt={piece.title}
+                  loading="lazy"
+                />
+              ) : (
+                <div class="piece-card-placeholder" />
+              )}
+            </div>
+            <div class="piece-card-info">
+              <h2>{piece.title}</h2>
+              <span class:list={['status-badge', `status-badge--${piece.status}`]}>
+                {statusLabel(piece.status)}
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</Layout>
+
+<style>
+  .page-header {
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 2.5rem;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header p {
+    color: var(--color-text-muted);
+  }
+
+  .empty-state {
+    color: var(--color-text-muted);
+    padding: 2rem 0;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .piece-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .piece-card-image {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #f0f0f0;
+    margin-bottom: 0.75rem;
+  }
+
+  .piece-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+  }
+
+  .piece-card:hover .piece-card-image img {
+    transform: scale(1.03);
+  }
+
+  .piece-card-placeholder {
+    width: 100%;
+    height: 100%;
+  }
+
+  .piece-card-info {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .piece-card-info h2 {
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .status-badge {
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  .status-badge--given_away {
+    border-style: dashed;
+  }
+
+  @media (max-width: 900px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

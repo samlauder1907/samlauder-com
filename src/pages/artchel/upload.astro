@@ -1,0 +1,319 @@
+---
+export const prerender = false;
+
+import Layout from '../../layouts/Layout.astro';
+import { isAuthenticated } from '../../lib/auth.js';
+import {
+  validateImageFile,
+  toSlug,
+  uniqueSlug,
+  generateImageKey,
+  uploadToR2,
+} from '../../lib/upload.js';
+import { env } from 'cloudflare:workers';
+
+if (!await isAuthenticated(Astro.cookies, env)) {
+  return Astro.redirect('/artchel/login');
+}
+
+const VALID_STATUSES = ['in_progress', 'finished', 'given_away'];
+
+let error: string | null = null;
+const success = Astro.url.searchParams.get('success');
+
+// Always fetch pieces — needed for the progress photo dropdown and re-renders.
+const pieces = (
+  await env.DB.prepare('SELECT id, title, slug FROM pieces ORDER BY created_at DESC').all()
+).results as { id: number; title: string; slug: string }[];
+
+const preselectedPieceId = Astro.url.searchParams.get('piece');
+
+if (Astro.request.method === 'POST') {
+  const formData = await Astro.request.formData();
+  const mode = formData.get('mode')?.toString();
+
+  if (mode === 'piece') {
+    const title = formData.get('title')?.toString().trim() ?? '';
+    const medium = formData.get('medium')?.toString().trim() ?? '';
+    const status = formData.get('status')?.toString() ?? 'in_progress';
+    const notes = formData.get('notes')?.toString().trim() ?? '';
+    const coverFile = formData.get('cover_image') as File | null;
+
+    if (!title) {
+      error = 'Title is required.';
+    } else {
+      const fileError = validateImageFile(coverFile);
+      if (fileError) {
+        error = fileError;
+      } else {
+        let coverKey: string | null = null;
+        if (coverFile && coverFile.size > 0) {
+          coverKey = generateImageKey('cover', coverFile.name);
+          await uploadToR2(env.ART_IMAGES, coverKey, coverFile);
+        }
+
+        const slug = await uniqueSlug(env.DB, toSlug(title));
+        const safeStatus = VALID_STATUSES.includes(status) ? status : 'in_progress';
+
+        await env.DB.prepare(
+          `INSERT INTO pieces (title, slug, medium, status, notes, cover_image_key)
+           VALUES (?, ?, ?, ?, ?, ?)`
+        )
+          .bind(title, slug, medium || null, safeStatus, notes || null, coverKey)
+          .run();
+
+        return Astro.redirect('/artchel/upload?success=piece');
+      }
+    }
+  } else if (mode === 'photo') {
+    const pieceId = parseInt(formData.get('piece_id')?.toString() ?? '', 10);
+    const caption = formData.get('caption')?.toString().trim() ?? '';
+    const photoFile = formData.get('photo') as File | null;
+
+    if (!pieceId || isNaN(pieceId)) {
+      error = 'Please select a piece.';
+    } else if (!photoFile || photoFile.size === 0) {
+      error = 'Please choose a photo to upload.';
+    } else {
+      const fileError = validateImageFile(photoFile);
+      if (fileError) {
+        error = fileError;
+      } else {
+        const photoKey = generateImageKey('photo', photoFile.name);
+        await uploadToR2(env.ART_IMAGES, photoKey, photoFile);
+
+        await env.DB.prepare(
+          `INSERT INTO progress_photos (piece_id, image_key, caption) VALUES (?, ?, ?)`
+        )
+          .bind(pieceId, photoKey, caption || null)
+          .run();
+
+        return Astro.redirect('/artchel/upload?success=photo');
+      }
+    }
+  }
+}
+---
+
+<Layout title="Art Log — Upload" noindex={true}>
+  <div class="container">
+    <header class="page-header">
+      <h1>Art Log</h1>
+      <p><a href="/artchel">← Gallery</a></p>
+    </header>
+
+    {error && <p class="notice notice--error">{error}</p>}
+    {success === 'piece' && <p class="notice notice--success">Piece created.</p>}
+    {success === 'photo' && <p class="notice notice--success">Progress photo added.</p>}
+
+    <section class="upload-section">
+      <h2>New piece</h2>
+      <form method="POST" enctype="multipart/form-data" class="upload-form">
+        <input type="hidden" name="mode" value="piece" />
+
+        <div class="field">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" required autocomplete="off" />
+        </div>
+
+        <div class="field">
+          <label for="medium">Medium <span class="optional">(private)</span></label>
+          <input type="text" id="medium" name="medium" placeholder="e.g. Acrylic on canvas" autocomplete="off" />
+        </div>
+
+        <div class="field">
+          <label for="status">Status</label>
+          <select id="status" name="status">
+            <option value="in_progress">In Progress</option>
+            <option value="finished">Finished</option>
+            <option value="given_away">Given Away</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="notes">Notes <span class="optional">(private)</span></label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Critique, learnings, observations…"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="cover_image">Cover image <span class="optional">(optional — JPEG, PNG, or WebP)</span></label>
+          <input type="file" id="cover_image" name="cover_image" accept="image/jpeg,image/png,image/webp" />
+        </div>
+
+        <button type="submit">Create piece</button>
+      </form>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="upload-section">
+      <h2>Add progress photo</h2>
+
+      {pieces.length === 0 ? (
+        <p class="empty-state">No pieces yet — create one above first.</p>
+      ) : (
+        <form method="POST" enctype="multipart/form-data" class="upload-form">
+          <input type="hidden" name="mode" value="photo" />
+
+          <div class="field">
+            <label for="piece_id">Piece</label>
+            <select id="piece_id" name="piece_id">
+              {pieces.map(p => (
+                <option value={p.id} selected={String(p.id) === preselectedPieceId}>{p.title}</option>
+              ))}
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="photo">Photo <span class="optional">(JPEG, PNG, or WebP)</span></label>
+            <input type="file" id="photo" name="photo" accept="image/jpeg,image/png,image/webp" required />
+          </div>
+
+          <div class="field">
+            <label for="caption">Caption <span class="optional">(optional — public)</span></label>
+            <input type="text" id="caption" name="caption" autocomplete="off" />
+          </div>
+
+          <button type="submit">Add photo</button>
+        </form>
+      )}
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .page-header {
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 2.5rem;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.4rem;
+  }
+
+  .page-header p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .notice {
+    padding: 0.75rem 1rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    border-left: 3px solid;
+  }
+
+  .notice--error {
+    border-color: #b00;
+    color: #b00;
+    background: #fff5f5;
+  }
+
+  .notice--success {
+    border-color: #2a7a2a;
+    color: #2a7a2a;
+    background: #f3faf3;
+  }
+
+  .upload-section {
+    max-width: 520px;
+    padding-bottom: 3rem;
+  }
+
+  .upload-section h2 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    margin-bottom: 1.5rem;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 0 0 3rem;
+    max-width: 520px;
+  }
+
+  .upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .field label {
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  .optional {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
+
+  .field input[type='text'],
+  .field input[type='file'],
+  .field select,
+  .field textarea {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--color-border);
+    font-size: 0.95rem;
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background: #fff;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    border-color: var(--color-text);
+  }
+
+  .field textarea {
+    resize: vertical;
+    line-height: 1.5;
+  }
+
+  .field input[type='file'] {
+    padding: 0.4rem 0.75rem;
+    cursor: pointer;
+  }
+
+  .upload-form button {
+    align-self: flex-start;
+    padding: 0.65rem 1.75rem;
+    background: var(--color-text);
+    color: #fff;
+    border: none;
+    font-size: 0.9rem;
+    font-family: var(--font-sans);
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+
+  .upload-form button:hover {
+    opacity: 0.8;
+  }
+
+  .empty-state {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+</style>

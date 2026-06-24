@@ -1,0 +1,12 @@
+name = "samlauder-com"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-09-23"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "samlauder-art-log"
+database_id = "87453463-b938-4fda-a258-3cfeb21c3313"
+
+[[r2_buckets]]
+binding = "ART_IMAGES"
+bucket_name = "samlauder-art-log"
