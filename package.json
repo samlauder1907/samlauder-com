@@ -4,11 +4,10 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/fix-worker-config.mjs",
+    "build": "astro build",
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^13.6.1",
     "@astrojs/react": "^5.0.7",
     "@notionhq/client": "^5.22.0",
     "astro": "^6.4.4",

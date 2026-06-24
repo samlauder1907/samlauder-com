@@ -1,16 +1,5 @@
 name = "samlauder-com"
 compatibility_date = "2024-09-23"
-# pages_build_output_dir is intentionally absent from this file.
-# When present, it triggers Cloudflare Pages CI "v2 root directory strategy" which
-# skips the build command and tries to serve directly from the repo — but dist/ is
-# gitignored, so the deployment ends up empty. Pages CI uses the build command and
-# output directory from the project settings instead (build: npm run build, output: dist).
-# For local dev, platformProxy reads D1/R2 bindings below — no pages_build_output_dir needed.
-
-[[d1_databases]]
-binding = "DB"
-database_name = "samlauder-art-log"
-database_id = "87453463-b938-4fda-a258-3cfeb21c3313"
 
 [[r2_buckets]]
 binding = "ART_IMAGES"
