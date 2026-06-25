@@ -54,9 +54,10 @@ export async function onRequestGet(context) {
         const coverFiles = page.properties['Cover Image']?.files ?? [];
         const coverFile = coverFiles[0];
         const cover = coverFile?.external?.url ?? coverFile?.file?.url ?? null;
+        const comments = richText(page.properties.Comments?.rich_text);
 
         // Medium and Notes are never accessed — privacy enforced here
-        pieces.push({ title, slug: toSlug(title), status, cover });
+        pieces.push({ id: page.id, title, slug: toSlug(title), status, cover, comments });
       }
 
       cursor = data.has_more ? data.next_cursor : undefined;
