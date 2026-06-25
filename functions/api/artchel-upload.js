@@ -29,9 +29,13 @@ export async function onRequestPost(context) {
     const ext = extFromFilename(coverFile.name);
     const key = `covers/${slug}-${Date.now()}.${ext}`;
 
-    await env.ART_IMAGES.put(key, await coverFile.arrayBuffer(), {
-      httpMetadata: { contentType: coverFile.type },
-    });
+    try {
+      await env.ART_IMAGES.put(key, await coverFile.arrayBuffer(), {
+        httpMetadata: { contentType: coverFile.type },
+      });
+    } catch (err) {
+      return errorResponse(`Image upload failed: ${err.message}`);
+    }
     coverUrl = `${R2_PUBLIC_BASE}/${key}`;
   }
 
@@ -41,7 +45,7 @@ export async function onRequestPost(context) {
       Name: { title: [{ text: { content: title } }] },
       Status: { select: { name: safeStatus } },
       ...(coverUrl
-        ? { 'Cover Image': { files: [{ name: 'cover', external: { url: coverUrl } }] } }
+        ? { 'Cover Image': { files: [{ type: 'external', name: 'cover', external: { url: coverUrl } }] } }
         : {}),
     },
   };
