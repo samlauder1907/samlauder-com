@@ -3,47 +3,75 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout
-  title="Art Log"
-  description="Paintings and works in progress by Sam Lauder."
+  title="Artchel"
+  description="Watercolours and gouache paintings by Sam Lauder."
+  standalone={true}
 >
-  <div class="container">
+  <link slot="head" rel="preconnect" href="https://fonts.googleapis.com" />
+  <link slot="head" rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link slot="head" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" />
+
+  <div class="page">
     <header class="page-header">
-      <h1>Art Log</h1>
-      <p>Paintings, works in progress, and finished pieces.</p>
+      <h1 class="page-title">Artchel</h1>
+      <p class="page-subtitle">watercolours &amp; works in progress</p>
     </header>
 
     <p id="gallery-status" class="empty-state">Loading...</p>
     <div id="gallery-grid" class="gallery-grid" hidden></div>
 
+    <!-- Add a new piece -->
     <details class="upload-toggle">
-      <summary>+ Add a piece</summary>
-      <form
-        class="upload-form"
-        method="POST"
-        action="/api/artchel-upload"
-        enctype="multipart/form-data"
-      >
-        <div class="field">
-          <label for="title">Title</label>
-          <input type="text" id="title" name="title" required autocomplete="off" />
-        </div>
+      <summary><span class="upload-tab">+ add a piece</span></summary>
+      <div class="upload-form-wrap">
+        <form
+          class="upload-form"
+          method="POST"
+          action="/api/artchel-upload"
+          enctype="multipart/form-data"
+        >
+          <div class="field">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" required autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="status">Status</label>
+            <select id="status" name="status">
+              <option value="In Progress">In Progress</option>
+              <option value="Finished">Finished</option>
+              <option value="Given Away">Given Away</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cover_image">Cover image <span class="optional">(JPEG, PNG, or WebP)</span></label>
+            <input type="file" id="cover_image" name="cover_image" accept="image/jpeg,image/png,image/webp" />
+          </div>
+          <button type="submit">Add piece</button>
+        </form>
+      </div>
+    </details>
 
-        <div class="field">
-          <label for="status">Status</label>
-          <select id="status" name="status">
-            <option value="In Progress">In Progress</option>
-            <option value="Finished">Finished</option>
-            <option value="Given Away">Given Away</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="cover_image">Cover image <span class="optional">(JPEG, PNG, or WebP)</span></label>
-          <input type="file" id="cover_image" name="cover_image" accept="image/jpeg,image/png,image/webp" />
-        </div>
-
-        <button type="submit">Add piece</button>
-      </form>
+    <!-- Add a progress photo to an existing piece -->
+    <details class="upload-toggle">
+      <summary><span class="upload-tab">+ add a progress photo</span></summary>
+      <div class="upload-form-wrap">
+        <form class="upload-form" id="progress-form">
+          <div class="field">
+            <label for="progress-piece">Piece</label>
+            <select id="progress-piece" name="piece_id" required>
+              <option value="">Loading…</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="progress-image">New photo <span class="optional">(JPEG, PNG, or WebP)</span></label>
+            <input type="file" id="progress-image" name="image" accept="image/jpeg,image/png,image/webp" required />
+          </div>
+          <div class="progress-form-footer">
+            <button type="submit" id="progress-submit">Add photo</button>
+            <span id="progress-feedback" class="progress-feedback" aria-live="polite"></span>
+          </div>
+        </form>
+      </div>
     </details>
   </div>
 
@@ -53,16 +81,29 @@ import Layout from '../../layouts/Layout.astro';
     <div class="lightbox-panel">
       <button class="lightbox-close" aria-label="Close">&times;</button>
       <div class="lightbox-image-wrap">
-        <img id="lightbox-img" src="" alt="" />
+        <button class="lb-photo-nav lb-photo-prev" id="lb-photo-prev" aria-label="Previous photo" hidden>&#8249;</button>
+        <span class="lb-photo-counter" id="lb-photo-counter" hidden></span>
+        <button class="lb-photo-nav lb-photo-next" id="lb-photo-next" aria-label="Next photo" hidden>&#8250;</button>
+        <!-- White frame wrapper — the polaroid effect in the lightbox -->
+        <div class="lb-img-frame" id="lb-img-frame">
+          <img id="lightbox-img" src="" alt="" />
+        </div>
         <div id="lightbox-no-image" class="lightbox-no-image" hidden></div>
       </div>
       <div class="lightbox-meta">
         <h2 id="lightbox-title"></h2>
-        <span id="lightbox-status" class="status-badge"></span>
+        <div class="lightbox-status-row">
+          <select id="lightbox-status-select" class="status-select" aria-label="Status">
+            <option value="In Progress">In Progress</option>
+            <option value="Finished">Finished</option>
+            <option value="Given Away">Given Away</option>
+          </select>
+          <span id="lightbox-status-feedback" class="status-feedback" aria-live="polite"></span>
+        </div>
         <div class="lightbox-comment-section">
-          <label for="lightbox-textarea">Comment</label>
-          <textarea id="lightbox-textarea" rows="4" placeholder="Add a comment…"></textarea>
-          <button id="lightbox-save">Save comment</button>
+          <label for="lightbox-textarea">Notes</label>
+          <textarea id="lightbox-textarea" rows="4" placeholder="Add a note…"></textarea>
+          <button id="lightbox-save">Save note</button>
         </div>
       </div>
     </div>
@@ -83,11 +124,12 @@ import Layout from '../../layouts/Layout.astro';
   }
 
   function renderCard(piece, idx) {
+    const rot = (Math.random() * 6 - 3).toFixed(2);
     const image = piece.cover
       ? `<img src="${esc(piece.cover)}" alt="${esc(piece.title)}" loading="lazy" />`
       : `<div class="piece-card-placeholder"></div>`;
     return `
-      <div class="piece-card" data-idx="${idx}" role="button" tabindex="0" aria-label="Open ${esc(piece.title)}">
+      <div class="piece-card" data-idx="${idx}" style="--rot:${rot}deg" role="button" tabindex="0" aria-label="Open ${esc(piece.title)}">
         <div class="piece-card-image">${image}</div>
         <div class="piece-card-info">
           <h2>${esc(piece.title)}</h2>
@@ -96,39 +138,77 @@ import Layout from '../../layouts/Layout.astro';
       </div>`;
   }
 
-  // --- Lightbox ---
+  // --- Lightbox state ---
   let pieces = [];
   let currentIdx = null;
+  let currentPhotoIdx = 0;
 
-  const lightbox   = document.getElementById('lightbox');
-  const backdrop   = lightbox.querySelector('.lightbox-backdrop');
-  const closeBtn   = lightbox.querySelector('.lightbox-close');
-  const lbImg      = document.getElementById('lightbox-img');
-  const lbNoImg    = document.getElementById('lightbox-no-image');
-  const lbTitle    = document.getElementById('lightbox-title');
-  const lbStatus   = document.getElementById('lightbox-status');
-  const lbTextarea = document.getElementById('lightbox-textarea');
-  const lbSave     = document.getElementById('lightbox-save');
+  const lightbox         = document.getElementById('lightbox');
+  const backdrop         = lightbox.querySelector('.lightbox-backdrop');
+  const closeBtn         = lightbox.querySelector('.lightbox-close');
+  const lbImgFrame       = document.getElementById('lb-img-frame');
+  const lbImg            = document.getElementById('lightbox-img');
+  const lbNoImg          = document.getElementById('lightbox-no-image');
+  const lbTitle          = document.getElementById('lightbox-title');
+  const lbStatusSelect   = document.getElementById('lightbox-status-select');
+  const lbStatusFeedback = document.getElementById('lightbox-status-feedback');
+  const lbTextarea       = document.getElementById('lightbox-textarea');
+  const lbSave           = document.getElementById('lightbox-save');
+  const lbPhotoPrev      = document.getElementById('lb-photo-prev');
+  const lbPhotoNext      = document.getElementById('lb-photo-next');
+  const lbPhotoCounter   = document.getElementById('lb-photo-counter');
+
+  function updateLightboxPhoto() {
+    if (currentIdx === null) return;
+    const piece = pieces[currentIdx];
+    const url = piece.photos?.[currentPhotoIdx]?.url ?? null;
+
+    if (url) {
+      lbImg.src = url;
+      lbImg.alt = piece.title;
+      lbImgFrame.hidden = false;
+      lbImg.hidden = false;
+      lbNoImg.hidden = true;
+    } else {
+      lbImgFrame.hidden = true;
+      lbImg.hidden = true;
+      lbNoImg.hidden = false;
+    }
+  }
+
+  function updatePhotoNav() {
+    if (currentIdx === null) return;
+    const count = pieces[currentIdx]?.photos?.length ?? 0;
+
+    if (count <= 1) {
+      lbPhotoPrev.hidden = true;
+      lbPhotoNext.hidden = true;
+      lbPhotoCounter.hidden = true;
+    } else {
+      lbPhotoPrev.hidden = false;
+      lbPhotoNext.hidden = false;
+      lbPhotoCounter.hidden = false;
+      lbPhotoPrev.disabled = currentPhotoIdx === 0;
+      lbPhotoNext.disabled = currentPhotoIdx === count - 1;
+      lbPhotoCounter.textContent = `${currentPhotoIdx + 1} / ${count}`;
+    }
+  }
 
   function openLightbox(idx) {
     currentIdx = idx;
     const piece = pieces[idx];
+    const photos = piece.photos ?? [];
 
-    if (piece.cover) {
-      lbImg.src = piece.cover;
-      lbImg.alt = piece.title;
-      lbImg.hidden = false;
-      lbNoImg.hidden = true;
-    } else {
-      lbImg.hidden = true;
-      lbNoImg.hidden = false;
-    }
+    currentPhotoIdx = photos.length > 0 ? photos.length - 1 : 0;
+    updateLightboxPhoto();
+    updatePhotoNav();
 
     lbTitle.textContent = piece.title;
-    lbStatus.textContent = piece.status;
-    lbStatus.className = `status-badge status-badge--${statusClass(piece.status)}`;
+    lbStatusSelect.value = piece.status;
+    lbStatusSelect.className = `status-select status-select--${statusClass(piece.status)}`;
+    lbStatusFeedback.textContent = '';
     lbTextarea.value = piece.comments ?? '';
-    lbSave.textContent = 'Save comment';
+    lbSave.textContent = 'Save note';
     lbSave.disabled = false;
 
     lightbox.hidden = false;
@@ -140,12 +220,78 @@ import Layout from '../../layouts/Layout.astro';
     lightbox.hidden = true;
     document.body.style.overflow = '';
     currentIdx = null;
+    currentPhotoIdx = 0;
   }
 
   backdrop.addEventListener('click', closeLightbox);
   closeBtn.addEventListener('click', closeLightbox);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
+  lbPhotoPrev.addEventListener('click', () => {
+    if (currentPhotoIdx > 0) {
+      currentPhotoIdx--;
+      updateLightboxPhoto();
+      updatePhotoNav();
+    }
+  });
+
+  lbPhotoNext.addEventListener('click', () => {
+    const count = pieces[currentIdx]?.photos?.length ?? 0;
+    if (currentPhotoIdx < count - 1) {
+      currentPhotoIdx++;
+      updateLightboxPhoto();
+      updatePhotoNav();
+    }
+  });
+
+  // --- Status change ---
+  lbStatusSelect.addEventListener('change', async () => {
+    if (currentIdx === null) return;
+    const piece = pieces[currentIdx];
+    const newStatus = lbStatusSelect.value;
+
+    lbStatusSelect.disabled = true;
+    lbStatusFeedback.textContent = 'Saving…';
+
+    try {
+      const res = await fetch('/api/artchel-status', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: piece.id, status: newStatus }),
+      });
+
+      if (!res.ok) {
+        lbStatusFeedback.textContent = 'Error';
+        lbStatusSelect.value = piece.status;
+        lbStatusSelect.className = `status-select status-select--${statusClass(piece.status)}`;
+        lbStatusSelect.disabled = false;
+        return;
+      }
+
+      pieces[currentIdx].status = newStatus;
+      lbStatusSelect.className = `status-select status-select--${statusClass(newStatus)}`;
+
+      const card = gridEl.querySelector(`[data-idx="${currentIdx}"]`);
+      if (card) {
+        const badge = card.querySelector('.status-badge');
+        if (badge) {
+          badge.textContent = newStatus;
+          badge.className = `status-badge status-badge--${statusClass(newStatus)}`;
+        }
+      }
+
+      lbStatusFeedback.textContent = 'Saved';
+      lbStatusSelect.disabled = false;
+      setTimeout(() => { lbStatusFeedback.textContent = ''; }, 1500);
+    } catch {
+      lbStatusFeedback.textContent = 'Error';
+      lbStatusSelect.value = piece.status;
+      lbStatusSelect.className = `status-select status-select--${statusClass(piece.status)}`;
+      lbStatusSelect.disabled = false;
+    }
+  });
+
+  // --- Note save ---
   lbSave.addEventListener('click', async () => {
     if (currentIdx === null) return;
     const piece = pieces[currentIdx];
@@ -170,7 +316,7 @@ import Layout from '../../layouts/Layout.astro';
       pieces[currentIdx].comments = comment;
       lbSave.textContent = 'Saved';
       setTimeout(() => {
-        lbSave.textContent = 'Save comment';
+        lbSave.textContent = 'Save note';
         lbSave.disabled = false;
       }, 1500);
     } catch {
@@ -180,8 +326,12 @@ import Layout from '../../layouts/Layout.astro';
   });
 
   // --- Gallery ---
-  const statusEl = document.getElementById('gallery-status');
-  const gridEl   = document.getElementById('gallery-grid');
+  const statusEl            = document.getElementById('gallery-status');
+  const gridEl              = document.getElementById('gallery-grid');
+  const progressPieceSelect = document.getElementById('progress-piece');
+  const progressForm        = document.getElementById('progress-form');
+  const progressSubmitBtn   = document.getElementById('progress-submit');
+  const progressFeedback    = document.getElementById('progress-feedback');
 
   gridEl.addEventListener('click', e => {
     const card = e.target.closest('[data-idx]');
@@ -204,143 +354,330 @@ import Layout from '../../layouts/Layout.astro';
       pieces = data;
       if (pieces.length === 0) {
         statusEl.textContent = 'No pieces yet.';
+        progressPieceSelect.innerHTML = '<option value="">No pieces yet</option>';
       } else {
         statusEl.hidden = true;
         gridEl.innerHTML = pieces.map(renderCard).join('');
         gridEl.hidden = false;
+        progressPieceSelect.innerHTML =
+          '<option value="">Select a piece…</option>' +
+          pieces.map(p => `<option value="${esc(p.id)}">${esc(p.title)}</option>`).join('');
       }
     })
     .catch(() => {
       statusEl.textContent = 'Could not load pieces.';
     });
+
+  // --- Progress photo upload ---
+  progressForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    const pieceId = progressPieceSelect.value;
+    if (!pieceId) return;
+    const imageInput = progressForm.querySelector('input[type="file"]');
+    const file = imageInput?.files?.[0];
+    if (!file) return;
+
+    progressSubmitBtn.disabled = true;
+    progressFeedback.textContent = 'Uploading…';
+
+    const fd = new FormData();
+    fd.append('piece_id', pieceId);
+    fd.append('image', file);
+
+    try {
+      const res = await fetch('/api/artchel-progress', { method: 'POST', body: fd });
+      const json = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        progressFeedback.textContent = json.error ?? 'Upload failed';
+        progressSubmitBtn.disabled = false;
+        return;
+      }
+
+      const idx = pieces.findIndex(p => p.id === pieceId);
+      if (idx !== -1) {
+        const newPhoto = { url: json.url, date: new Date().toISOString() };
+        pieces[idx].photos = [...(pieces[idx].photos ?? []), newPhoto];
+        pieces[idx].cover = json.url;
+
+        const card = gridEl.querySelector(`[data-idx="${idx}"]`);
+        if (card) {
+          const imgWrap = card.querySelector('.piece-card-image');
+          if (imgWrap) {
+            const existing = imgWrap.querySelector('img');
+            if (existing) {
+              existing.src = json.url;
+            } else {
+              imgWrap.innerHTML = `<img src="${esc(json.url)}" alt="${esc(pieces[idx].title)}" loading="lazy" />`;
+            }
+          }
+        }
+      }
+
+      progressFeedback.textContent = 'Added!';
+      progressForm.reset();
+      progressSubmitBtn.disabled = false;
+      setTimeout(() => { progressFeedback.textContent = ''; }, 2500);
+    } catch {
+      progressFeedback.textContent = 'Upload failed';
+      progressSubmitBtn.disabled = false;
+    }
+  });
 </script>
 
 <style>
+  /* ── Page background ─────────────────────────── */
+  :global(body) {
+    background-color: #ddd8ce;
+    background-image:
+      repeating-linear-gradient(
+        -45deg,
+        transparent 0,
+        transparent 3px,
+        rgba(0, 0, 0, 0.018) 3px,
+        rgba(0, 0, 0, 0.018) 4px
+      ),
+      repeating-linear-gradient(
+        45deg,
+        transparent 0,
+        transparent 3px,
+        rgba(0, 0, 0, 0.012) 3px,
+        rgba(0, 0, 0, 0.012) 4px
+      );
+  }
+
+  /* ── Page structure (static elements — scoped fine) ── */
+
+  .page {
+    padding: 3rem 2.5rem 5rem;
+    max-width: 1300px;
+    margin-inline: auto;
+  }
+
   .page-header {
-    padding: 3rem 0 2.5rem;
-    border-bottom: 1px solid var(--color-border);
-    margin-bottom: 2.5rem;
+    padding-top: 1.5rem;
+    margin-bottom: 3.5rem;
   }
 
-  .page-header h1 {
-    font-size: 2rem;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.5rem;
+  .page-title {
+    font-family: 'Marck Script', cursive;
+    font-size: clamp(3rem, 9vw, 6.5rem);
+    color: #2c2420;
+    letter-spacing: -0.01em;
+    transform: rotate(-2deg);
+    display: inline-block;
+    line-height: 1;
+    margin-bottom: 0.15rem;
   }
 
-  .page-header p {
-    color: var(--color-text-muted);
+  .page-subtitle {
+    font-family: 'Marck Script', cursive;
+    font-size: 1.25rem;
+    color: #7a6858;
+    letter-spacing: 0.04em;
+    margin-left: 0.5rem;
+    display: block;
   }
 
   .empty-state {
-    color: var(--color-text-muted);
+    font-family: 'Marck Script', cursive;
+    font-size: 1.2rem;
+    color: #7a6858;
     padding: 2rem 0;
   }
 
   .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-bottom: 4rem;
+    columns: 3 220px;
+    column-gap: 2.5rem;
+    margin-bottom: 3rem;
   }
 
-  .piece-card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
+  /* ── Piece cards — ALL :global() because renderCard() injects
+        these elements via innerHTML and they never receive
+        the Astro CID attribute ──────────────────────────── */
+
+  :global(.piece-card) {
+    break-inside: avoid;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 3rem;
+    position: relative;
+    transform: rotate(var(--rot, 0deg));
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
+    background: #fffef8;
+    padding: 0.65rem 0.65rem 0;
+    box-shadow:
+      2px 4px 18px rgba(40, 28, 16, 0.18),
+      0 1px 4px rgba(40, 28, 16, 0.1);
   }
 
-  .piece-card-image {
+  :global(.piece-card:hover) {
+    transform: rotate(0deg) scale(1.03);
+    box-shadow: 4px 10px 30px rgba(40, 28, 16, 0.24);
+    z-index: 10;
+  }
+
+  :global(.piece-card:focus-visible) {
+    outline: 2px solid #8b6f52;
+    outline-offset: 4px;
+  }
+
+  /* Tape strip — top, position varies by nth-child */
+  :global(.piece-card::before) {
+    content: '';
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-4deg);
+    width: 52px;
+    height: 20px;
+    background: rgba(218, 202, 152, 0.82);
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  :global(.piece-card:nth-child(3n)::before) {
+    left: 28%;
+    background: rgba(200, 218, 205, 0.82);
+    transform: translateX(-50%) rotate(3deg);
+  }
+
+  :global(.piece-card:nth-child(3n + 2)::before) {
+    left: 72%;
+    transform: translateX(-50%) rotate(-2deg);
+  }
+
+  /* Second tape strip — bottom corner, every other card */
+  :global(.piece-card:nth-child(even)::after) {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 18%;
+    width: 44px;
+    height: 18px;
+    background: rgba(196, 210, 222, 0.78);
+    transform: rotate(2.5deg);
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  /* White mat between card outer frame and image */
+  :global(.piece-card-image) {
+    width: 100%;
     aspect-ratio: 4 / 3;
     overflow: hidden;
-    background: #f0f0f0;
-    margin-bottom: 0.75rem;
-    transition: opacity 0.15s, transform 0.2s;
+    background: #fffef8;
+    padding: 6px;
   }
 
-  .piece-card:hover .piece-card-image {
-    opacity: 0.85;
-    transform: scale(1.02);
-  }
-
-  .piece-card-image img {
+  :global(.piece-card-image img) {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    display: block;
+    background: #ede8e0;
   }
 
-  .piece-card-placeholder {
+  :global(.piece-card-placeholder) {
     width: 100%;
     height: 100%;
+    background: #ede8e0;
   }
 
-  .piece-card-info {
-    display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
-    flex-wrap: wrap;
+  :global(.piece-card-info) {
+    padding: 0.7rem 0.5rem 1.4rem;
+    text-align: center;
   }
 
-  .piece-card-info h2 {
-    font-size: 0.95rem;
-    font-weight: 500;
+  :global(.piece-card-info h2) {
+    font-family: 'Marck Script', cursive;
+    font-size: 1.1rem;
+    color: #2c2420;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
   }
 
-  .status-badge {
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 0.2rem 0.5rem;
-    border: 1px solid var(--color-border);
-    color: var(--color-text-muted);
-    white-space: nowrap;
+  /* Status badges (washi tape) */
+  :global(.status-badge) {
+    display: inline-block;
+    font-family: 'Marck Script', cursive;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    padding: 0.05rem 0.65rem;
+    transform: rotate(-0.5deg);
   }
 
-  .status-badge--given_away {
-    border-style: dashed;
+  :global(.status-badge--in_progress) {
+    background: rgba(255, 218, 130, 0.85);
+    color: #5a3e00;
   }
 
-  @media (max-width: 900px) {
-    .gallery-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  :global(.status-badge--finished) {
+    background: rgba(152, 208, 174, 0.85);
+    color: #1a4530;
   }
 
-  @media (max-width: 480px) {
-    .gallery-grid {
-      grid-template-columns: 1fr;
-    }
+  :global(.status-badge--given_away) {
+    background: rgba(196, 178, 222, 0.85);
+    color: #3a2050;
   }
 
-  /* Upload form */
+  /* ── Upload toggles ───────────────────────────── */
 
   .upload-toggle {
-    margin-top: 4rem;
-    border-top: 1px solid var(--color-border);
-    padding-top: 2rem;
-    max-width: 520px;
+    margin-top: 2rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .upload-toggle:last-of-type {
+    padding-bottom: 4rem;
   }
 
   .upload-toggle > summary {
-    cursor: pointer;
-    font-size: 0.85rem;
-    letter-spacing: 0.04em;
-    color: var(--color-text-muted);
     list-style: none;
     user-select: none;
+    cursor: pointer;
+    display: inline-block;
   }
 
   .upload-toggle > summary::-webkit-details-marker {
     display: none;
   }
 
+  .upload-tab {
+    display: inline-block;
+    background: #f5e87a;
+    padding: 0.5rem 1.5rem 0.5rem 1rem;
+    font-family: 'Marck Script', cursive;
+    font-size: 1.2rem;
+    color: #3d2b1f;
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.16), inset 0 -3px 0 rgba(0, 0, 0, 0.06);
+    transform: rotate(-1.2deg);
+    transition: transform 0.15s;
+  }
+
+  .upload-toggle > summary:hover .upload-tab {
+    transform: rotate(0deg);
+  }
+
+  .upload-toggle[open] > summary .upload-tab {
+    transform: rotate(0deg);
+  }
+
+  .upload-form-wrap {
+    margin-top: 0.75rem;
+    max-width: 480px;
+  }
+
   .upload-form {
+    background: #faf8f4;
+    border: 1px solid #e0d8cc;
+    padding: 1.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    margin-top: 1.75rem;
   }
 
   .field {
@@ -350,36 +687,34 @@ import Layout from '../../layouts/Layout.astro';
   }
 
   .field label {
-    font-size: 0.82rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
+    font-family: 'Marck Script', cursive;
+    font-size: 1.05rem;
+    color: #7a6858;
   }
 
   .optional {
-    text-transform: none;
-    letter-spacing: 0;
-    font-size: 0.8rem;
-    opacity: 0.8;
+    font-size: 0.82rem;
+    color: #a09080;
+    font-family: var(--font-sans);
   }
 
   .field input[type='text'],
   .field input[type='file'],
   .field select {
     width: 100%;
-    padding: 0.6rem 0.75rem;
-    border: 1px solid var(--color-border);
+    padding: 0.55rem 0.75rem;
+    border: 1px solid #d8cfc4;
     font-size: 0.95rem;
     font-family: var(--font-sans);
-    color: var(--color-text);
-    background: #fff;
+    color: #2c2420;
+    background: #fffef8;
     outline: none;
     transition: border-color 0.15s;
   }
 
   .field input:focus,
   .field select:focus {
-    border-color: var(--color-text);
+    border-color: #8b6f52;
   }
 
   .field input[type='file'] {
@@ -387,24 +722,38 @@ import Layout from '../../layouts/Layout.astro';
     cursor: pointer;
   }
 
-  .upload-form button {
+  .upload-form button[type='submit'] {
     align-self: flex-start;
-    padding: 0.65rem 1.75rem;
-    background: var(--color-text);
-    color: #fff;
+    padding: 0.6rem 1.75rem;
+    background: #3d2b1f;
+    color: #faf8f4;
     border: none;
-    font-size: 0.9rem;
-    font-family: var(--font-sans);
-    letter-spacing: 0.03em;
+    font-family: 'Marck Script', cursive;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
     cursor: pointer;
     transition: opacity 0.15s;
   }
 
-  .upload-form button:hover {
-    opacity: 0.8;
+  .upload-form button[type='submit']:hover {
+    opacity: 0.82;
   }
 
-  /* Lightbox */
+  .progress-form-footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .progress-feedback {
+    font-family: 'Marck Script', cursive;
+    font-size: 1rem;
+    color: #7a6858;
+    font-style: italic;
+  }
+
+  /* ── Lightbox ─────────────────────────────────── */
 
   .lightbox {
     position: fixed;
@@ -423,12 +772,12 @@ import Layout from '../../layouts/Layout.astro';
   .lightbox-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(30, 20, 12, 0.78);
   }
 
   .lightbox-panel {
     position: relative;
-    background: #fff;
+    background: #fffef8;
     max-width: 1080px;
     width: 100%;
     max-height: calc(100vh - 3rem);
@@ -436,6 +785,7 @@ import Layout from '../../layouts/Layout.astro';
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto 1fr;
+    box-shadow: 0 24px 80px rgba(20, 12, 6, 0.45);
   }
 
   .lightbox-close {
@@ -447,52 +797,203 @@ import Layout from '../../layouts/Layout.astro';
     font-size: 1.4rem;
     line-height: 1;
     cursor: pointer;
-    color: var(--color-text-muted);
+    color: #7a6858;
     padding: 0.25rem 0.5rem;
-    z-index: 1;
+    z-index: 5;
+    font-family: var(--font-sans);
   }
 
   .lightbox-close:hover {
-    color: var(--color-text);
+    color: #2c2420;
   }
 
   .lightbox-image-wrap {
     grid-row: 1 / -1;
-    background: #f0f0f0;
-    min-height: 260px;
+    background: #ede8e0;
+    min-height: 280px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 2rem;
+    position: relative;
   }
 
-  .lightbox-image-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  /* Tape corner accents */
+  .lightbox-image-wrap::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    width: 38px;
+    height: 15px;
+    background: rgba(218, 202, 152, 0.85);
+    transform: rotate(-38deg);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .lightbox-image-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    width: 38px;
+    height: 15px;
+    background: rgba(196, 210, 222, 0.85);
+    transform: rotate(-38deg);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* White polaroid frame around the actual image */
+  .lb-img-frame {
+    background: #fffef8;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .lb-img-frame img {
     display: block;
+    max-width: 100%;
+    max-height: calc(100vh - 7rem);
+    width: auto;
+    height: auto;
+    object-fit: contain;
   }
 
   .lightbox-no-image {
     width: 100%;
-    height: 100%;
-    min-height: 260px;
+    min-height: 280px;
   }
 
+  /* ── Photo history nav ───────────────────────── */
+
+  .lb-photo-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 254, 248, 0.88);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #2c2420;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, opacity 0.15s;
+    font-family: var(--font-sans);
+  }
+
+  .lb-photo-nav:hover:not(:disabled) {
+    background: #fffef8;
+  }
+
+  .lb-photo-nav:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .lb-photo-prev {
+    left: 10px;
+  }
+
+  .lb-photo-next {
+    right: 10px;
+  }
+
+  .lb-photo-counter {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 254, 248, 0.88);
+    padding: 0.15rem 0.65rem;
+    font-family: 'Marck Script', cursive;
+    font-size: 0.9rem;
+    color: #7a6858;
+    z-index: 4;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  /* Lined-paper meta panel */
   .lightbox-meta {
-    padding: 2rem 2rem 2rem 1.5rem;
+    padding: 2rem 1.75rem 2rem 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.75rem;
+    background-image: repeating-linear-gradient(
+      transparent 0,
+      transparent 27px,
+      rgba(160, 140, 112, 0.15) 27px,
+      rgba(160, 140, 112, 0.15) 28px
+    );
+    background-position: 0 44px;
   }
 
-  .lightbox-meta h2 {
-    font-size: 1.1rem;
-    font-weight: 500;
+  #lightbox-title {
+    font-family: 'Marck Script', cursive;
+    font-size: 1.5rem;
+    color: #2c2420;
     padding-right: 2rem;
+    line-height: 1.2;
+  }
+
+  .lightbox-status-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .status-select {
+    font-family: 'Marck Script', cursive;
+    font-size: 1rem;
+    padding: 0.2rem 0.5rem;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 1px;
+  }
+
+  .status-select:focus-visible {
+    outline: 2px solid #8b6f52;
+    outline-offset: 2px;
+  }
+
+  .status-select--in_progress {
+    background: rgba(255, 218, 130, 0.85);
+    color: #5a3e00;
+  }
+
+  .status-select--finished {
+    background: rgba(152, 208, 174, 0.85);
+    color: #1a4530;
+  }
+
+  .status-select--given_away {
+    background: rgba(196, 178, 222, 0.85);
+    color: #3a2050;
+  }
+
+  .status-feedback {
+    font-family: 'Marck Script', cursive;
+    font-size: 0.95rem;
+    color: #7a6858;
+    font-style: italic;
+    min-width: 4rem;
   }
 
   .lightbox-comment-section {
-    margin-top: 1rem;
+    margin-top: 0.25rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -500,20 +1001,19 @@ import Layout from '../../layouts/Layout.astro';
   }
 
   .lightbox-comment-section label {
-    font-size: 0.82rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
+    font-family: 'Marck Script', cursive;
+    font-size: 1rem;
+    color: #7a6858;
   }
 
   .lightbox-comment-section textarea {
     width: 100%;
     padding: 0.6rem 0.75rem;
-    border: 1px solid var(--color-border);
+    border: 1px solid #d8cfc4;
     font-size: 0.9rem;
     font-family: var(--font-sans);
-    color: var(--color-text);
-    background: #fff;
+    color: #2c2420;
+    background: rgba(255, 254, 248, 0.85);
     outline: none;
     resize: vertical;
     line-height: 1.5;
@@ -523,24 +1023,24 @@ import Layout from '../../layouts/Layout.astro';
   }
 
   .lightbox-comment-section textarea:focus {
-    border-color: var(--color-text);
+    border-color: #8b6f52;
   }
 
   #lightbox-save {
     align-self: flex-start;
-    padding: 0.55rem 1.4rem;
-    background: var(--color-text);
-    color: #fff;
+    padding: 0.45rem 1.4rem;
+    background: #3d2b1f;
+    color: #faf8f4;
     border: none;
-    font-size: 0.85rem;
-    font-family: var(--font-sans);
-    letter-spacing: 0.03em;
+    font-family: 'Marck Script', cursive;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
     cursor: pointer;
     transition: opacity 0.15s;
   }
 
   #lightbox-save:hover:not(:disabled) {
-    opacity: 0.8;
+    opacity: 0.82;
   }
 
   #lightbox-save:disabled {
@@ -548,7 +1048,22 @@ import Layout from '../../layouts/Layout.astro';
     cursor: default;
   }
 
+  /* ── Responsive ──────────────────────────────── */
+
   @media (max-width: 600px) {
+    .page {
+      padding: 2rem 1.25rem 3rem;
+    }
+
+    :global(.piece-card) {
+      transform: rotate(0deg);
+      margin-bottom: 1.75rem;
+    }
+
+    :global(.piece-card:hover) {
+      transform: scale(1.02);
+    }
+
     .lightbox-panel {
       grid-template-columns: 1fr;
       grid-template-rows: auto auto;
@@ -558,6 +1073,7 @@ import Layout from '../../layouts/Layout.astro';
       grid-row: auto;
       min-height: 200px;
       max-height: 50vh;
+      padding: 1.25rem;
     }
 
     .lightbox-meta {
