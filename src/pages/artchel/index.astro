@@ -9,12 +9,11 @@ import Layout from '../../layouts/Layout.astro';
 >
   <link slot="head" rel="preconnect" href="https://fonts.googleapis.com" />
   <link slot="head" rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link slot="head" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" />
+  <link slot="head" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Space+Grotesk:wght@400;500;600&display=swap" />
 
   <div class="page">
     <header class="page-header">
       <h1 class="page-title">Artchel</h1>
-      <p class="page-subtitle">watercolours &amp; works in progress</p>
     </header>
 
     <p id="gallery-status" class="empty-state">Loading...</p>
@@ -709,26 +708,12 @@ import Layout from '../../layouts/Layout.astro';
   }
 
   .page-title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Marck Script', cursive;
     font-size: clamp(3rem, 9vw, 6.5rem);
-    font-weight: 600;
     color: #2c2420;
-    letter-spacing: -0.03em;
     transform: rotate(-2deg);
     display: inline-block;
     line-height: 1;
-    margin-bottom: 0.15rem;
-  }
-
-  .page-subtitle {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    color: #7a6858;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-left: 0.25rem;
-    display: block;
   }
 
   .empty-state {
