@@ -2,6 +2,7 @@ const DB_ID = '28f6a06c-e92c-49bc-ab84-68a968daf15f';
 const R2_PUBLIC_BASE = 'https://pub-dee00670cc0f4e899a38d9bbe64ecb80.r2.dev';
 const NOTION_VERSION = '2022-06-28';
 const VALID_STATUSES = ['In Progress', 'Finished', 'Given Away'];
+const VALID_MEDIUMS = ['Watercolour', 'Gouache', 'Mixed Media', 'Other'];
 
 export async function onRequestPost(context) {
   const { request, env } = context;
@@ -15,10 +16,12 @@ export async function onRequestPost(context) {
 
   const title = formData.get('title')?.toString().trim() ?? '';
   const status = formData.get('status')?.toString() ?? 'In Progress';
+  const medium = formData.get('medium')?.toString() ?? '';
   const coverFile = formData.get('cover_image');
 
   if (!title) return errorResponse('Title is required.');
   const safeStatus = VALID_STATUSES.includes(status) ? status : 'In Progress';
+  const safeMedium = VALID_MEDIUMS.includes(medium) ? medium : 'Other';
 
   let coverUrl = null;
   if (coverFile && coverFile.size > 0) {
@@ -44,6 +47,7 @@ export async function onRequestPost(context) {
     properties: {
       Name: { title: [{ text: { content: title } }] },
       Status: { select: { name: safeStatus } },
+      Medium: { select: { name: safeMedium } },
       ...(coverUrl
         ? { 'Cover Image': { files: [{ type: 'external', name: 'cover', external: { url: coverUrl } }] } }
         : {}),

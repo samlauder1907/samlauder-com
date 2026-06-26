@@ -88,9 +88,24 @@ export async function onRequestGet(context) {
         const coverFile = coverFiles[0];
         const cover = coverFile?.external?.url ?? coverFile?.file?.url ?? null;
         const comments = richText(page.properties.Comments?.rich_text);
+        // Read select first, fall back to rich_text for backward-compat with any old schema
+        const medium = page.properties.Medium?.select?.name
+          ?? richText(page.properties.Medium?.rich_text)
+          ?? '';
+        const givenTo = richText(page.properties['Given To']?.rich_text) ?? '';
         const createdTime = page.created_time;
 
-        rawPieces.push({ id: page.id, title, slug: toSlug(title), status, cover, comments, createdTime });
+        rawPieces.push({
+          id: page.id,
+          title,
+          slug: toSlug(title),
+          status,
+          cover,
+          comments,
+          medium,
+          givenTo,
+          createdTime,
+        });
       }
 
       cursor = data.has_more ? data.next_cursor : undefined;
@@ -103,8 +118,7 @@ export async function onRequestGet(context) {
   }
 
   // Enrich each piece with its block-children photo history.
-  // Wrapped in its own try/catch so a failure here never breaks the gallery —
-  // we fall back to each piece's Cover Image property value.
+  // Wrapped in its own try/catch so a failure never blacks out existing thumbnails.
   let pieces;
   try {
     pieces = await Promise.all(
@@ -112,14 +126,14 @@ export async function onRequestGet(context) {
         const photos = await fetchPagePhotos(piece.id, piece.cover, piece.createdTime, env.NOTION_TOKEN);
         const cover = photos.length > 0 ? photos[photos.length - 1].url : piece.cover;
         const { createdTime, ...rest } = piece;
-        return { ...rest, photos, cover };
+        return { ...rest, photos, cover, createdAt: createdTime };
       }),
     );
   } catch {
-    // Photo history unavailable — serve plain pieces with cover from Notion property
     pieces = rawPieces.map(({ createdTime, ...piece }) => ({
       ...piece,
       photos: piece.cover ? [{ url: piece.cover, date: null }] : [],
+      createdAt: createdTime,
     }));
   }
 

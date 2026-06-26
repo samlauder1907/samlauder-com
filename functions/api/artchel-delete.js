@@ -1,5 +1,4 @@
 const NOTION_VERSION = '2022-06-28';
-const VALID_STATUSES = ['In Progress', 'Finished', 'Given Away'];
 
 export async function onRequestPost(context) {
   const { request, env } = context;
@@ -11,22 +10,8 @@ export async function onRequestPost(context) {
     return jsonError('Invalid JSON body.');
   }
 
-  const { id, status, given_to } = body;
+  const { id } = body;
   if (!id || typeof id !== 'string') return jsonError('Piece ID is required.');
-  if (!VALID_STATUSES.includes(status)) return jsonError('Invalid status value.');
-
-  const properties = {
-    Status: { select: { name: status } },
-  };
-
-  // given_to is optional — only touch the property when explicitly sent
-  if (given_to !== undefined) {
-    properties['Given To'] = {
-      rich_text: given_to.trim()
-        ? [{ type: 'text', text: { content: given_to.trim() } }]
-        : [],
-    };
-  }
 
   const notionRes = await fetch(`https://api.notion.com/v1/pages/${id}`, {
     method: 'PATCH',
@@ -35,7 +20,7 @@ export async function onRequestPost(context) {
       'Notion-Version': NOTION_VERSION,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ properties }),
+    body: JSON.stringify({ archived: true }),
   });
 
   if (!notionRes.ok) {

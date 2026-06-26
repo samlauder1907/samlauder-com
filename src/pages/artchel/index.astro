@@ -9,7 +9,7 @@ import Layout from '../../layouts/Layout.astro';
 >
   <link slot="head" rel="preconnect" href="https://fonts.googleapis.com" />
   <link slot="head" rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link slot="head" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" />
+  <link slot="head" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" />
 
   <div class="page">
     <header class="page-header">
@@ -18,6 +18,14 @@ import Layout from '../../layouts/Layout.astro';
     </header>
 
     <p id="gallery-status" class="empty-state">Loading...</p>
+
+    <div class="sort-controls" id="sort-controls" hidden aria-label="Sort gallery">
+      <span class="sort-label">Sort</span>
+      <button class="sort-btn sort-btn--active" data-sort="date">Date added</button>
+      <button class="sort-btn" data-sort="medium">Medium</button>
+      <button class="sort-btn" data-sort="stage">Stage</button>
+    </div>
+
     <div id="gallery-grid" class="gallery-grid" hidden></div>
 
     <!-- Add a new piece -->
@@ -33,6 +41,15 @@ import Layout from '../../layouts/Layout.astro';
           <div class="field">
             <label for="title">Title</label>
             <input type="text" id="title" name="title" required autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="medium">Medium</label>
+            <select id="medium" name="medium" required>
+              <option value="Watercolour">Watercolour</option>
+              <option value="Gouache">Gouache</option>
+              <option value="Mixed Media">Mixed Media</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
           <div class="field">
             <label for="status">Status</label>
@@ -68,7 +85,7 @@ import Layout from '../../layouts/Layout.astro';
           </div>
           <div class="progress-form-footer">
             <button type="submit" id="progress-submit">Add photo</button>
-            <span id="progress-feedback" class="progress-feedback" aria-live="polite"></span>
+            <span id="progress-feedback" class="inline-feedback" aria-live="polite"></span>
           </div>
         </form>
       </div>
@@ -80,31 +97,56 @@ import Layout from '../../layouts/Layout.astro';
     <div class="lightbox-backdrop"></div>
     <div class="lightbox-panel">
       <button class="lightbox-close" aria-label="Close">&times;</button>
+
       <div class="lightbox-image-wrap">
         <button class="lb-photo-nav lb-photo-prev" id="lb-photo-prev" aria-label="Previous photo" hidden>&#8249;</button>
         <span class="lb-photo-counter" id="lb-photo-counter" hidden></span>
         <button class="lb-photo-nav lb-photo-next" id="lb-photo-next" aria-label="Next photo" hidden>&#8250;</button>
-        <!-- White frame wrapper — the polaroid effect in the lightbox -->
         <div class="lb-img-frame" id="lb-img-frame">
           <img id="lightbox-img" src="" alt="" />
         </div>
         <div id="lightbox-no-image" class="lightbox-no-image" hidden></div>
       </div>
+
       <div class="lightbox-meta">
         <h2 id="lightbox-title"></h2>
+        <div id="lb-medium-badge" class="lb-medium-badge" hidden></div>
+
         <div class="lightbox-status-row">
           <select id="lightbox-status-select" class="status-select" aria-label="Status">
             <option value="In Progress">In Progress</option>
             <option value="Finished">Finished</option>
             <option value="Given Away">Given Away</option>
           </select>
-          <span id="lightbox-status-feedback" class="status-feedback" aria-live="polite"></span>
+          <span id="lightbox-status-feedback" class="inline-feedback" aria-live="polite"></span>
         </div>
+
+        <!-- Given To: visible when status = Given Away -->
+        <div class="lb-given-to-row" id="lb-given-to-row" hidden>
+          <label for="lb-given-to">Given to</label>
+          <div class="lb-given-to-input-row">
+            <input type="text" id="lb-given-to" placeholder="Name…" autocomplete="off" />
+            <button id="lb-given-to-save" class="lb-small-btn">Save</button>
+          </div>
+          <span id="lb-given-to-feedback" class="inline-feedback" aria-live="polite"></span>
+        </div>
+
         <div class="lightbox-comment-section">
           <label for="lightbox-textarea">Notes</label>
-          <textarea id="lightbox-textarea" rows="4" placeholder="Add a note…"></textarea>
+          <textarea id="lightbox-textarea" rows="3" placeholder="Add a note…"></textarea>
           <button id="lightbox-save">Save note</button>
         </div>
+
+        <div class="lb-progress-section">
+          <label for="lb-progress-file">Add progress photo</label>
+          <div class="lb-progress-row">
+            <input type="file" id="lb-progress-file" accept="image/jpeg,image/png,image/webp" />
+            <button id="lb-progress-btn" class="lb-small-btn">Upload</button>
+          </div>
+          <span id="lb-progress-feedback" class="inline-feedback" aria-live="polite"></span>
+        </div>
+
+        <button id="lb-delete" class="lb-delete-btn">Delete piece</button>
       </div>
     </div>
   </div>
@@ -119,8 +161,8 @@ import Layout from '../../layouts/Layout.astro';
       .replace(/"/g, '&quot;');
   }
 
-  function statusClass(status) {
-    return status.toLowerCase().replace(/ /g, '_');
+  function statusClass(s) {
+    return s.toLowerCase().replace(/ /g, '_');
   }
 
   function renderCard(piece, idx) {
@@ -128,14 +170,57 @@ import Layout from '../../layouts/Layout.astro';
     const image = piece.cover
       ? `<img src="${esc(piece.cover)}" alt="${esc(piece.title)}" loading="lazy" />`
       : `<div class="piece-card-placeholder"></div>`;
+    const mediumHtml = piece.medium
+      ? `<span class="piece-card-medium">${esc(piece.medium)}</span>`
+      : '';
     return `
       <div class="piece-card" data-idx="${idx}" style="--rot:${rot}deg" role="button" tabindex="0" aria-label="Open ${esc(piece.title)}">
         <div class="piece-card-image">${image}</div>
         <div class="piece-card-info">
           <h2>${esc(piece.title)}</h2>
+          ${mediumHtml}
           <span class="status-badge status-badge--${esc(statusClass(piece.status))}">${esc(piece.status)}</span>
         </div>
       </div>`;
+  }
+
+  // --- Sort ---
+  let currentSort = 'date';
+
+  function getSortedPieces() {
+    const indexed = pieces.map((p, i) => ({ p, i }));
+    switch (currentSort) {
+      case 'date':
+        return [...indexed].sort((a, b) => {
+          const da = a.p.createdAt ? new Date(a.p.createdAt).getTime() : 0;
+          const db = b.p.createdAt ? new Date(b.p.createdAt).getTime() : 0;
+          return db - da;
+        });
+      case 'medium':
+        return [...indexed].sort((a, b) =>
+          (a.p.medium ?? '').localeCompare(b.p.medium ?? ''));
+      case 'stage': {
+        const order = { 'In Progress': 0, 'Finished': 1, 'Given Away': 2 };
+        return [...indexed].sort((a, b) =>
+          (order[a.p.status] ?? 3) - (order[b.p.status] ?? 3));
+      }
+      default:
+        return indexed;
+    }
+  }
+
+  function renderGallery() {
+    gridEl.innerHTML = getSortedPieces().map(({ p, i }) => renderCard(p, i)).join('');
+  }
+
+  function updatePiecePicker() {
+    if (pieces.length === 0) {
+      progressPieceSelect.innerHTML = '<option value="">No pieces yet</option>';
+    } else {
+      progressPieceSelect.innerHTML =
+        '<option value="">Select a piece…</option>' +
+        pieces.map(p => `<option value="${esc(p.id)}">${esc(p.title)}</option>`).join('');
+    }
   }
 
   // --- Lightbox state ---
@@ -143,29 +228,36 @@ import Layout from '../../layouts/Layout.astro';
   let currentIdx = null;
   let currentPhotoIdx = 0;
 
-  const lightbox         = document.getElementById('lightbox');
-  const backdrop         = lightbox.querySelector('.lightbox-backdrop');
-  const closeBtn         = lightbox.querySelector('.lightbox-close');
-  const lbImgFrame       = document.getElementById('lb-img-frame');
-  const lbImg            = document.getElementById('lightbox-img');
-  const lbNoImg          = document.getElementById('lightbox-no-image');
-  const lbTitle          = document.getElementById('lightbox-title');
-  const lbStatusSelect   = document.getElementById('lightbox-status-select');
-  const lbStatusFeedback = document.getElementById('lightbox-status-feedback');
-  const lbTextarea       = document.getElementById('lightbox-textarea');
-  const lbSave           = document.getElementById('lightbox-save');
-  const lbPhotoPrev      = document.getElementById('lb-photo-prev');
-  const lbPhotoNext      = document.getElementById('lb-photo-next');
-  const lbPhotoCounter   = document.getElementById('lb-photo-counter');
+  const lightbox           = document.getElementById('lightbox');
+  const backdrop           = lightbox.querySelector('.lightbox-backdrop');
+  const closeBtn           = lightbox.querySelector('.lightbox-close');
+  const lbImgFrame         = document.getElementById('lb-img-frame');
+  const lbImg              = document.getElementById('lightbox-img');
+  const lbNoImg            = document.getElementById('lightbox-no-image');
+  const lbTitle            = document.getElementById('lightbox-title');
+  const lbMediumBadge      = document.getElementById('lb-medium-badge');
+  const lbStatusSelect     = document.getElementById('lightbox-status-select');
+  const lbStatusFeedback   = document.getElementById('lightbox-status-feedback');
+  const lbGivenToRow       = document.getElementById('lb-given-to-row');
+  const lbGivenToInput     = document.getElementById('lb-given-to');
+  const lbGivenToSaveBtn   = document.getElementById('lb-given-to-save');
+  const lbGivenToFeedback  = document.getElementById('lb-given-to-feedback');
+  const lbTextarea         = document.getElementById('lightbox-textarea');
+  const lbSave             = document.getElementById('lightbox-save');
+  const lbProgressFile     = document.getElementById('lb-progress-file');
+  const lbProgressBtn      = document.getElementById('lb-progress-btn');
+  const lbProgressFeedback = document.getElementById('lb-progress-feedback');
+  const lbDeleteBtn        = document.getElementById('lb-delete');
+  const lbPhotoPrev        = document.getElementById('lb-photo-prev');
+  const lbPhotoNext        = document.getElementById('lb-photo-next');
+  const lbPhotoCounter     = document.getElementById('lb-photo-counter');
 
   function updateLightboxPhoto() {
     if (currentIdx === null) return;
-    const piece = pieces[currentIdx];
-    const url = piece.photos?.[currentPhotoIdx]?.url ?? null;
-
+    const url = pieces[currentIdx]?.photos?.[currentPhotoIdx]?.url ?? null;
     if (url) {
       lbImg.src = url;
-      lbImg.alt = piece.title;
+      lbImg.alt = pieces[currentIdx].title;
       lbImgFrame.hidden = false;
       lbImg.hidden = false;
       lbNoImg.hidden = true;
@@ -179,7 +271,6 @@ import Layout from '../../layouts/Layout.astro';
   function updatePhotoNav() {
     if (currentIdx === null) return;
     const count = pieces[currentIdx]?.photos?.length ?? 0;
-
     if (count <= 1) {
       lbPhotoPrev.hidden = true;
       lbPhotoNext.hidden = true;
@@ -194,6 +285,10 @@ import Layout from '../../layouts/Layout.astro';
     }
   }
 
+  function setGivenToVisibility(status) {
+    lbGivenToRow.hidden = status !== 'Given Away';
+  }
+
   function openLightbox(idx) {
     currentIdx = idx;
     const piece = pieces[idx];
@@ -204,12 +299,32 @@ import Layout from '../../layouts/Layout.astro';
     updatePhotoNav();
 
     lbTitle.textContent = piece.title;
+
+    if (piece.medium) {
+      lbMediumBadge.textContent = piece.medium;
+      lbMediumBadge.hidden = false;
+    } else {
+      lbMediumBadge.hidden = true;
+    }
+
     lbStatusSelect.value = piece.status;
     lbStatusSelect.className = `status-select status-select--${statusClass(piece.status)}`;
     lbStatusFeedback.textContent = '';
+
+    setGivenToVisibility(piece.status);
+    lbGivenToInput.value = piece.givenTo ?? '';
+    lbGivenToFeedback.textContent = '';
+
     lbTextarea.value = piece.comments ?? '';
     lbSave.textContent = 'Save note';
     lbSave.disabled = false;
+
+    lbProgressFile.value = '';
+    lbProgressFeedback.textContent = '';
+    lbProgressBtn.disabled = false;
+
+    lbDeleteBtn.textContent = 'Delete piece';
+    lbDeleteBtn.disabled = false;
 
     lightbox.hidden = false;
     document.body.style.overflow = 'hidden';
@@ -228,20 +343,11 @@ import Layout from '../../layouts/Layout.astro';
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
   lbPhotoPrev.addEventListener('click', () => {
-    if (currentPhotoIdx > 0) {
-      currentPhotoIdx--;
-      updateLightboxPhoto();
-      updatePhotoNav();
-    }
+    if (currentPhotoIdx > 0) { currentPhotoIdx--; updateLightboxPhoto(); updatePhotoNav(); }
   });
-
   lbPhotoNext.addEventListener('click', () => {
     const count = pieces[currentIdx]?.photos?.length ?? 0;
-    if (currentPhotoIdx < count - 1) {
-      currentPhotoIdx++;
-      updateLightboxPhoto();
-      updatePhotoNav();
-    }
+    if (currentPhotoIdx < count - 1) { currentPhotoIdx++; updateLightboxPhoto(); updatePhotoNav(); }
   });
 
   // --- Status change ---
@@ -270,6 +376,12 @@ import Layout from '../../layouts/Layout.astro';
 
       pieces[currentIdx].status = newStatus;
       lbStatusSelect.className = `status-select status-select--${statusClass(newStatus)}`;
+      setGivenToVisibility(newStatus);
+
+      // If switching TO Given Away, focus the given-to input for quick entry
+      if (newStatus === 'Given Away' && !pieces[currentIdx].givenTo) {
+        lbGivenToInput.focus();
+      }
 
       const card = gridEl.querySelector(`[data-idx="${currentIdx}"]`);
       if (card) {
@@ -288,6 +400,38 @@ import Layout from '../../layouts/Layout.astro';
       lbStatusSelect.value = piece.status;
       lbStatusSelect.className = `status-select status-select--${statusClass(piece.status)}`;
       lbStatusSelect.disabled = false;
+    }
+  });
+
+  // --- Given To save ---
+  lbGivenToSaveBtn.addEventListener('click', async () => {
+    if (currentIdx === null) return;
+    const piece = pieces[currentIdx];
+    const givenTo = lbGivenToInput.value;
+
+    lbGivenToSaveBtn.disabled = true;
+    lbGivenToFeedback.textContent = 'Saving…';
+
+    try {
+      const res = await fetch('/api/artchel-status', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: piece.id, status: piece.status, given_to: givenTo }),
+      });
+
+      if (!res.ok) {
+        lbGivenToFeedback.textContent = 'Error';
+        lbGivenToSaveBtn.disabled = false;
+        return;
+      }
+
+      pieces[currentIdx].givenTo = givenTo.trim();
+      lbGivenToFeedback.textContent = 'Saved';
+      lbGivenToSaveBtn.disabled = false;
+      setTimeout(() => { lbGivenToFeedback.textContent = ''; }, 1500);
+    } catch {
+      lbGivenToFeedback.textContent = 'Error';
+      lbGivenToSaveBtn.disabled = false;
     }
   });
 
@@ -315,19 +459,117 @@ import Layout from '../../layouts/Layout.astro';
 
       pieces[currentIdx].comments = comment;
       lbSave.textContent = 'Saved';
-      setTimeout(() => {
-        lbSave.textContent = 'Save note';
-        lbSave.disabled = false;
-      }, 1500);
+      setTimeout(() => { lbSave.textContent = 'Save note'; lbSave.disabled = false; }, 1500);
     } catch {
       lbSave.textContent = 'Error — try again';
       lbSave.disabled = false;
     }
   });
 
+  // --- In-lightbox progress photo upload ---
+  lbProgressBtn.addEventListener('click', async () => {
+    if (currentIdx === null) return;
+    const piece = pieces[currentIdx];
+    const file = lbProgressFile.files[0];
+    if (!file) return;
+
+    lbProgressBtn.disabled = true;
+    lbProgressFeedback.textContent = 'Uploading…';
+
+    const fd = new FormData();
+    fd.append('piece_id', piece.id);
+    fd.append('image', file);
+
+    try {
+      const res = await fetch('/api/artchel-progress', { method: 'POST', body: fd });
+      const json = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        lbProgressFeedback.textContent = json.error ?? 'Upload failed';
+        lbProgressBtn.disabled = false;
+        return;
+      }
+
+      const newPhoto = { url: json.url, date: new Date().toISOString() };
+      pieces[currentIdx].photos = [...(piece.photos ?? []), newPhoto];
+      pieces[currentIdx].cover = json.url;
+
+      // Jump to the newly added photo
+      currentPhotoIdx = pieces[currentIdx].photos.length - 1;
+      updateLightboxPhoto();
+      updatePhotoNav();
+
+      // Update gallery card thumbnail
+      const card = gridEl.querySelector(`[data-idx="${currentIdx}"]`);
+      if (card) {
+        const imgWrap = card.querySelector('.piece-card-image');
+        if (imgWrap) {
+          const existing = imgWrap.querySelector('img');
+          if (existing) {
+            existing.src = json.url;
+          } else {
+            imgWrap.innerHTML = `<img src="${esc(json.url)}" alt="${esc(piece.title)}" loading="lazy" />`;
+          }
+        }
+      }
+
+      lbProgressFeedback.textContent = 'Added!';
+      lbProgressFile.value = '';
+      lbProgressBtn.disabled = false;
+      setTimeout(() => { lbProgressFeedback.textContent = ''; }, 2500);
+    } catch {
+      lbProgressFeedback.textContent = 'Upload failed';
+      lbProgressBtn.disabled = false;
+    }
+  });
+
+  // --- Delete piece ---
+  lbDeleteBtn.addEventListener('click', async () => {
+    if (currentIdx === null) return;
+    const piece = pieces[currentIdx];
+
+    if (!confirm(`Delete "${piece.title}"? This can't be undone from the site.`)) return;
+
+    lbDeleteBtn.disabled = true;
+    lbDeleteBtn.textContent = 'Deleting…';
+
+    try {
+      const res = await fetch('/api/artchel-delete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: piece.id }),
+      });
+
+      if (!res.ok) {
+        lbDeleteBtn.textContent = 'Error';
+        lbDeleteBtn.disabled = false;
+        return;
+      }
+
+      const deletedIdx = currentIdx;
+      closeLightbox();
+
+      pieces.splice(deletedIdx, 1);
+      updatePiecePicker();
+
+      if (pieces.length === 0) {
+        gridEl.hidden = true;
+        sortControls.hidden = true;
+        statusEl.textContent = 'No pieces yet.';
+        statusEl.hidden = false;
+      } else {
+        renderGallery();
+      }
+    } catch {
+      lbDeleteBtn.textContent = 'Error';
+      lbDeleteBtn.disabled = false;
+    }
+  });
+
   // --- Gallery ---
   const statusEl            = document.getElementById('gallery-status');
   const gridEl              = document.getElementById('gallery-grid');
+  const sortControls        = document.getElementById('sort-controls');
   const progressPieceSelect = document.getElementById('progress-piece');
   const progressForm        = document.getElementById('progress-form');
   const progressSubmitBtn   = document.getElementById('progress-submit');
@@ -337,12 +579,20 @@ import Layout from '../../layouts/Layout.astro';
     const card = e.target.closest('[data-idx]');
     if (card) openLightbox(parseInt(card.dataset.idx, 10));
   });
-
   gridEl.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') {
       const card = e.target.closest('[data-idx]');
       if (card) { e.preventDefault(); openLightbox(parseInt(card.dataset.idx, 10)); }
     }
+  });
+
+  sortControls.addEventListener('click', e => {
+    const btn = e.target.closest('[data-sort]');
+    if (!btn || btn.dataset.sort === currentSort) return;
+    currentSort = btn.dataset.sort;
+    sortControls.querySelectorAll('.sort-btn').forEach(b =>
+      b.classList.toggle('sort-btn--active', b.dataset.sort === currentSort));
+    renderGallery();
   });
 
   fetch('/api/artchel-list')
@@ -354,21 +604,20 @@ import Layout from '../../layouts/Layout.astro';
       pieces = data;
       if (pieces.length === 0) {
         statusEl.textContent = 'No pieces yet.';
-        progressPieceSelect.innerHTML = '<option value="">No pieces yet</option>';
+        updatePiecePicker();
       } else {
         statusEl.hidden = true;
-        gridEl.innerHTML = pieces.map(renderCard).join('');
+        renderGallery();
         gridEl.hidden = false;
-        progressPieceSelect.innerHTML =
-          '<option value="">Select a piece…</option>' +
-          pieces.map(p => `<option value="${esc(p.id)}">${esc(p.title)}</option>`).join('');
+        sortControls.hidden = false;
+        updatePiecePicker();
       }
     })
     .catch(() => {
       statusEl.textContent = 'Could not load pieces.';
     });
 
-  // --- Progress photo upload ---
+  // --- Standalone progress photo upload ---
   progressForm.addEventListener('submit', async e => {
     e.preventDefault();
     const pieceId = progressPieceSelect.value;
@@ -446,7 +695,7 @@ import Layout from '../../layouts/Layout.astro';
       );
   }
 
-  /* ── Page structure (static elements — scoped fine) ── */
+  /* ── Page structure ───────────────────────────── */
 
   .page {
     padding: 3rem 2.5rem 5rem;
@@ -456,14 +705,15 @@ import Layout from '../../layouts/Layout.astro';
 
   .page-header {
     padding-top: 1.5rem;
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
   }
 
   .page-title {
-    font-family: 'Marck Script', cursive;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: clamp(3rem, 9vw, 6.5rem);
+    font-weight: 600;
     color: #2c2420;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.03em;
     transform: rotate(-2deg);
     display: inline-block;
     line-height: 1;
@@ -471,20 +721,67 @@ import Layout from '../../layouts/Layout.astro';
   }
 
   .page-subtitle {
-    font-family: 'Marck Script', cursive;
-    font-size: 1.25rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
     color: #7a6858;
-    letter-spacing: 0.04em;
-    margin-left: 0.5rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-left: 0.25rem;
     display: block;
   }
 
   .empty-state {
-    font-family: 'Marck Script', cursive;
-    font-size: 1.2rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
     color: #7a6858;
     padding: 2rem 0;
   }
+
+  /* ── Sort controls ────────────────────────────── */
+
+  .sort-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .sort-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #9a8878;
+    margin-right: 0.25rem;
+  }
+
+  .sort-btn {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: 0.3rem 0.85rem;
+    border: 1px solid #c8bfb4;
+    background: rgba(255, 254, 248, 0.6);
+    color: #7a6858;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+
+  .sort-btn:hover {
+    background: rgba(255, 254, 248, 0.9);
+    color: #2c2420;
+  }
+
+  .sort-btn--active {
+    background: #3d2b1f;
+    color: #faf8f4;
+    border-color: #3d2b1f;
+  }
+
+  /* ── Gallery grid ─────────────────────────────── */
 
   .gallery-grid {
     columns: 3 220px;
@@ -492,9 +789,7 @@ import Layout from '../../layouts/Layout.astro';
     margin-bottom: 3rem;
   }
 
-  /* ── Piece cards — ALL :global() because renderCard() injects
-        these elements via innerHTML and they never receive
-        the Astro CID attribute ──────────────────────────── */
+  /* ── Cards — :global() because renderCard() uses innerHTML ── */
 
   :global(.piece-card) {
     break-inside: avoid;
@@ -523,7 +818,6 @@ import Layout from '../../layouts/Layout.astro';
     outline-offset: 4px;
   }
 
-  /* Tape strip — top, position varies by nth-child */
   :global(.piece-card::before) {
     content: '';
     position: absolute;
@@ -548,7 +842,6 @@ import Layout from '../../layouts/Layout.astro';
     transform: translateX(-50%) rotate(-2deg);
   }
 
-  /* Second tape strip — bottom corner, every other card */
   :global(.piece-card:nth-child(even)::after) {
     content: '';
     position: absolute;
@@ -562,7 +855,6 @@ import Layout from '../../layouts/Layout.astro';
     pointer-events: none;
   }
 
-  /* White mat between card outer frame and image */
   :global(.piece-card-image) {
     width: 100%;
     aspect-ratio: 4 / 3;
@@ -586,25 +878,38 @@ import Layout from '../../layouts/Layout.astro';
   }
 
   :global(.piece-card-info) {
-    padding: 0.7rem 0.5rem 1.4rem;
+    padding: 0.6rem 0.5rem 1.25rem;
     text-align: center;
   }
 
   :global(.piece-card-info h2) {
-    font-family: 'Marck Script', cursive;
-    font-size: 1.1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
     color: #2c2420;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
     line-height: 1.2;
   }
 
-  /* Status badges (washi tape) */
+  :global(.piece-card-medium) {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #9a8878;
+    margin-bottom: 0.3rem;
+  }
+
   :global(.status-badge) {
     display: inline-block;
-    font-family: 'Marck Script', cursive;
-    font-size: 0.9rem;
-    letter-spacing: 0.02em;
-    padding: 0.05rem 0.65rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.1rem 0.55rem;
     transform: rotate(-0.5deg);
   }
 
@@ -648,9 +953,11 @@ import Layout from '../../layouts/Layout.astro';
   .upload-tab {
     display: inline-block;
     background: #f5e87a;
-    padding: 0.5rem 1.5rem 0.5rem 1rem;
-    font-family: 'Marck Script', cursive;
-    font-size: 1.2rem;
+    padding: 0.45rem 1.25rem 0.45rem 0.9rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
     color: #3d2b1f;
     box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.16), inset 0 -3px 0 rgba(0, 0, 0, 0.06);
     transform: rotate(-1.2deg);
@@ -683,19 +990,23 @@ import Layout from '../../layouts/Layout.astro';
   .field {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.35rem;
   }
 
   .field label {
-    font-family: 'Marck Script', cursive;
-    font-size: 1.05rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     color: #7a6858;
   }
 
   .optional {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     color: #a09080;
-    font-family: var(--font-sans);
+    text-transform: none;
+    letter-spacing: 0;
   }
 
   .field input[type='text'],
@@ -704,7 +1015,7 @@ import Layout from '../../layouts/Layout.astro';
     width: 100%;
     padding: 0.55rem 0.75rem;
     border: 1px solid #d8cfc4;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-family: var(--font-sans);
     color: #2c2420;
     background: #fffef8;
@@ -724,13 +1035,14 @@ import Layout from '../../layouts/Layout.astro';
 
   .upload-form button[type='submit'] {
     align-self: flex-start;
-    padding: 0.6rem 1.75rem;
+    padding: 0.55rem 1.5rem;
     background: #3d2b1f;
     color: #faf8f4;
     border: none;
-    font-family: 'Marck Script', cursive;
-    font-size: 1.15rem;
-    letter-spacing: 0.02em;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
     cursor: pointer;
     transition: opacity 0.15s;
   }
@@ -746,11 +1058,10 @@ import Layout from '../../layouts/Layout.astro';
     flex-wrap: wrap;
   }
 
-  .progress-feedback {
-    font-family: 'Marck Script', cursive;
-    font-size: 1rem;
+  .inline-feedback {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.82rem;
     color: #7a6858;
-    font-style: italic;
   }
 
   /* ── Lightbox ─────────────────────────────────── */
@@ -818,7 +1129,6 @@ import Layout from '../../layouts/Layout.astro';
     position: relative;
   }
 
-  /* Tape corner accents */
   .lightbox-image-wrap::before {
     content: '';
     position: absolute;
@@ -845,7 +1155,6 @@ import Layout from '../../layouts/Layout.astro';
     pointer-events: none;
   }
 
-  /* White polaroid frame around the actual image */
   .lb-img-frame {
     background: #fffef8;
     padding: 14px;
@@ -869,7 +1178,7 @@ import Layout from '../../layouts/Layout.astro';
     min-height: 280px;
   }
 
-  /* ── Photo history nav ───────────────────────── */
+  /* ── Photo nav ────────────────────────────────── */
 
   .lb-photo-nav {
     position: absolute;
@@ -892,22 +1201,10 @@ import Layout from '../../layouts/Layout.astro';
     font-family: var(--font-sans);
   }
 
-  .lb-photo-nav:hover:not(:disabled) {
-    background: #fffef8;
-  }
-
-  .lb-photo-nav:disabled {
-    opacity: 0.3;
-    cursor: default;
-  }
-
-  .lb-photo-prev {
-    left: 10px;
-  }
-
-  .lb-photo-next {
-    right: 10px;
-  }
+  .lb-photo-nav:hover:not(:disabled) { background: #fffef8; }
+  .lb-photo-nav:disabled { opacity: 0.3; cursor: default; }
+  .lb-photo-prev { left: 10px; }
+  .lb-photo-next { right: 10px; }
 
   .lb-photo-counter {
     position: absolute;
@@ -916,20 +1213,23 @@ import Layout from '../../layouts/Layout.astro';
     transform: translateX(-50%);
     background: rgba(255, 254, 248, 0.88);
     padding: 0.15rem 0.65rem;
-    font-family: 'Marck Script', cursive;
-    font-size: 0.9rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
     color: #7a6858;
     z-index: 4;
     pointer-events: none;
     white-space: nowrap;
+    letter-spacing: 0.03em;
   }
 
-  /* Lined-paper meta panel */
+  /* ── Lightbox meta panel ─────────────────────── */
+
   .lightbox-meta {
-    padding: 2rem 1.75rem 2rem 1.5rem;
+    padding: 1.75rem 1.75rem 1.5rem 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.85rem;
     background-image: repeating-linear-gradient(
       transparent 0,
       transparent 27px,
@@ -937,14 +1237,27 @@ import Layout from '../../layouts/Layout.astro';
       rgba(160, 140, 112, 0.15) 28px
     );
     background-position: 0 44px;
+    overflow-y: auto;
   }
 
   #lightbox-title {
-    font-family: 'Marck Script', cursive;
-    font-size: 1.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
     color: #2c2420;
     padding-right: 2rem;
-    line-height: 1.2;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+
+  .lb-medium-badge {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #9a8878;
+    margin-top: -0.4rem;
   }
 
   .lightbox-status-row {
@@ -955,8 +1268,11 @@ import Layout from '../../layouts/Layout.astro';
   }
 
   .status-select {
-    font-family: 'Marck Script', cursive;
-    font-size: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     padding: 0.2rem 0.5rem;
     border: none;
     cursor: pointer;
@@ -969,48 +1285,72 @@ import Layout from '../../layouts/Layout.astro';
     outline-offset: 2px;
   }
 
-  .status-select--in_progress {
-    background: rgba(255, 218, 130, 0.85);
-    color: #5a3e00;
-  }
+  .status-select--in_progress { background: rgba(255, 218, 130, 0.85); color: #5a3e00; }
+  .status-select--finished    { background: rgba(152, 208, 174, 0.85); color: #1a4530; }
+  .status-select--given_away  { background: rgba(196, 178, 222, 0.85); color: #3a2050; }
 
-  .status-select--finished {
-    background: rgba(152, 208, 174, 0.85);
-    color: #1a4530;
-  }
-
-  .status-select--given_away {
-    background: rgba(196, 178, 222, 0.85);
-    color: #3a2050;
-  }
-
-  .status-feedback {
-    font-family: 'Marck Script', cursive;
-    font-size: 0.95rem;
-    color: #7a6858;
-    font-style: italic;
-    min-width: 4rem;
-  }
-
-  .lightbox-comment-section {
-    margin-top: 0.25rem;
+  /* Given To */
+  .lb-given-to-row {
     display: flex;
     flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.6rem 0.75rem;
+    background: rgba(196, 178, 222, 0.15);
+    border-left: 2px solid rgba(196, 178, 222, 0.6);
+  }
+
+  .lb-given-to-row label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #7a6858;
+  }
+
+  .lb-given-to-input-row {
+    display: flex;
     gap: 0.5rem;
+  }
+
+  .lb-given-to-input-row input {
     flex: 1;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid #d8cfc4;
+    font-size: 0.88rem;
+    font-family: var(--font-sans);
+    color: #2c2420;
+    background: #fffef8;
+    outline: none;
+    transition: border-color 0.15s;
+    min-width: 0;
+  }
+
+  .lb-given-to-input-row input:focus {
+    border-color: #8b6f52;
+  }
+
+  /* Notes */
+  .lightbox-comment-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
   }
 
   .lightbox-comment-section label {
-    font-family: 'Marck Script', cursive;
-    font-size: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     color: #7a6858;
   }
 
   .lightbox-comment-section textarea {
     width: 100%;
-    padding: 0.6rem 0.75rem;
+    padding: 0.55rem 0.7rem;
     border: 1px solid #d8cfc4;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     font-family: var(--font-sans);
     color: #2c2420;
     background: rgba(255, 254, 248, 0.85);
@@ -1018,32 +1358,106 @@ import Layout from '../../layouts/Layout.astro';
     resize: vertical;
     line-height: 1.5;
     transition: border-color 0.15s;
-    flex: 1;
-    min-height: 80px;
+    min-height: 70px;
   }
 
   .lightbox-comment-section textarea:focus {
     border-color: #8b6f52;
   }
 
-  #lightbox-save {
-    align-self: flex-start;
-    padding: 0.45rem 1.4rem;
+  /* Shared small button style (save given-to, upload) */
+  .lb-small-btn {
+    padding: 0.35rem 0.85rem;
     background: #3d2b1f;
     color: #faf8f4;
     border: none;
-    font-family: 'Marck Script', cursive;
-    font-size: 1.05rem;
-    letter-spacing: 0.02em;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+    flex-shrink: 0;
+  }
+
+  .lb-small-btn:hover:not(:disabled) { opacity: 0.82; }
+  .lb-small-btn:disabled { opacity: 0.5; cursor: default; }
+
+  /* Note save */
+  #lightbox-save {
+    align-self: flex-start;
+    padding: 0.45rem 1.25rem;
+    background: #3d2b1f;
+    color: #faf8f4;
+    border: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
     cursor: pointer;
     transition: opacity 0.15s;
   }
 
-  #lightbox-save:hover:not(:disabled) {
-    opacity: 0.82;
+  #lightbox-save:hover:not(:disabled) { opacity: 0.82; }
+  #lightbox-save:disabled { opacity: 0.5; cursor: default; }
+
+  /* In-lightbox progress upload */
+  .lb-progress-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #e8e2d8;
   }
 
-  #lightbox-save:disabled {
+  .lb-progress-section label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #7a6858;
+  }
+
+  .lb-progress-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .lb-progress-row input[type='file'] {
+    flex: 1;
+    font-size: 0.82rem;
+    font-family: var(--font-sans);
+    color: #2c2420;
+    min-width: 0;
+    cursor: pointer;
+  }
+
+  /* Delete button */
+  .lb-delete-btn {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    color: #b0a098;
+    cursor: pointer;
+    padding: 0;
+    margin-top: auto;
+    padding-top: 0.25rem;
+    transition: color 0.15s;
+  }
+
+  .lb-delete-btn:hover:not(:disabled) {
+    color: #a0392b;
+  }
+
+  .lb-delete-btn:disabled {
     opacity: 0.5;
     cursor: default;
   }
