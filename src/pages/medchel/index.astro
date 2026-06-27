@@ -1,0 +1,1155 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Medchel"
+  description="Rachel's medical reference tool."
+  standalone={true}
+>
+  <link slot="head" rel="preconnect" href="https://fonts.googleapis.com" />
+  <link slot="head" rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link slot="head" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Space+Grotesk:wght@400;500;600&display=swap" />
+
+  <div class="page">
+    <header class="page-header">
+      <h1 class="page-title">Medchel</h1>
+    </header>
+
+    <!-- Search -->
+    <div class="search-wrap" id="search-wrap">
+      <label for="search-input" class="search-label">Search symptoms, conditions, or keywords</label>
+      <div class="search-field">
+        <input
+          type="search"
+          id="search-input"
+          class="search-input"
+          placeholder="e.g. headache, migraine, chest pain…"
+          autocomplete="off"
+          aria-autocomplete="list"
+          aria-controls="search-dropdown"
+          aria-expanded="false"
+        />
+      </div>
+      <ul id="search-dropdown" class="search-dropdown" role="listbox" hidden></ul>
+    </div>
+
+    <!-- Page status (loading / empty) -->
+    <p id="page-status" class="page-status">Loading…</p>
+
+    <!-- All-entries table -->
+    <div id="entry-table-wrap" hidden>
+      <h2 class="table-heading">All entries</h2>
+      <table class="entry-table">
+        <thead>
+          <tr>
+            <th class="col-thumb" aria-label="Image"></th>
+            <th class="col-title">Condition</th>
+            <th class="col-tags">Tags</th>
+            <th class="col-desc">Description</th>
+          </tr>
+        </thead>
+        <tbody id="entry-tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- Add an entry -->
+    <details class="upload-toggle" id="add-toggle">
+      <summary><span class="upload-tab">+ add an entry</span></summary>
+      <div class="upload-form-wrap">
+        <form class="upload-form" id="add-form">
+          <div class="field">
+            <label for="add-title">Condition / title</label>
+            <input type="text" id="add-title" name="title" required autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="add-tags">Tags <span class="optional">(comma-separated synonyms, e.g. headache, migraine, head pain)</span></label>
+            <input type="text" id="add-tags" name="tags" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="add-description">Description</label>
+            <textarea id="add-description" name="description" rows="6" placeholder="Describe the condition, symptoms, or notes…"></textarea>
+          </div>
+          <div class="field">
+            <label for="add-links">Links <span class="optional">(one URL per line)</span></label>
+            <textarea id="add-links" name="links" rows="3" placeholder="https://example.com/article"></textarea>
+          </div>
+          <div class="field">
+            <label for="add-images">Images <span class="optional">(JPEG, PNG, or WebP — optional)</span></label>
+            <input type="file" id="add-images" name="images" accept="image/jpeg,image/png,image/webp" multiple />
+          </div>
+          <div class="form-footer">
+            <button type="submit" id="add-submit">Add entry</button>
+            <span id="add-feedback" class="inline-feedback" aria-live="polite"></span>
+          </div>
+        </form>
+      </div>
+    </details>
+  </div>
+
+  <!-- Entry modal -->
+  <div id="modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-backdrop"></div>
+    <div class="modal-panel">
+      <button class="modal-close" aria-label="Close">&times;</button>
+
+      <!-- View mode -->
+      <div id="modal-view">
+        <h2 id="modal-title" class="modal-title"></h2>
+        <div id="modal-tags" class="modal-tags"></div>
+        <div id="modal-description" class="modal-description"></div>
+        <div id="modal-images" class="modal-images"></div>
+        <div id="modal-links" class="modal-links"></div>
+        <div id="modal-last-edited" class="modal-last-edited"></div>
+        <div class="modal-actions">
+          <button id="modal-edit-btn" class="btn-secondary">Edit</button>
+          <button id="modal-delete-btn" class="modal-delete-btn">Delete entry</button>
+        </div>
+      </div>
+
+      <!-- Edit mode -->
+      <div id="modal-edit" hidden>
+        <form class="upload-form edit-form" id="edit-form">
+          <div class="field">
+            <label for="edit-title">Condition / title</label>
+            <input type="text" id="edit-title" name="title" required autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="edit-tags">Tags <span class="optional">(comma-separated)</span></label>
+            <input type="text" id="edit-tags" name="tags" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="edit-description">Description</label>
+            <textarea id="edit-description" name="description" rows="7"></textarea>
+          </div>
+          <div class="field">
+            <label for="edit-links">Links <span class="optional">(one URL per line)</span></label>
+            <textarea id="edit-links" name="links" rows="3" placeholder="https://example.com/article"></textarea>
+          </div>
+          <div class="field">
+            <label for="edit-images">Add more images <span class="optional">(JPEG, PNG, or WebP)</span></label>
+            <input type="file" id="edit-images" name="images" accept="image/jpeg,image/png,image/webp" multiple />
+          </div>
+          <div class="form-footer">
+            <button type="submit" id="edit-submit">Save</button>
+            <button type="button" id="edit-cancel" class="btn-ghost">Cancel</button>
+            <span id="edit-feedback" class="inline-feedback" aria-live="polite"></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  function esc(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function formatDate(iso) {
+    if (!iso) return '';
+    return new Date(iso).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+
+  // --- Fuzzy search (Levenshtein) ---
+  function levenshtein(a, b) {
+    const m = a.length, n = b.length;
+    if (m === 0) return n;
+    if (n === 0) return m;
+    const row = Array.from({ length: n + 1 }, (_, i) => i);
+    for (let i = 1; i <= m; i++) {
+      let prev = i;
+      for (let j = 1; j <= n; j++) {
+        const val = a[i - 1] === b[j - 1]
+          ? row[j - 1]
+          : 1 + Math.min(prev, row[j], row[j - 1]);
+        row[j - 1] = prev;
+        prev = val;
+      }
+      row[n] = prev;
+    }
+    return row[n];
+  }
+
+  function maxEdits(len) {
+    if (len <= 3) return 0;
+    if (len <= 6) return 1;
+    return 2;
+  }
+
+  function fuzzyMatchesTerm(q, candidate) {
+    if (levenshtein(q, candidate) <= maxEdits(q.length)) return true;
+    // also check each word in multi-word candidates (e.g. "chest pain")
+    return candidate.split(/\s+/).some(w => levenshtein(q, w) <= maxEdits(q.length));
+  }
+
+  function isExactMatch(entry, q) {
+    return entry.title.toLowerCase().includes(q) ||
+      entry.tags.some(t => t.includes(q));
+  }
+
+  function isFuzzyMatch(entry, q) {
+    if (fuzzyMatchesTerm(q, entry.title.toLowerCase())) return true;
+    return entry.tags.some(t => fuzzyMatchesTerm(q, t));
+  }
+
+  function getMatches(query) {
+    const q = query.trim().toLowerCase();
+    if (!q) return [];
+    const exact = entries.filter(e => isExactMatch(e, q));
+    const exactIds = new Set(exact.map(e => e.id));
+    // fuzzy only kicks in for queries ≥ 4 chars (shorter queries rely on exact)
+    const fuzzy = q.length >= 4
+      ? entries.filter(e => !exactIds.has(e.id) && isFuzzyMatch(e, q))
+      : [];
+    return [...exact, ...fuzzy];
+  }
+
+  // --- State ---
+  let entries = [];
+  let currentId = null;
+
+  // --- DOM refs ---
+  const pageStatus       = document.getElementById('page-status');
+  const entryTableWrap   = document.getElementById('entry-table-wrap');
+  const entryTbody       = document.getElementById('entry-tbody');
+  const searchWrap       = document.getElementById('search-wrap');
+  const searchInput      = document.getElementById('search-input');
+  const searchDropdown   = document.getElementById('search-dropdown');
+  const modal            = document.getElementById('modal');
+  const modalBackdrop    = modal.querySelector('.modal-backdrop');
+  const modalClose       = modal.querySelector('.modal-close');
+  const modalView        = document.getElementById('modal-view');
+  const modalEdit        = document.getElementById('modal-edit');
+  const modalTitle       = document.getElementById('modal-title');
+  const modalTags        = document.getElementById('modal-tags');
+  const modalDescription = document.getElementById('modal-description');
+  const modalImages      = document.getElementById('modal-images');
+  const modalLinks       = document.getElementById('modal-links');
+  const modalLastEdited  = document.getElementById('modal-last-edited');
+  const modalEditBtn     = document.getElementById('modal-edit-btn');
+  const modalDeleteBtn   = document.getElementById('modal-delete-btn');
+  const editForm         = document.getElementById('edit-form');
+  const editTitle        = document.getElementById('edit-title');
+  const editTags         = document.getElementById('edit-tags');
+  const editDescription  = document.getElementById('edit-description');
+  const editLinks        = document.getElementById('edit-links');
+  const editImages       = document.getElementById('edit-images');
+  const editSubmit       = document.getElementById('edit-submit');
+  const editCancel       = document.getElementById('edit-cancel');
+  const editFeedback     = document.getElementById('edit-feedback');
+  const addForm          = document.getElementById('add-form');
+  const addSubmit        = document.getElementById('add-submit');
+  const addFeedback      = document.getElementById('add-feedback');
+  const addToggle        = document.getElementById('add-toggle');
+
+  // --- Modal: view mode ---
+  function openModal(id) {
+    const entry = entries.find(e => e.id === id);
+    if (!entry) return;
+    currentId = id;
+
+    modalTitle.textContent = entry.title;
+
+    if (entry.tags.length > 0) {
+      modalTags.innerHTML = entry.tags.map(t => `<span class="tag-chip">${esc(t)}</span>`).join('');
+      modalTags.hidden = false;
+    } else {
+      modalTags.innerHTML = '';
+      modalTags.hidden = true;
+    }
+
+    modalDescription.textContent = entry.description || '';
+    modalDescription.hidden = !entry.description;
+
+    if (entry.images.length > 0) {
+      modalImages.innerHTML = entry.images
+        .map(url => `<img src="${esc(url)}" alt="" loading="lazy" class="modal-img" />`)
+        .join('');
+      modalImages.hidden = false;
+    } else {
+      modalImages.innerHTML = '';
+      modalImages.hidden = true;
+    }
+
+    const entryLinks = entry.links ?? [];
+    if (entryLinks.length > 0) {
+      modalLinks.innerHTML = entryLinks
+        .map(url => `<a href="${esc(url)}" target="_blank" rel="noopener" class="modal-link">${esc(url)}</a>`)
+        .join('');
+      modalLinks.hidden = false;
+    } else {
+      modalLinks.innerHTML = '';
+      modalLinks.hidden = true;
+    }
+
+    modalLastEdited.textContent = entry.lastEdited ? `Last updated ${formatDate(entry.lastEdited)}` : '';
+
+    modalDeleteBtn.textContent = 'Delete entry';
+    modalDeleteBtn.disabled = false;
+    modalView.hidden = false;
+    modalEdit.hidden = true;
+
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    modalClose.focus();
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    currentId = null;
+  }
+
+  modalBackdrop.addEventListener('click', closeModal);
+  modalClose.addEventListener('click', closeModal);
+
+  // --- Modal: edit mode ---
+  modalEditBtn.addEventListener('click', () => {
+    const entry = entries.find(e => e.id === currentId);
+    if (!entry) return;
+
+    editTitle.value = entry.title;
+    editTags.value = entry.tags.join(', ');
+    editDescription.value = entry.description;
+    editLinks.value = (entry.links ?? []).join('\n');
+    editImages.value = '';
+    editFeedback.textContent = '';
+    editSubmit.textContent = 'Save';
+    editSubmit.disabled = false;
+
+    modalView.hidden = true;
+    modalEdit.hidden = false;
+    editTitle.focus();
+  });
+
+  editCancel.addEventListener('click', () => {
+    modalView.hidden = false;
+    modalEdit.hidden = true;
+  });
+
+  editForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (!currentId) return;
+
+    editSubmit.disabled = true;
+    editSubmit.textContent = 'Saving…';
+    editFeedback.textContent = '';
+
+    const fd = new FormData();
+    fd.append('id', currentId);
+    fd.append('title', editTitle.value.trim());
+    fd.append('tags', editTags.value.trim());
+    fd.append('description', editDescription.value);
+    fd.append('links', editLinks.value);
+    for (const file of editImages.files) fd.append('images', file);
+
+    try {
+      const res = await fetch('/api/medchel-upsert', { method: 'POST', body: fd });
+      const json = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        editFeedback.textContent = json.error ?? 'Save failed';
+        editSubmit.textContent = 'Save';
+        editSubmit.disabled = false;
+        return;
+      }
+
+      const idx = entries.findIndex(e => e.id === currentId);
+      if (idx !== -1) entries[idx] = json;
+      entries.sort((a, b) => a.title.localeCompare(b.title));
+      renderTable();
+      openModal(currentId);
+    } catch {
+      editFeedback.textContent = 'Save failed';
+      editSubmit.textContent = 'Save';
+      editSubmit.disabled = false;
+    }
+  });
+
+  // --- Delete ---
+  modalDeleteBtn.addEventListener('click', async () => {
+    if (!currentId) return;
+    const entry = entries.find(e => e.id === currentId);
+    if (!entry) return;
+
+    if (!confirm(`Delete "${entry.title}"? This can't be undone from the site.`)) return;
+
+    modalDeleteBtn.disabled = true;
+    modalDeleteBtn.textContent = 'Deleting…';
+
+    try {
+      const res = await fetch('/api/medchel-delete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: currentId }),
+      });
+
+      if (!res.ok) {
+        modalDeleteBtn.textContent = 'Error';
+        modalDeleteBtn.disabled = false;
+        return;
+      }
+
+      const deletedId = currentId;
+      closeModal();
+      entries = entries.filter(e => e.id !== deletedId);
+      renderTable();
+      if (entries.length === 0) {
+        pageStatus.textContent = 'No entries yet — add one below.';
+        pageStatus.hidden = false;
+      }
+    } catch {
+      modalDeleteBtn.textContent = 'Error';
+      modalDeleteBtn.disabled = false;
+    }
+  });
+
+  // --- Add form ---
+  addForm.addEventListener('submit', async e => {
+    e.preventDefault();
+
+    addSubmit.disabled = true;
+    addSubmit.textContent = 'Saving…';
+    addFeedback.textContent = '';
+
+    const fd = new FormData(addForm);
+
+    try {
+      const res = await fetch('/api/medchel-upsert', { method: 'POST', body: fd });
+      const json = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        addFeedback.textContent = json.error ?? 'Add failed';
+        addSubmit.textContent = 'Add entry';
+        addSubmit.disabled = false;
+        return;
+      }
+
+      entries = [...entries, json].sort((a, b) => a.title.localeCompare(b.title));
+      renderTable();
+      pageStatus.hidden = true;
+
+      addForm.reset();
+      addSubmit.textContent = 'Add entry';
+      addSubmit.disabled = false;
+      addFeedback.textContent = 'Added!';
+      addToggle.open = false;
+      setTimeout(() => { addFeedback.textContent = ''; }, 2500);
+    } catch {
+      addFeedback.textContent = 'Add failed';
+      addSubmit.textContent = 'Add entry';
+      addSubmit.disabled = false;
+    }
+  });
+
+  // --- Table ---
+  function renderTable() {
+    if (entries.length === 0) {
+      entryTableWrap.hidden = true;
+      return;
+    }
+    entryTableWrap.hidden = false;
+    entryTbody.innerHTML = entries.map(entry => {
+      const thumb = entry.images[0]
+        ? `<img src="${esc(entry.images[0])}" alt="" loading="lazy" class="row-thumb" />`
+        : '';
+      const tagsText = entry.tags.length > 0
+        ? esc(entry.tags.join(', '))
+        : '<span class="row-tag-none">—</span>';
+      // Collapse newlines; let CSS text-overflow handle ellipsis at cell boundary
+      const descText = esc((entry.description ?? '').replace(/\n+/g, ' ').trim());
+      return `<tr data-id="${esc(entry.id)}" role="button" tabindex="0" aria-label="Open ${esc(entry.title)}">
+        <td class="col-thumb">${thumb}</td>
+        <td class="col-title">${esc(entry.title)}</td>
+        <td class="col-tags">${tagsText}</td>
+        <td class="col-desc">${descText}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  entryTbody.addEventListener('click', e => {
+    const row = e.target.closest('[data-id]');
+    if (row) openModal(row.dataset.id);
+  });
+  entryTbody.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      const row = e.target.closest('[data-id]');
+      if (row) { e.preventDefault(); openModal(row.dataset.id); }
+    }
+  });
+
+  // --- Search dropdown ---
+  let highlightIdx = -1;
+
+  function closeDropdown() {
+    searchDropdown.hidden = true;
+    searchDropdown.innerHTML = '';
+    searchInput.setAttribute('aria-expanded', 'false');
+    highlightIdx = -1;
+  }
+
+  function renderDropdown(matches) {
+    if (matches.length === 0) { closeDropdown(); return; }
+    searchDropdown.innerHTML = matches
+      .map(e => `<li role="option" data-id="${esc(e.id)}">${esc(e.title)}</li>`)
+      .join('');
+    searchDropdown.hidden = false;
+    searchInput.setAttribute('aria-expanded', 'true');
+    highlightIdx = -1;
+  }
+
+  function setHighlight(idx) {
+    const items = searchDropdown.querySelectorAll('li');
+    items.forEach((li, i) => li.classList.toggle('highlighted', i === idx));
+    highlightIdx = idx;
+    if (idx >= 0) items[idx]?.scrollIntoView({ block: 'nearest' });
+  }
+
+  searchInput.addEventListener('input', () => {
+    renderDropdown(getMatches(searchInput.value));
+  });
+
+  searchInput.addEventListener('keydown', e => {
+    const items = searchDropdown.querySelectorAll('li');
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setHighlight(Math.min(highlightIdx + 1, items.length - 1));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setHighlight(Math.max(highlightIdx - 1, 0));
+    } else if (e.key === 'Enter') {
+      const highlighted = items[highlightIdx];
+      if (highlighted) {
+        e.preventDefault();
+        searchInput.value = '';
+        closeDropdown();
+        openModal(highlighted.dataset.id);
+      }
+    } else if (e.key === 'Escape') {
+      closeDropdown();
+    }
+  });
+
+  searchDropdown.addEventListener('click', e => {
+    const li = e.target.closest('li[data-id]');
+    if (li) {
+      searchInput.value = '';
+      closeDropdown();
+      openModal(li.dataset.id);
+    }
+  });
+
+  document.addEventListener('click', e => {
+    if (!searchWrap.contains(e.target)) closeDropdown();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      if (!modal.hidden) closeModal();
+      else closeDropdown();
+    }
+  });
+
+  // --- Initial load ---
+  fetch('/api/medchel-list')
+    .then(r => {
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r.json();
+    })
+    .then(data => {
+      entries = data;
+      pageStatus.hidden = true;
+      if (entries.length === 0) {
+        pageStatus.textContent = 'No entries yet — add one below.';
+        pageStatus.hidden = false;
+      }
+      renderTable();
+    })
+    .catch(() => {
+      pageStatus.textContent = 'Could not load entries.';
+    });
+</script>
+
+<style>
+  /* ── Background — lighter warm cream ─────────── */
+  :global(body) {
+    background-color: #f2efe8;
+    background-image:
+      repeating-linear-gradient(
+        -45deg,
+        transparent 0,
+        transparent 3px,
+        rgba(0, 0, 0, 0.012) 3px,
+        rgba(0, 0, 0, 0.012) 4px
+      ),
+      repeating-linear-gradient(
+        45deg,
+        transparent 0,
+        transparent 3px,
+        rgba(0, 0, 0, 0.008) 3px,
+        rgba(0, 0, 0, 0.008) 4px
+      );
+  }
+
+  /* ── Page structure ───────────────────────────── */
+  .page {
+    padding: 3rem 2.5rem 6rem;
+    max-width: 920px;
+    margin-inline: auto;
+  }
+
+  .page-header {
+    padding-top: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── Heading — Cormorant Garamond italic ──────── */
+  .page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(3.5rem, 10vw, 6.5rem);
+    color: #2c2420;
+    display: inline-block;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .page-status {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    color: #7a6858;
+    padding: 1rem 0 2rem;
+  }
+
+  /* ── Search ───────────────────────────────────── */
+  .search-wrap {
+    position: relative;
+    margin-bottom: 3rem;
+  }
+
+  .search-label {
+    display: block;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #7a6858;
+    margin-bottom: 0.5rem;
+  }
+
+  .search-field {
+    position: relative;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 0.85rem 1.1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem;
+    color: #2c2420;
+    background: #fffef8;
+    border: 1.5px solid #d8cfc4;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    box-shadow: 0 2px 8px rgba(44, 36, 32, 0.06);
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .search-input:focus {
+    border-color: #8b6f52;
+    box-shadow: 0 2px 12px rgba(44, 36, 32, 0.1);
+  }
+
+  .search-input::-webkit-search-cancel-button { display: none; }
+
+  .search-dropdown {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    right: 0;
+    background: #fffef8;
+    border: 1.5px solid #d8cfc4;
+    border-top: none;
+    list-style: none;
+    margin: 0;
+    padding: 0.25rem 0;
+    z-index: 50;
+    box-shadow: 0 8px 24px rgba(44, 36, 32, 0.12);
+    max-height: 280px;
+    overflow-y: auto;
+  }
+
+  .search-dropdown[hidden] { display: none; }
+
+  .search-dropdown li {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    color: #2c2420;
+    padding: 0.6rem 1.1rem;
+    cursor: pointer;
+    transition: background 0.1s;
+  }
+
+  .search-dropdown li:hover,
+  .search-dropdown li.highlighted {
+    background: #ede8e0;
+  }
+
+  /* ── Entry table ──────────────────────────────── */
+  .table-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9a8878;
+    margin-bottom: 0.5rem;
+  }
+
+  /* .entry-table is in static HTML — scoped styles reach it fine */
+  .entry-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: 3rem;
+    table-layout: fixed;
+  }
+
+  /* thead th elements are static — no :global needed */
+  .entry-table thead th {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #9a8878;
+    text-align: left;
+    padding: 0 1.25rem 0.75rem;
+    border-bottom: 2px solid #c8bfb4;
+  }
+
+  .entry-table thead th.col-thumb { padding-left: 0; padding-right: 0.75rem; }
+  .entry-table thead th.col-title,
+  .entry-table thead th.col-tags { border-right: 1px solid #ddd5cc; }
+
+  /* tbody tr + td are injected via innerHTML — must use :global() */
+  :global(.entry-table tbody tr) {
+    cursor: pointer;
+    transition: background 0.1s;
+  }
+
+  :global(.entry-table tbody tr:nth-child(odd))  { background: rgba(255, 254, 252, 0.55); }
+  :global(.entry-table tbody tr:nth-child(even)) { background: rgba(232, 228, 220, 0.35); }
+  :global(.entry-table tbody tr:hover)           { background: #e0dbd2; }
+
+  :global(.entry-table tbody tr:focus-visible) {
+    outline: 2px solid #8b6f52;
+    outline-offset: -2px;
+  }
+
+  :global(.entry-table tbody td) {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #c8bfb4;
+    vertical-align: middle;
+    overflow: hidden;
+  }
+
+  :global(.entry-table tbody td.col-thumb) { padding-left: 0; padding-right: 0.75rem; }
+  :global(.entry-table tbody td.col-title),
+  :global(.entry-table tbody td.col-tags)  { border-right: 1px solid #ddd5cc; }
+
+  /* Cell content classes — all injected, all need :global */
+  :global(.col-thumb) { width: 44px; }
+
+  :global(.col-title) {
+    width: 190px;
+    font-size: 0.94rem;
+    font-weight: 600;
+    color: #2c2420;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  :global(.col-tags) {
+    width: 220px;
+    font-size: 0.87rem;
+    color: #7a6858;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  :global(.col-desc) {
+    font-size: 0.87rem;
+    color: #9a8878;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  :global(.row-tag-none) { color: #c0b4a8; }
+
+  :global(.row-thumb) {
+    width: 34px;
+    height: 34px;
+    object-fit: cover;
+    display: block;
+    background: #ede8e0;
+  }
+
+  /* ── Upload toggle ────────────────────────────── */
+  .upload-toggle {
+    margin-top: 1rem;
+  }
+
+  .upload-toggle > summary {
+    list-style: none;
+    user-select: none;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .upload-toggle > summary::-webkit-details-marker { display: none; }
+
+  .upload-tab {
+    display: inline-block;
+    background: #f5e87a;
+    padding: 0.45rem 1.25rem 0.45rem 0.9rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #3d2b1f;
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.16), inset 0 -3px 0 rgba(0, 0, 0, 0.06);
+    transform: rotate(-1.2deg);
+    transition: transform 0.15s;
+  }
+
+  .upload-toggle > summary:hover .upload-tab { transform: rotate(0deg); }
+  .upload-toggle[open] > summary .upload-tab { transform: rotate(0deg); }
+
+  .upload-form-wrap {
+    margin-top: 0.75rem;
+    max-width: 560px;
+  }
+
+  /* ── Forms (shared) ───────────────────────────── */
+  .upload-form {
+    background: #faf8f4;
+    border: 1px solid #e0d8cc;
+    padding: 1.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .field label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #7a6858;
+  }
+
+  .optional {
+    font-size: 0.78rem;
+    color: #a09080;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .field input[type='text'],
+  .field input[type='file'],
+  .field textarea {
+    width: 100%;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid #d8cfc4;
+    font-size: 0.9rem;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #2c2420;
+    background: #fffef8;
+    outline: none;
+    transition: border-color 0.15s;
+    resize: vertical;
+  }
+
+  .field input:focus,
+  .field textarea:focus { border-color: #8b6f52; }
+
+  .field input[type='file'] {
+    padding: 0.4rem 0.75rem;
+    cursor: pointer;
+    resize: none;
+  }
+
+  .form-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .form-footer button[type='submit'],
+  #edit-submit {
+    padding: 0.55rem 1.5rem;
+    background: #3d2b1f;
+    color: #faf8f4;
+    border: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    white-space: nowrap;
+  }
+
+  .form-footer button[type='submit']:hover:not(:disabled),
+  #edit-submit:hover:not(:disabled) { opacity: 0.82; }
+
+  .form-footer button[type='submit']:disabled,
+  #edit-submit:disabled { opacity: 0.5; cursor: default; }
+
+  .btn-ghost {
+    padding: 0.55rem 1rem;
+    background: none;
+    border: 1px solid #c8bfb4;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #7a6858;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+
+  .btn-ghost:hover { border-color: #8b6f52; color: #2c2420; }
+
+  .inline-feedback {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.82rem;
+    color: #7a6858;
+  }
+
+  /* ── Modal ────────────────────────────────────── */
+  .modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+
+  .modal[hidden] { display: none; }
+
+  .modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(30, 20, 12, 0.72);
+  }
+
+  .modal-panel {
+    position: relative;
+    background: #fffef8;
+    width: 100%;
+    max-width: 640px;
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+    box-shadow: 0 24px 80px rgba(20, 12, 6, 0.38);
+    padding: 2rem 2rem 1.75rem;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #9a8878;
+    padding: 0.25rem 0.5rem;
+    font-family: var(--font-sans);
+    transition: color 0.15s;
+  }
+
+  .modal-close:hover { color: #2c2420; }
+
+  .modal-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #2c2420;
+    line-height: 1.2;
+    padding-right: 2rem;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+  }
+
+  .modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+  }
+
+  .modal-tags[hidden] { display: none; }
+
+  .tag-chip {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #7a6858;
+    background: #ede8e0;
+    padding: 0.15rem 0.55rem;
+  }
+
+  .modal-description {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.93rem;
+    color: #3a2f28;
+    line-height: 1.65;
+    white-space: pre-line;
+    margin-bottom: 1.25rem;
+  }
+
+  .modal-description[hidden] { display: none; }
+
+  .modal-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .modal-images[hidden] { display: none; }
+
+  .modal-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    background: #ede8e0;
+  }
+
+  .modal-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .modal-links[hidden] { display: none; }
+
+  .modal-link {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.82rem;
+    color: #6b8fa8;
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.15s;
+  }
+
+  .modal-link:hover { color: #3d6680; text-decoration: underline; }
+
+  .modal-last-edited {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    color: #b0a098;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.85rem;
+  }
+
+  .modal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e8e2d8;
+  }
+
+  .btn-secondary {
+    padding: 0.45rem 1.15rem;
+    background: none;
+    border: 1px solid #c8bfb4;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: #7a6858;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+  }
+
+  .btn-secondary:hover { border-color: #8b6f52; color: #2c2420; }
+
+  .modal-delete-btn {
+    background: none;
+    border: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    color: #b0a098;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.15s;
+  }
+
+  .modal-delete-btn:hover:not(:disabled) { color: #a0392b; }
+  .modal-delete-btn:disabled { opacity: 0.5; cursor: default; }
+
+  .edit-form {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    background: transparent;
+  }
+
+  /* ── Responsive ───────────────────────────────── */
+  @media (max-width: 680px) {
+    .page {
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* Hide description and tags columns on narrow viewports */
+    :global(.col-desc),
+    .entry-table thead th.col-desc,
+    :global(.col-tags),
+    .entry-table thead th.col-tags { display: none; }
+
+    :global(.col-title) { width: auto; }
+
+    .modal-panel {
+      padding: 1.5rem 1.25rem 1.25rem;
+      max-height: calc(100vh - 2rem);
+    }
+
+    .modal-img {
+      width: 90px;
+      height: 90px;
+    }
+  }
+</style>
