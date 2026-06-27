@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20260623.1",
+    "puppeteer": "^25.2.1",
     "wrangler": "^4.104.0"
   }
 }
