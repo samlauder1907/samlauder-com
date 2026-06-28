@@ -37,8 +37,13 @@ import Layout from '../../layouts/Layout.astro';
     <!-- Page status (loading / empty) -->
     <p id="page-status" class="page-status">Loading…</p>
 
-    <!-- Tag filter chips -->
-    <div id="filter-chips" class="filter-chips" hidden></div>
+    <!-- Sort controls -->
+    <div id="sort-controls" class="sort-controls" hidden aria-label="Sort entries">
+      <span class="sort-label">Sort</span>
+      <button class="sort-btn sort-btn--active" data-sort="alpha">A–Z</button>
+      <button class="sort-btn" data-sort="newest">Newest first</button>
+      <button class="sort-btn" data-sort="oldest">Oldest first</button>
+    </div>
 
     <!-- All-entries table -->
     <div id="entry-table-wrap" hidden>
@@ -215,11 +220,11 @@ import Layout from '../../layouts/Layout.astro';
   // --- State ---
   let entries = [];
   let currentId = null;
-  let currentFilter = null; // null = All
+  let currentSort = 'alpha';
 
   // --- DOM refs ---
   const pageStatus       = document.getElementById('page-status');
-  const filterChipsEl    = document.getElementById('filter-chips');
+  const sortControlsEl   = document.getElementById('sort-controls');
   const entryTableWrap   = document.getElementById('entry-table-wrap');
   const entryTbody       = document.getElementById('entry-tbody');
   const searchWrap       = document.getElementById('search-wrap');
@@ -367,7 +372,6 @@ import Layout from '../../layouts/Layout.astro';
       const idx = entries.findIndex(e => e.id === currentId);
       if (idx !== -1) entries[idx] = json;
       entries.sort((a, b) => a.title.localeCompare(b.title));
-      buildFilterChips();
       renderTable();
       openModal(currentId);
     } catch {
@@ -404,7 +408,6 @@ import Layout from '../../layouts/Layout.astro';
       const deletedId = currentId;
       closeModal();
       entries = entries.filter(e => e.id !== deletedId);
-      buildFilterChips();
       renderTable();
       if (entries.length === 0) {
         pageStatus.textContent = 'No entries yet — add one below.';
@@ -438,7 +441,6 @@ import Layout from '../../layouts/Layout.astro';
       }
 
       entries = [...entries, json].sort((a, b) => a.title.localeCompare(b.title));
-      buildFilterChips();
       renderTable();
       pageStatus.hidden = true;
 
@@ -456,27 +458,29 @@ import Layout from '../../layouts/Layout.astro';
   });
 
   // --- Table ---
+  function getSortedEntries() {
+    if (currentSort === 'newest') {
+      return [...entries].sort((a, b) => (b.lastEdited ?? '').localeCompare(a.lastEdited ?? ''));
+    }
+    if (currentSort === 'oldest') {
+      return [...entries].sort((a, b) => (a.lastEdited ?? '').localeCompare(b.lastEdited ?? ''));
+    }
+    return entries; // 'alpha' — entries is already sorted A–Z
+  }
+
   function renderTable() {
     if (entries.length === 0) {
       entryTableWrap.hidden = true;
       return;
     }
-    const visible = currentFilter
-      ? entries.filter(e => e.tags.includes(currentFilter))
-      : entries;
     entryTableWrap.hidden = false;
-    if (visible.length === 0) {
-      entryTbody.innerHTML = `<tr><td colspan="4" class="no-filter-results">No entries tagged "${esc(currentFilter)}".</td></tr>`;
-      return;
-    }
-    entryTbody.innerHTML = visible.map(entry => {
+    entryTbody.innerHTML = getSortedEntries().map(entry => {
       const thumb = entry.images[0]
         ? `<img src="${esc(entry.images[0])}" alt="" loading="lazy" class="row-thumb" />`
         : '';
       const tagsText = entry.tags.length > 0
         ? esc(entry.tags.join(', '))
         : '<span class="row-tag-none">—</span>';
-      // Collapse newlines; let CSS text-overflow handle ellipsis at cell boundary
       const descText = esc((entry.description ?? '').replace(/\n+/g, ' ').trim());
       return `<tr data-id="${esc(entry.id)}" role="button" tabindex="0" aria-label="Open ${esc(entry.title)}">
         <td class="col-thumb">${thumb}</td>
@@ -487,29 +491,13 @@ import Layout from '../../layouts/Layout.astro';
     }).join('');
   }
 
-  // --- Filter chips ---
-  function buildFilterChips() {
-    const allTags = [...new Set(entries.flatMap(e => e.tags))].sort((a, b) => a.localeCompare(b));
-    if (allTags.length === 0) {
-      filterChipsEl.hidden = true;
-      return;
-    }
-    // Validate currentFilter still exists; reset if not
-    if (currentFilter && !allTags.includes(currentFilter)) currentFilter = null;
-    filterChipsEl.innerHTML =
-      `<button class="filter-chip${!currentFilter ? ' filter-chip--active' : ''}" data-tag="">All</button>` +
-      allTags.map(t =>
-        `<button class="filter-chip${currentFilter === t ? ' filter-chip--active' : ''}" data-tag="${esc(t)}">${esc(t)}</button>`
-      ).join('');
-    filterChipsEl.hidden = false;
-  }
-
-  filterChipsEl.addEventListener('click', e => {
-    const btn = e.target.closest('.filter-chip');
-    if (!btn) return;
-    currentFilter = btn.dataset.tag || null;
-    filterChipsEl.querySelectorAll('.filter-chip').forEach(b =>
-      b.classList.toggle('filter-chip--active', b === btn));
+  // --- Sort controls ---
+  sortControlsEl.addEventListener('click', e => {
+    const btn = e.target.closest('[data-sort]');
+    if (!btn || btn.dataset.sort === currentSort) return;
+    currentSort = btn.dataset.sort;
+    sortControlsEl.querySelectorAll('.sort-btn').forEach(b =>
+      b.classList.toggle('sort-btn--active', b.dataset.sort === currentSort));
     renderTable();
   });
 
@@ -609,7 +597,7 @@ import Layout from '../../layouts/Layout.astro';
         pageStatus.textContent = 'No entries yet — add one below.';
         pageStatus.hidden = false;
       }
-      buildFilterChips();
+      sortControlsEl.hidden = false;
       renderTable();
     })
     .catch(() => {
@@ -847,46 +835,46 @@ import Layout from '../../layouts/Layout.astro';
     background: #ede8e0;
   }
 
-  /* ── Filter chips ────────────────────────────── */
-  .filter-chips {
+  /* ── Sort controls ────────────────────────────── */
+  .sort-controls {
     display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
     flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 1.25rem;
   }
 
-  :global(.filter-chip) {
+  .sort-label {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #9a8878;
+    margin-right: 0.25rem;
+  }
+
+  .sort-btn {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
     font-weight: 500;
-    letter-spacing: 0.03em;
-    padding: 0.28rem 0.85rem;
+    letter-spacing: 0.02em;
+    padding: 0.3rem 0.85rem;
     border: 1px solid #c8bfb4;
-    border-radius: 999px;
-    background: rgba(255, 254, 248, 0.5);
+    background: rgba(255, 254, 248, 0.6);
     color: #7a6858;
     cursor: pointer;
-    transition: background 0.12s, color 0.12s, border-color 0.12s;
-    line-height: 1.6;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
   }
 
-  :global(.filter-chip:hover) {
+  .sort-btn:hover {
     background: rgba(255, 254, 248, 0.9);
     color: #2c2420;
-    border-color: #b0a498;
   }
 
-  :global(.filter-chip--active) {
+  .sort-btn--active {
     background: #3d2b1f;
     color: #faf8f4;
     border-color: #3d2b1f;
-  }
-
-  :global(.no-filter-results) {
-    padding: 1.5rem 1.25rem;
-    color: #9a8878;
-    font-style: italic;
-    font-size: 0.9rem;
   }
 
   /* ── Upload toggle ────────────────────────────── */
