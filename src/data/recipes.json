@@ -618,7 +618,7 @@
       ],
       "credits": "Sam Lauder (with Claude)",
       "cover": null,
-      "lastEdited": "2026-07-23T02:25:00.000Z"
+      "lastEdited": "2026-07-23T02:47:00.000Z"
     },
     {
       "id": "572b0f76-4dba-4ff7-836f-033d3a7703d4",
@@ -42850,7 +42850,7 @@
                 "block_id": "8fb5b386-ab68-44eb-bbd7-d1ff6ef95b02"
               },
               "created_time": "2026-07-23T02:21:00.000Z",
-              "last_edited_time": "2026-07-23T02:21:00.000Z",
+              "last_edited_time": "2026-07-23T02:47:00.000Z",
               "created_by": {
                 "object": "user",
                 "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
@@ -42867,7 +42867,7 @@
                   {
                     "type": "text",
                     "text": {
-                      "content": "Cover and leave at room temperature (14c) until roughly doubled. At this temperature expect 18-22 hours, it's doing the job a fridge would normally do.",
+                      "content": "Cover and bulk ferment at room temperature until roughly doubled. Timing depends on your room, see the Cool Room vs Warm Room guide below.",
                       "link": null
                     },
                     "annotations": {
@@ -42878,7 +42878,7 @@
                       "code": false,
                       "color": "default"
                     },
-                    "plain_text": "Cover and leave at room temperature (14c) until roughly doubled. At this temperature expect 18-22 hours, it's doing the job a fridge would normally do.",
+                    "plain_text": "Cover and bulk ferment at room temperature until roughly doubled. Timing depends on your room, see the Cool Room vs Warm Room guide below.",
                     "href": null
                   }
                 ],
@@ -42940,7 +42940,7 @@
                 "block_id": "8fb5b386-ab68-44eb-bbd7-d1ff6ef95b02"
               },
               "created_time": "2026-07-23T02:21:00.000Z",
-              "last_edited_time": "2026-07-23T02:21:00.000Z",
+              "last_edited_time": "2026-07-23T02:47:00.000Z",
               "created_by": {
                 "object": "user",
                 "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
@@ -42957,7 +42957,7 @@
                   {
                     "type": "text",
                     "text": {
-                      "content": "Cover and leave at room temperature for 4-5 hours, until puffy and relaxed but not fully doubled again.",
+                      "content": "Cover and do a final proof at room temperature until puffy and relaxed but not fully doubled again. See the guide below for how long.",
                       "link": null
                     },
                     "annotations": {
@@ -42968,7 +42968,7 @@
                       "code": false,
                       "color": "default"
                     },
-                    "plain_text": "Cover and leave at room temperature for 4-5 hours, until puffy and relaxed but not fully doubled again.",
+                    "plain_text": "Cover and do a final proof at room temperature until puffy and relaxed but not fully doubled again. See the guide below for how long.",
                     "href": null
                   }
                 ],
@@ -43315,6 +43315,482 @@
         "paragraph": {
           "rich_text": [],
           "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "294602b0-62bb-448c-8b11-36416be1d5de",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3a67f2e5-26bb-818f-9b78-e353119367c4"
+        },
+        "created_time": "2026-07-23T02:47:00.000Z",
+        "last_edited_time": "2026-07-23T02:47:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_3",
+        "heading_3": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Cool Room (12-16c):",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Cool Room (12-16c):",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "25c12f9d-f04a-4bfd-b521-5b2e00b2afff",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3a67f2e5-26bb-818f-9b78-e353119367c4"
+        },
+        "created_time": "2026-07-23T02:47:00.000Z",
+        "last_edited_time": "2026-07-23T02:47:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "2.2g",
+                "link": null
+              },
+              "annotations": {
+                "bold": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "2.2g",
+              "href": null
+            },
+            {
+              "type": "text",
+              "text": {
+                "content": " Instant Dried Yeast (the amount listed in the main ingredients)",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": " Instant Dried Yeast (the amount listed in the main ingredients)",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "d47a0e8c-8fe8-4fd8-8feb-b28cf3f37279",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3a67f2e5-26bb-818f-9b78-e353119367c4"
+        },
+        "created_time": "2026-07-23T02:47:00.000Z",
+        "last_edited_time": "2026-07-23T02:47:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Bulk ferment: 18-22 hours",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Bulk ferment: 18-22 hours",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "5ded717f-a2c5-433a-b623-6148d21b9799",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3a67f2e5-26bb-818f-9b78-e353119367c4"
+        },
+        "created_time": "2026-07-23T02:47:00.000Z",
+        "last_edited_time": "2026-07-23T02:47:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Final proof (after balling): 4-5 hours",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Final proof (after balling): 4-5 hours",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "7b7c193d-dccd-49b4-9918-fb7e5fbffa36",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3a67f2e5-26bb-818f-9b78-e353119367c4"
+        },
+        "created_time": "2026-07-23T02:47:00.000Z",
+        "last_edited_time": "2026-07-23T02:47:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Good for a set-and-forget overnight-to-next-day timeline",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Good for a set-and-forget overnight-to-next-day timeline",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "88e9fdf1-e18a-42cb-8b07-478e618ec819",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3a67f2e5-26bb-818f-9b78-e353119367c4"
+        },
+        "created_time": "2026-07-23T02:47:00.000Z",
+        "last_edited_time": "2026-07-23T02:47:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_3",
+        "heading_3": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Warm Room (20-24c):",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Warm Room (20-24c):",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "79b3913b-4016-450e-b641-7d51c82514b3",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3a67f2e5-26bb-818f-9b78-e353119367c4"
+        },
+        "created_time": "2026-07-23T02:47:00.000Z",
+        "last_edited_time": "2026-07-23T02:47:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "1g",
+                "link": null
+              },
+              "annotations": {
+                "bold": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "1g",
+              "href": null
+            },
+            {
+              "type": "text",
+              "text": {
+                "content": " Instant Dried Yeast (less than the cool room amount, since fermentation moves faster)",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": " Instant Dried Yeast (less than the cool room amount, since fermentation moves faster)",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "da9b8322-0c1c-4c8d-a1c1-eeadc2558b76",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3a67f2e5-26bb-818f-9b78-e353119367c4"
+        },
+        "created_time": "2026-07-23T02:47:00.000Z",
+        "last_edited_time": "2026-07-23T02:47:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Bulk ferment: 5-7 hours",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Bulk ferment: 5-7 hours",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "9475c1ac-f0e1-4035-9318-aa88290052bd",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3a67f2e5-26bb-818f-9b78-e353119367c4"
+        },
+        "created_time": "2026-07-23T02:47:00.000Z",
+        "last_edited_time": "2026-07-23T02:47:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Final proof (after balling): 2-3 hours",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Final proof (after balling): 2-3 hours",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "6f709779-da2c-4d6b-8e16-b46f52f9c296",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3a67f2e5-26bb-818f-9b78-e353119367c4"
+        },
+        "created_time": "2026-07-23T02:47:00.000Z",
+        "last_edited_time": "2026-07-23T02:47:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Good for a same-day timeline, check by eye rather than the clock",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Good for a same-day timeline, check by eye rather than the clock",
+              "href": null
+            }
+          ],
           "color": "default"
         },
         "archived": false
