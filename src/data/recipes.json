@@ -603,6 +603,24 @@
       "lastEdited": "2021-07-23T00:46:00.000Z"
     },
     {
+      "id": "3a67f2e5-26bb-818f-9b78-e353119367c4",
+      "slug": "3a67f2e526bb818f9b78e353119367c4",
+      "name": "Pizza Dough - NY Style (APF, Cool Room)",
+      "tags": [
+        "Bread",
+        "Dinner"
+      ],
+      "difficulty": [
+        "Difficulty: 3"
+      ],
+      "duration": [
+        "Duration: >8hrs"
+      ],
+      "credits": "Sam Lauder (with Claude)",
+      "cover": null,
+      "lastEdited": "2026-07-23T02:25:00.000Z"
+    },
+    {
       "id": "572b0f76-4dba-4ff7-836f-033d3a7703d4",
       "slug": "572b0f764dba4ff7836f033d3a7703d4",
       "name": "Quick Chocolate Cake",
@@ -686,6 +704,23 @@
       "credits": "Sam Lauder",
       "cover": "/images/recipes/e4f07305e3c74c2eaacfeff3d3528521/cover.jpg",
       "lastEdited": "2022-10-14T01:14:00.000Z"
+    },
+    {
+      "id": "37a7f2e5-26bb-8197-b837-c0900dfecbdb",
+      "slug": "37a7f2e526bb8197b837c0900dfecbdb",
+      "name": "Sticky Toffee Pudding",
+      "tags": [
+        "Cake"
+      ],
+      "difficulty": [
+        "Difficulty: 3"
+      ],
+      "duration": [
+        "Duration: 2-3hrs"
+      ],
+      "credits": "YouTube (youtu.be/dNs2y12zgIg)",
+      "cover": null,
+      "lastEdited": "2026-06-09T22:02:00.000Z"
     },
     {
       "id": "0ab3fa8c-d6bd-45c6-94da-a92bbcb1b5f2",
@@ -42234,6 +42269,1057 @@
         "archived": false
       }
     ],
+    "3a67f2e526bb818f9b78e353119367c4": [
+      {
+        "object": "block",
+        "id": "f2e0c199-f079-4fbe-809b-8ac58d2f55ce",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3a67f2e5-26bb-818f-9b78-e353119367c4"
+        },
+        "created_time": "2026-07-23T02:21:00.000Z",
+        "last_edited_time": "2026-07-23T02:21:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": true,
+        "in_trash": false,
+        "type": "column_list",
+        "column_list": {},
+        "archived": false,
+        "_columns": [
+          [
+            {
+              "object": "block",
+              "id": "dba32fe1-fefd-42d0-92ff-caef54e6bcaf",
+              "parent": {
+                "type": "block_id",
+                "block_id": "163a576d-9198-42a5-9243-22483d4d40d7"
+              },
+              "created_time": "2026-07-23T02:21:00.000Z",
+              "last_edited_time": "2026-07-23T02:21:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "heading_1",
+              "heading_1": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Ingredients",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Ingredients",
+                    "href": null
+                  }
+                ],
+                "is_toggleable": false,
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "21697fe1-8f80-4c14-941e-e0e84465a5cc",
+              "parent": {
+                "type": "block_id",
+                "block_id": "163a576d-9198-42a5-9243-22483d4d40d7"
+              },
+              "created_time": "2026-07-23T02:21:00.000Z",
+              "last_edited_time": "2026-07-23T02:21:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "640g",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "640g",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " All-Purpose Flour",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " All-Purpose Flour",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "668ee9ff-27db-4438-94be-54fd51b16300",
+              "parent": {
+                "type": "block_id",
+                "block_id": "163a576d-9198-42a5-9243-22483d4d40d7"
+              },
+              "created_time": "2026-07-23T02:21:00.000Z",
+              "last_edited_time": "2026-07-23T02:21:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "360ml",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "360ml",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " Water, lukewarm",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " Water, lukewarm",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "b64c7b15-3c8d-4356-b534-7004296fa5cc",
+              "parent": {
+                "type": "block_id",
+                "block_id": "163a576d-9198-42a5-9243-22483d4d40d7"
+              },
+              "created_time": "2026-07-23T02:21:00.000Z",
+              "last_edited_time": "2026-07-23T02:21:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "16g",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "16g",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " Fine Salt",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " Fine Salt",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "30ee0ba8-1c42-406a-93f4-f98ff6828791",
+              "parent": {
+                "type": "block_id",
+                "block_id": "163a576d-9198-42a5-9243-22483d4d40d7"
+              },
+              "created_time": "2026-07-23T02:21:00.000Z",
+              "last_edited_time": "2026-07-23T02:21:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "13g",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "13g",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " Olive Oil",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " Olive Oil",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "40329aa5-9894-433e-94c3-4dd8df2a4b7f",
+              "parent": {
+                "type": "block_id",
+                "block_id": "163a576d-9198-42a5-9243-22483d4d40d7"
+              },
+              "created_time": "2026-07-23T02:21:00.000Z",
+              "last_edited_time": "2026-07-23T02:21:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "6g",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "6g",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " Caster Sugar",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " Caster Sugar",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "9b40e861-83bb-4bf3-b212-468af884ea50",
+              "parent": {
+                "type": "block_id",
+                "block_id": "163a576d-9198-42a5-9243-22483d4d40d7"
+              },
+              "created_time": "2026-07-23T02:21:00.000Z",
+              "last_edited_time": "2026-07-23T02:21:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "2.2g",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "2.2g",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " Instant Dried Yeast",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " Instant Dried Yeast",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            }
+          ],
+          [
+            {
+              "object": "block",
+              "id": "84cbe42b-7670-4925-b273-2a54d7bfaad2",
+              "parent": {
+                "type": "block_id",
+                "block_id": "8fb5b386-ab68-44eb-bbd7-d1ff6ef95b02"
+              },
+              "created_time": "2026-07-23T02:21:00.000Z",
+              "last_edited_time": "2026-07-23T02:21:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "heading_1",
+              "heading_1": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Method",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Method",
+                    "href": null
+                  }
+                ],
+                "is_toggleable": false,
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "3b2bb389-7a72-4784-a475-f4dfdd7dfade",
+              "parent": {
+                "type": "block_id",
+                "block_id": "8fb5b386-ab68-44eb-bbd7-d1ff6ef95b02"
+              },
+              "created_time": "2026-07-23T02:21:00.000Z",
+              "last_edited_time": "2026-07-23T02:21:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Dissolve yeast and sugar into the lukewarm water. Add flour, mix until no dry flour remains, then rest 20 minutes (autolyse).",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Dissolve yeast and sugar into the lukewarm water. Add flour, mix until no dry flour remains, then rest 20 minutes (autolyse).",
+                    "href": null
+                  }
+                ],
+                "color": "default",
+                "list_format": "numbers"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "956cb732-46e9-4e43-8064-8adc01033856",
+              "parent": {
+                "type": "block_id",
+                "block_id": "8fb5b386-ab68-44eb-bbd7-d1ff6ef95b02"
+              },
+              "created_time": "2026-07-23T02:21:00.000Z",
+              "last_edited_time": "2026-07-23T02:21:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Add salt and olive oil, knead for 10-12 minutes by hand or 8 minutes on a mixer, until smooth and elastic.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Add salt and olive oil, knead for 10-12 minutes by hand or 8 minutes on a mixer, until smooth and elastic.",
+                    "href": null
+                  }
+                ],
+                "color": "default",
+                "list_format": "numbers"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "5affd9a8-8240-42fa-9d6d-3d343d491490",
+              "parent": {
+                "type": "block_id",
+                "block_id": "8fb5b386-ab68-44eb-bbd7-d1ff6ef95b02"
+              },
+              "created_time": "2026-07-23T02:21:00.000Z",
+              "last_edited_time": "2026-07-23T02:21:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Cover and leave at room temperature (14c) until roughly doubled. At this temperature expect 18-22 hours, it's doing the job a fridge would normally do.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Cover and leave at room temperature (14c) until roughly doubled. At this temperature expect 18-22 hours, it's doing the job a fridge would normally do.",
+                    "href": null
+                  }
+                ],
+                "color": "default",
+                "list_format": "numbers"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "f26fc00e-2f96-4391-b4dc-64971d568599",
+              "parent": {
+                "type": "block_id",
+                "block_id": "8fb5b386-ab68-44eb-bbd7-d1ff6ef95b02"
+              },
+              "created_time": "2026-07-23T02:21:00.000Z",
+              "last_edited_time": "2026-07-23T02:21:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Divide into 4 pieces (~260g each) and shape into tight balls.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Divide into 4 pieces (~260g each) and shape into tight balls.",
+                    "href": null
+                  }
+                ],
+                "color": "default",
+                "list_format": "numbers"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "ffdfec41-90c2-4987-b1cb-ebbbfe6b9328",
+              "parent": {
+                "type": "block_id",
+                "block_id": "8fb5b386-ab68-44eb-bbd7-d1ff6ef95b02"
+              },
+              "created_time": "2026-07-23T02:21:00.000Z",
+              "last_edited_time": "2026-07-23T02:21:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Cover and leave at room temperature for 4-5 hours, until puffy and relaxed but not fully doubled again.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Cover and leave at room temperature for 4-5 hours, until puffy and relaxed but not fully doubled again.",
+                    "href": null
+                  }
+                ],
+                "color": "default",
+                "list_format": "numbers"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "b46fbee9-dc28-4be3-8935-d5e085e10cce",
+              "parent": {
+                "type": "block_id",
+                "block_id": "8fb5b386-ab68-44eb-bbd7-d1ff6ef95b02"
+              },
+              "created_time": "2026-07-23T02:21:00.000Z",
+              "last_edited_time": "2026-07-23T02:25:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Preheat stone to 350-380c.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Preheat stone to 350-380c.",
+                    "href": null
+                  }
+                ],
+                "color": "default",
+                "list_format": "numbers"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "144598d3-e9c6-44ea-bf6a-437b2f55da85",
+              "parent": {
+                "type": "block_id",
+                "block_id": "8fb5b386-ab68-44eb-bbd7-d1ff6ef95b02"
+              },
+              "created_time": "2026-07-23T02:21:00.000Z",
+              "last_edited_time": "2026-07-23T02:21:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Stretch to about 32cm, slightly thicker than a bread flour dough since APF tears more easily. Top lightly.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Stretch to about 32cm, slightly thicker than a bread flour dough since APF tears more easily. Top lightly.",
+                    "href": null
+                  }
+                ],
+                "color": "default",
+                "list_format": "numbers"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "e7f9b5e7-3752-4970-98b4-e189c35f60b8",
+              "parent": {
+                "type": "block_id",
+                "block_id": "8fb5b386-ab68-44eb-bbd7-d1ff6ef95b02"
+              },
+              "created_time": "2026-07-23T02:21:00.000Z",
+              "last_edited_time": "2026-07-23T02:25:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Bake 3ish minutes, turning every 45 seconds, until the base is deeply spotted and firm. Enjoy!",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Bake 3ish minutes, turning every 45 seconds, until the base is deeply spotted and firm. Enjoy!",
+                    "href": null
+                  }
+                ],
+                "color": "default",
+                "list_format": "numbers"
+              },
+              "archived": false
+            }
+          ]
+        ]
+      },
+      {
+        "object": "block",
+        "id": "9115b629-5558-47af-aa73-1f23056ba4a6",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3a67f2e5-26bb-818f-9b78-e353119367c4"
+        },
+        "created_time": "2026-07-23T02:21:00.000Z",
+        "last_edited_time": "2026-07-23T02:21:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_3",
+        "heading_3": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Notes:",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Notes:",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "ba9dac3f-3595-4dba-9f92-7674790ae78d",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3a67f2e5-26bb-818f-9b78-e353119367c4"
+        },
+        "created_time": "2026-07-23T02:21:00.000Z",
+        "last_edited_time": "2026-07-23T02:21:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Made with all-purpose flour rather than bread flour, hydration and stone temp adjusted down to compensate for lower protein.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Made with all-purpose flour rather than bread flour, hydration and stone temp adjusted down to compensate for lower protein.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "c07b6c6b-37b9-4971-9531-b5579517c856",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3a67f2e5-26bb-818f-9b78-e353119367c4"
+        },
+        "created_time": "2026-07-23T02:21:00.000Z",
+        "last_edited_time": "2026-07-23T02:21:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Check the bulk rise by eye rather than the clock, especially in cooler weather.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Check the bulk rise by eye rather than the clock, especially in cooler weather.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "86268532-572a-4a30-9eb0-176dd68fc0a3",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3a67f2e5-26bb-818f-9b78-e353119367c4"
+        },
+        "created_time": "2026-07-23T02:21:00.000Z",
+        "last_edited_time": "2026-07-23T02:21:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "For a crunchier New Haven-leaning base, drop water to 350ml and skip the oil.",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "For a crunchier New Haven-leaning base, drop water to 350ml and skip the oil.",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "3a67f2e5-26bb-80bd-8e40-fe555ba3b900",
+        "parent": {
+          "type": "page_id",
+          "page_id": "3a67f2e5-26bb-818f-9b78-e353119367c4"
+        },
+        "created_time": "2026-07-23T02:25:00.000Z",
+        "last_edited_time": "2026-07-23T02:25:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      }
+    ],
     "572b0f764dba4ff7836f033d3a7703d4": [
       {
         "object": "block",
@@ -48603,6 +49689,1999 @@
         "paragraph": {
           "rich_text": [],
           "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      }
+    ],
+    "37a7f2e526bb8197b837c0900dfecbdb": [
+      {
+        "object": "block",
+        "id": "3c9f2f6d-de4a-4510-9bc3-cc190158dca6",
+        "parent": {
+          "type": "page_id",
+          "page_id": "37a7f2e5-26bb-8197-b837-c0900dfecbdb"
+        },
+        "created_time": "2026-06-09T21:54:00.000Z",
+        "last_edited_time": "2026-06-09T21:54:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": true,
+        "in_trash": false,
+        "type": "column_list",
+        "column_list": {},
+        "archived": false,
+        "_columns": [
+          [
+            {
+              "object": "block",
+              "id": "b4652f15-7c4c-42c0-baa6-ccd268c19f50",
+              "parent": {
+                "type": "block_id",
+                "block_id": "fea8f672-35ce-43e7-a8f6-4ce27879f064"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "heading_1",
+              "heading_1": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Sponge",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Sponge",
+                    "href": null
+                  }
+                ],
+                "is_toggleable": false,
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "3f5ab234-cd03-45e8-9d12-4fece01b2a4d",
+              "parent": {
+                "type": "block_id",
+                "block_id": "fea8f672-35ce-43e7-a8f6-4ce27879f064"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "175g",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "175g",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " dates, chopped",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " dates, chopped",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "7b0f1fbd-ff24-42b8-bc9f-f80cad7b7f57",
+              "parent": {
+                "type": "block_id",
+                "block_id": "fea8f672-35ce-43e7-a8f6-4ce27879f064"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "100ml",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "100ml",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " coffee (americano strength, not espresso)",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " coffee (americano strength, not espresso)",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "733d4132-3aae-4486-bcbc-5ce44c51152c",
+              "parent": {
+                "type": "block_id",
+                "block_id": "fea8f672-35ce-43e7-a8f6-4ce27879f064"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "100ml",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "100ml",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " water",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " water",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "01a48fb1-69d5-4ac1-9876-2a2b06d389d5",
+              "parent": {
+                "type": "block_id",
+                "block_id": "fea8f672-35ce-43e7-a8f6-4ce27879f064"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "1 tsp",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "1 tsp",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " vanilla essence",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " vanilla essence",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "8cb0a379-2f25-4aed-8a98-39c1e925c506",
+              "parent": {
+                "type": "block_id",
+                "block_id": "fea8f672-35ce-43e7-a8f6-4ce27879f064"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T22:02:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "60g",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "60g",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " unsalted butter,  ",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " unsalted butter,  ",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "(substituted for 50g beef suet — see note)",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": true,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "(substituted for 50g beef suet — see note)",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "608d5529-a6ca-45cd-aa72-c1d17a1bee04",
+              "parent": {
+                "type": "block_id",
+                "block_id": "fea8f672-35ce-43e7-a8f6-4ce27879f064"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Pinch of salt",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Pinch of salt",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "0dc95a33-5ce3-4937-bbe0-70df4d608294",
+              "parent": {
+                "type": "block_id",
+                "block_id": "fea8f672-35ce-43e7-a8f6-4ce27879f064"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "175g",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "175g",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " dark muscovado sugar",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " dark muscovado sugar",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "1bbf69f0-4158-4769-b918-76cb65f322e0",
+              "parent": {
+                "type": "block_id",
+                "block_id": "fea8f672-35ce-43e7-a8f6-4ce27879f064"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "2",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "2",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " free-range eggs",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " free-range eggs",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "fb74baa6-4913-4fa7-9ed8-3e2be9ffed1d",
+              "parent": {
+                "type": "block_id",
+                "block_id": "fea8f672-35ce-43e7-a8f6-4ce27879f064"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "175g",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "175g",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " self-raising flour",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " self-raising flour",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "6db72d75-7a2e-4c20-9fa3-e9c752a4ff24",
+              "parent": {
+                "type": "block_id",
+                "block_id": "fea8f672-35ce-43e7-a8f6-4ce27879f064"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "1 rounded tsp",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "1 rounded tsp",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " bicarbonate of soda",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " bicarbonate of soda",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "3ee67880-40a6-4dc6-b574-91c1939f9198",
+              "parent": {
+                "type": "block_id",
+                "block_id": "fea8f672-35ce-43e7-a8f6-4ce27879f064"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "heading_1",
+              "heading_1": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Sauce",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Sauce",
+                    "href": null
+                  }
+                ],
+                "is_toggleable": false,
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "fe8f7ab5-43fd-4e67-8439-46d4241a0cde",
+              "parent": {
+                "type": "block_id",
+                "block_id": "fea8f672-35ce-43e7-a8f6-4ce27879f064"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "250ml",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "250ml",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " whipping cream",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " whipping cream",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "3df10dd2-da00-4e91-9fa8-1a9f3a25c35a",
+              "parent": {
+                "type": "block_id",
+                "block_id": "fea8f672-35ce-43e7-a8f6-4ce27879f064"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "80g",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "80g",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " dark muscovado sugar",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " dark muscovado sugar",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "255c98ff-b6e2-4283-b15c-f58bed095f1c",
+              "parent": {
+                "type": "block_id",
+                "block_id": "fea8f672-35ce-43e7-a8f6-4ce27879f064"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "80g",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "80g",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " butter",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " butter",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "5e43ffe8-2039-4005-b207-1018cc0c8d79",
+              "parent": {
+                "type": "block_id",
+                "block_id": "fea8f672-35ce-43e7-a8f6-4ce27879f064"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "bulleted_list_item",
+              "bulleted_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "10g",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": true,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "10g",
+                    "href": null
+                  },
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": " soy sauce",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": " soy sauce",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            }
+          ],
+          [
+            {
+              "object": "block",
+              "id": "e51e2552-14fc-4012-a092-6458df2c83bf",
+              "parent": {
+                "type": "block_id",
+                "block_id": "71ce43d5-e2d5-4ce4-a438-205cec6b0e26"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "heading_1",
+              "heading_1": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Method",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Method",
+                    "href": null
+                  }
+                ],
+                "is_toggleable": false,
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "9a991d24-c14c-4125-9e03-dc192d2ab24d",
+              "parent": {
+                "type": "block_id",
+                "block_id": "71ce43d5-e2d5-4ce4-a438-205cec6b0e26"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Roughly chop the dates. Set aside 2/3 in a heatproof bowl and 1/3 in a separate bowl.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Roughly chop the dates. Set aside 2/3 in a heatproof bowl and 1/3 in a separate bowl.",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "15a306f9-f6f3-4b4f-a7d1-4f9784974794",
+              "parent": {
+                "type": "block_id",
+                "block_id": "71ce43d5-e2d5-4ce4-a438-205cec6b0e26"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Pour the coffee, water and vanilla essence into a saucepan and bring to the boil.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Pour the coffee, water and vanilla essence into a saucepan and bring to the boil.",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "1cd2b2e9-3e57-4769-8931-30892fd1d078",
+              "parent": {
+                "type": "block_id",
+                "block_id": "71ce43d5-e2d5-4ce4-a438-205cec6b0e26"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Once boiling, pour the hot liquid over the 2/3 bowl of dates. Set aside to soak for 30 minutes.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Once boiling, pour the hot liquid over the 2/3 bowl of dates. Set aside to soak for 30 minutes.",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "8c91a5f0-0b7e-44ec-9ef1-a68516da7832",
+              "parent": {
+                "type": "block_id",
+                "block_id": "71ce43d5-e2d5-4ce4-a438-205cec6b0e26"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T22:02:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Strain the date soaking liquid into a blender along with the  butter, muscovado sugar and eggs. Blitz until smooth.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Strain the date soaking liquid into a blender along with the  butter, muscovado sugar and eggs. Blitz until smooth.",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "0c940a56-969b-4f5a-a1bf-afdaebd3ba12",
+              "parent": {
+                "type": "block_id",
+                "block_id": "71ce43d5-e2d5-4ce4-a438-205cec6b0e26"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Add the soaked chopped dates and blitz for a few seconds until combined, but with flecks still running through the batter.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Add the soaked chopped dates and blitz for a few seconds until combined, but with flecks still running through the batter.",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "00b91eea-c39e-4efb-b194-09b57ba641e8",
+              "parent": {
+                "type": "block_id",
+                "block_id": "71ce43d5-e2d5-4ce4-a438-205cec6b0e26"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Pour into a mixing bowl and fold through the flour, bicarb, salt, and the reserved 1/3 of dates.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Pour into a mixing bowl and fold through the flour, bicarb, salt, and the reserved 1/3 of dates.",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "9c3b91be-22ea-49b5-aecd-a98f51e08b49",
+              "parent": {
+                "type": "block_id",
+                "block_id": "71ce43d5-e2d5-4ce4-a438-205cec6b0e26"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Pour the batter into a loaf tin lined with parchment, gently shaking to level.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Pour the batter into a loaf tin lined with parchment, gently shaking to level.",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "fb95561c-9431-4ae6-b839-4006d43fbd40",
+              "parent": {
+                "type": "block_id",
+                "block_id": "71ce43d5-e2d5-4ce4-a438-205cec6b0e26"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Bake at 170°C for 55 minutes, or until a skewer comes out clean from the centre.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Bake at 170°C for 55 minutes, or until a skewer comes out clean from the centre.",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "dce29714-a0df-43b6-bb91-ae9bb10d3255",
+              "parent": {
+                "type": "block_id",
+                "block_id": "71ce43d5-e2d5-4ce4-a438-205cec6b0e26"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "While the sponge bakes, add all sauce ingredients except the soy sauce to a saucepan over medium heat. Stir as the butter melts and sugar dissolves.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "While the sponge bakes, add all sauce ingredients except the soy sauce to a saucepan over medium heat. Stir as the butter melts and sugar dissolves.",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "d91a5637-029a-46c2-85aa-40b1402c1139",
+              "parent": {
+                "type": "block_id",
+                "block_id": "71ce43d5-e2d5-4ce4-a438-205cec6b0e26"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Continue to stir until the sauce thickens slightly and coats the back of a spoon.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Continue to stir until the sauce thickens slightly and coats the back of a spoon.",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "cefd205a-eec3-47c3-9d09-67491396d1bf",
+              "parent": {
+                "type": "block_id",
+                "block_id": "71ce43d5-e2d5-4ce4-a438-205cec6b0e26"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Add the soy sauce and set aside in a warm place.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Add the soy sauce and set aside in a warm place.",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "8ed9d9a0-8ee4-436c-94e0-5eb82aa5b465",
+              "parent": {
+                "type": "block_id",
+                "block_id": "71ce43d5-e2d5-4ce4-a438-205cec6b0e26"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Once baked, remove from oven and run a small knife around the edge of the tin. Tip out, stand the right way up and cool on a wire rack.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Once baked, remove from oven and run a small knife around the edge of the tin. Tip out, stand the right way up and cool on a wire rack.",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "2c0d1e06-994e-4e54-a820-0dfdfa2f6fda",
+              "parent": {
+                "type": "block_id",
+                "block_id": "71ce43d5-e2d5-4ce4-a438-205cec6b0e26"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "To serve, set oven to 140°C. Slice into portions and warm through for 5 minutes, warming the sauce at the same time.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "To serve, set oven to 140°C. Slice into portions and warm through for 5 minutes, warming the sauce at the same time.",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            },
+            {
+              "object": "block",
+              "id": "3e9e9f3c-8861-4b96-b157-ea9e7983c677",
+              "parent": {
+                "type": "block_id",
+                "block_id": "71ce43d5-e2d5-4ce4-a438-205cec6b0e26"
+              },
+              "created_time": "2026-06-09T21:54:00.000Z",
+              "last_edited_time": "2026-06-09T21:54:00.000Z",
+              "created_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "last_edited_by": {
+                "object": "user",
+                "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+              },
+              "has_children": false,
+              "in_trash": false,
+              "type": "numbered_list_item",
+              "numbered_list_item": {
+                "rich_text": [
+                  {
+                    "type": "text",
+                    "text": {
+                      "content": "Serve with clotted cream, ice cream or custard.",
+                      "link": null
+                    },
+                    "annotations": {
+                      "bold": false,
+                      "italic": false,
+                      "strikethrough": false,
+                      "underline": false,
+                      "code": false,
+                      "color": "default"
+                    },
+                    "plain_text": "Serve with clotted cream, ice cream or custard.",
+                    "href": null
+                  }
+                ],
+                "color": "default"
+              },
+              "archived": false
+            }
+          ]
+        ]
+      },
+      {
+        "object": "block",
+        "id": "cacf51c2-5399-410c-b4f4-fb358b5348bb",
+        "parent": {
+          "type": "page_id",
+          "page_id": "37a7f2e5-26bb-8197-b837-c0900dfecbdb"
+        },
+        "created_time": "2026-06-09T21:54:00.000Z",
+        "last_edited_time": "2026-06-09T21:54:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "divider",
+        "divider": {},
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "6e79d7f6-aed3-4828-8145-0c11e70c4903",
+        "parent": {
+          "type": "page_id",
+          "page_id": "37a7f2e5-26bb-8197-b837-c0900dfecbdb"
+        },
+        "created_time": "2026-06-09T21:54:00.000Z",
+        "last_edited_time": "2026-06-09T21:54:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "heading_2",
+        "heading_2": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Butter Substitution Note",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Butter Substitution Note",
+              "href": null
+            }
+          ],
+          "is_toggleable": false,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "929014b6-910a-43a0-8298-bbe30e6e7885",
+        "parent": {
+          "type": "page_id",
+          "page_id": "37a7f2e5-26bb-8197-b837-c0900dfecbdb"
+        },
+        "created_time": "2026-06-09T21:54:00.000Z",
+        "last_edited_time": "2026-06-09T21:54:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "paragraph",
+        "paragraph": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "The original recipe uses ",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "The original recipe uses ",
+              "href": null
+            },
+            {
+              "type": "text",
+              "text": {
+                "content": "50g beef suet",
+                "link": null
+              },
+              "annotations": {
+                "bold": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "50g beef suet",
+              "href": null
+            },
+            {
+              "type": "text",
+              "text": {
+                "content": ", swapped here for ",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": ", swapped here for ",
+              "href": null
+            },
+            {
+              "type": "text",
+              "text": {
+                "content": "60g unsalted butter (melted and cooled)",
+                "link": null
+              },
+              "annotations": {
+                "bold": true,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "60g unsalted butter (melted and cooled)",
+              "href": null
+            },
+            {
+              "type": "text",
+              "text": {
+                "content": ".",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": ".",
+              "href": null
+            }
+          ],
+          "icon": null,
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "2f756ee5-afea-4fd4-9bfd-6f0e5ba0988c",
+        "parent": {
+          "type": "page_id",
+          "page_id": "37a7f2e5-26bb-8197-b837-c0900dfecbdb"
+        },
+        "created_time": "2026-06-09T21:54:00.000Z",
+        "last_edited_time": "2026-06-09T21:54:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Suet is ~100% fat; butter is ~80% fat, so 60g butter matches the fat contribution of 50g suet",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Suet is ~100% fat; butter is ~80% fat, so 60g butter matches the fat contribution of 50g suet",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "754a0da7-9412-40ef-bd91-5de137444528",
+        "parent": {
+          "type": "page_id",
+          "page_id": "37a7f2e5-26bb-8197-b837-c0900dfecbdb"
+        },
+        "created_time": "2026-06-09T21:54:00.000Z",
+        "last_edited_time": "2026-06-09T21:54:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Melt the butter and let it cool to room temperature before adding to the blender in step 4 — this ensures it emulsifies cleanly without scrambling the eggs",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Melt the butter and let it cool to room temperature before adding to the blender in step 4 — this ensures it emulsifies cleanly without scrambling the eggs",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "fb74a84f-48ba-40f0-ae01-71b95b713606",
+        "parent": {
+          "type": "page_id",
+          "page_id": "37a7f2e5-26bb-8197-b837-c0900dfecbdb"
+        },
+        "created_time": "2026-06-09T21:54:00.000Z",
+        "last_edited_time": "2026-06-09T21:54:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "Butter's lower melting point (~32°C vs suet's ~45°C) will produce a slightly denser, richer crumb. In a sticky toffee pudding this is a net positive",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "Butter's lower melting point (~32°C vs suet's ~45°C) will produce a slightly denser, richer crumb. In a sticky toffee pudding this is a net positive",
+              "href": null
+            }
+          ],
+          "color": "default"
+        },
+        "archived": false
+      },
+      {
+        "object": "block",
+        "id": "a9ac6423-5d10-4444-93b3-743dd16e9c8e",
+        "parent": {
+          "type": "page_id",
+          "page_id": "37a7f2e5-26bb-8197-b837-c0900dfecbdb"
+        },
+        "created_time": "2026-06-09T21:54:00.000Z",
+        "last_edited_time": "2026-06-09T21:54:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "12aae4d4-4b3d-44fe-91e3-0569301be9c1"
+        },
+        "has_children": false,
+        "in_trash": false,
+        "type": "bulleted_list_item",
+        "bulleted_list_item": {
+          "rich_text": [
+            {
+              "type": "text",
+              "text": {
+                "content": "If the top is browning too fast before the centre is set, tent loosely with foil",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "If the top is browning too fast before the centre is set, tent loosely with foil",
+              "href": null
+            }
+          ],
           "color": "default"
         },
         "archived": false
